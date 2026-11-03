@@ -50,6 +50,7 @@ Potrzebujesz Androida 8 lub nowszego. Wersji na iPhone'a jeszcze nie ma. Aplikac
 - Stuknij **Zacznij nasłuchiwać**. OwlEar nasłuchuje nawet po zamknięciu aplikacji i wysyła powiadomienie, gdy pojawi się coś ważnego.
 - **Radar** pokazuje, co jest wokół ciebie. Im bliżej środka jest kropka, tym bliżej ciebie jest dane urządzenie.
 - Aby sprawdzić, w którym kierunku coś jest, stuknij **Znajdź kierunek**. Trzymaj telefon płasko przy klatce piersiowej i powoli obróć się o pełne koło.
+- Aby odnaleźć jedno konkretne urządzenie, na przykład lokalizator, który według ciebie jest ukryty w samochodzie lub torbie, stuknij jego ikonę i wybierz **Znajdź to**. Chodź powoli i patrz na liczbę: im wyższa, tym jesteś bliżej. Aplikacja mówi, czy się zbliżasz, czy oddalasz, i może pikać lub wibrować, żebyś nie musiał cały czas patrzeć na ekran.
 - Jeśli lokalizator okaże się twój lub kogoś z rodziny, stuknij go i wybierz **Ignoruj**.
 
 ## Gdy OwlEar cię ostrzeże

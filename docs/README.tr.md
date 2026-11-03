@@ -50,6 +50,7 @@ Android 8 veya daha yenisi gerekir. Henüz iPhone sürümü yoktur. Uygulama tel
 - **Dinlemeye başla** düğmesine dokunun. OwlEar uygulama kapalıyken bile dinlemeye devam eder ve önemli bir şey çıktığında size uyarı gönderir.
 - **Radar**, etrafınızda ne olduğunu gösterir. Bir nokta merkeze ne kadar yakınsa o şey de size o kadar yakındır.
 - Bir şeyin hangi yönde olduğunu bulmak için **Yönü bul** düğmesine dokunun. Telefonu göğsünüze düz tutun ve yavaşça tam bir tur dönün.
+- Arabanızda ya da çantanızda saklandığını düşündüğünüz bir takip cihazı gibi tek bir şeyi bulmak için simgesine dokunun ve **Bul**'u seçin. Yavaşça dolaşın ve sayıya bakın: sayı yükseldikçe yaklaşıyorsunuz demektir. Uygulama yaklaşıp yaklaşmadığınızı söyler ve sürekli ekrana bakmanız gerekmesin diye bip sesi çıkarabilir ya da titreyebilir.
 - Bir takip cihazı sizin ya da ailenizin çıkarsa üzerine dokunun ve **Yok say** seçeneğini seçin.
 
 ## OwlEar sizi uyarırsa

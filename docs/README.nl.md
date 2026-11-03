@@ -50,6 +50,7 @@ Je hebt Android 8 of nieuwer nodig. Er is nog geen iPhone-versie. De app gebruik
 - Tik op **Begin met luisteren**. OwlEar blijft luisteren, ook als de app dicht is, en stuurt je een melding als er iets belangrijks opduikt.
 - De **radar** laat zien wat er om je heen is. Hoe dichter een stip bij het midden staat, hoe dichter dat ding bij jou is.
 - Wil je weten in welke richting iets is, tik dan op **Richting zoeken**. Houd de telefoon plat tegen je borst en draai langzaam een hele cirkel.
+- Om één ding op te sporen, zoals een tracker die volgens jou in je auto of tas verstopt zit, tik je op het pictogram en kies je **Zoeken**. Loop langzaam rond en let op het getal: hoe hoger het wordt, hoe dichterbij je bent. De app laat weten of je dichterbij komt of verder weg gaat, en kan piepen of trillen zodat je niet steeds naar het scherm hoeft te kijken.
 - Blijkt een tracker van jou of je familie te zijn, tik erop en kies **Negeren**.
 
 ## Als OwlEar je waarschuwt

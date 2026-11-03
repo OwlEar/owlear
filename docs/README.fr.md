@@ -50,6 +50,7 @@ Il faut Android 8 ou plus récent. Il n'existe pas encore de version iPhone. L�
 - Touchez **Commencer l’écoute**. OwlEar continue d'écouter même quand l'application est fermée et vous envoie une alerte quand quelque chose d'important apparaît.
 - Le **radar** montre ce qui vous entoure. Plus un point est proche du centre, plus l'objet est proche de vous.
 - Pour savoir dans quelle direction se trouve quelque chose, touchez **Trouver la direction**. Tenez le téléphone à plat contre votre poitrine et tournez lentement sur vous-même.
+- Pour retrouver un appareil précis, comme un traceur que vous pensez caché dans votre voiture ou votre sac, touchez son icône et choisissez **Le trouver**. Marchez lentement en regardant le chiffre : plus il monte, plus vous êtes près. L'app vous dit si vous vous rapprochez ou vous éloignez, et peut biper ou vibrer pour que vous n'ayez pas à fixer l'écran.
 - Si un traceur s'avère être le vôtre ou celui d'un proche, touchez-le et choisissez **Ignorer**.
 
 ## Si OwlEar vous prévient
