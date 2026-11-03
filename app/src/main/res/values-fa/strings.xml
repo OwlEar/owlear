@@ -23,7 +23,7 @@
     <string name="status_erased">پاک شد.</string>
     <string name="status_erased_listening">پاک شد. هنوز گوش می‌دهد.</string>
     <string name="section_radar">رادار</string>
-    <string name="hint_radar">حلقه‌ها = فاصلهٔ تقریبی بر اساس قدرت سیگنال. نقطه‌های پر جهت دارند؛ نقطه‌های توخالی هنوز نه. برای پیدا کردن جهت، گوشی را صاف روی سینه نگه دارید و آرام یک دور کامل بچرخید. بدن شما سیگنال‌های پشت سرتان را می‌پوشاند.</string>
+    <string name="hint_radar">نماد = چیست، اندازه = قدرت سیگنال، حلقه‌ها = فاصلهٔ تقریبی. برای جزئیات روی نماد بزنید و برای یادگیری نمادها روی ⓘ. برای جهت، گوشی را صاف روی سینه نگه دارید و آهسته یک دور کامل بچرخید.</string>
     <string name="section_recent">تازه از رادار خارج شده</string>
     <string name="hint_recent">سیگنال‌های علامت‌خورده در یک ساعت گذشته که رادار الان آن‌ها را نمی‌شنود.</string>
     <string name="section_following">⚠ ممکن است دنبالتان باشد</string>
@@ -207,6 +207,41 @@
     <string name="notif_following_text">&#x200F;%1$s به مدت %2$d دقیقه با شما بوده است (%3$s).</string>
     <string name="notif_detected">&#x200F;%1$s پیدا شد</string>
     <string name="notif_hit_text">&#x200F;%1$s (%2$s، %3$d dBm)</string>
+    <string name="glyph_tracker">ردیاب‌های اشیا</string>
+    <string name="glyph_vehicle">روترهای خودروهای ناوگان و پلیس</string>
+    <string name="glyph_bodycam">دوربین‌های بدن و تیزرها (Axon)</string>
+    <string name="glyph_camera">دوربین‌های Flock</string>
+    <string name="glyph_drone">پهپادها</string>
+    <string name="glyph_glasses">عینک‌های دوربین‌دار</string>
+    <string name="glyph_other">دوربین‌های مخفی و موارد خودتان</string>
+    <string name="dist_m">&#x200F;~%1$d متر</string>
+    <string name="dist_ft">&#x200F;~%1$d فوت</string>
+    <string name="radar_description">رادار. برای جزئیات روی یک نماد بزنید.</string>
+    <string name="radar_showing">&#x200F;%1$d از %2$d نمایش داده شده</string>
+    <string name="legend_title">خواندن رادار</string>
+    <string name="legend_colors">قرمز = شاید شما را دنبال کند. زرد = در فهرست هشدار شما. سفید = فقط نمایش. خاکستری = فقط سازنده مطابقت دارد، شاید بی‌خطر باشد.</string>
+    <string name="legend_size">نماد بزرگ‌تر = سیگنال قوی‌تر.</string>
+    <string name="legend_rings">حلقه‌ها = فاصلهٔ تقریبی، برآوردشده از قدرت سیگنال. دیوار، خودرو و بدن آدم‌ها می‌توانند آن را ۲ تا ۳ برابر اشتباه کنند.</string>
+    <string name="legend_filled">پُر = جهت با «یافتن جهت» پیدا شده. توخالی = هنوز جهتی نیست: در برش گروه خودش قرار می‌گیرد، پس زاویه نوع را نشان می‌دهد نه مکان را.</string>
+    <string name="legend_chips">روی یک نماد در ردیف زیر رادار بزنید تا آن گروه پنهان یا نمایان شود. ردیاب‌هایی که کنار صاحبشان هستند برای شلوغ نشدن روی رادار نمی‌آیند؛ در فهرست پایین هستند.</string>
+    <string name="detail_status">وضعیت</string>
+    <string name="detail_signal">سیگنال</string>
+    <string name="detail_signal_value">&#x200F;%1$d dBm · حدود %2$s فاصله</string>
+    <string name="detail_direction">جهت</string>
+    <string name="detail_direction_value">&#x200F;%1$d° از شمال</string>
+    <string name="detail_direction_none">هنوز معلوم نیست. از «یافتن جهت» استفاده کنید.</string>
+    <string name="detail_name">نامی که پخش می‌کند</string>
+    <string name="detail_address">نشانی</string>
+    <string name="detail_maker">سازنده</string>
+    <string name="detail_source">شنیده‌شده از طریق</string>
+    <string name="detail_drone">شناسهٔ پهپاد</string>
+    <string name="detail_first">اولین بار</string>
+    <string name="detail_last">آخرین بار</string>
+    <string name="detail_times">دفعات شنیدن</string>
+    <string name="detail_places">مکان‌های شنیدن</string>
+    <string name="detail_history">سیگنال در یک و نیم دقیقهٔ گذشته. بالا رفتن = نزدیک شدن.</string>
+    <string name="radar_group_hidden">&#x200F;%1$s از رادار پنهان شد</string>
+    <string name="radar_group_shown">&#x200F;%1$s روی رادار نمایش داده می‌شود</string>
     <plurals name="places_count">
         <item quantity="one">&#x200F;%d مکان</item>
         <item quantity="other">&#x200F;%d مکان</item>
@@ -223,4 +258,28 @@
         <item quantity="one">&#x200F;%d دستگاه دیگر در ۲ دقیقهٔ گذشته شنیده شد (گوشی‌ها، هدفون‌ها، خودروها، Wi-Fi).</item>
         <item quantity="other">&#x200F;%d دستگاه دیگر در ۲ دقیقهٔ گذشته شنیده شد (گوشی‌ها، هدفون‌ها، خودروها، Wi-Fi).</item>
     </plurals>
+    <!-- Find it (hot/cold) -->
+    <string name="find_it">پیدا کن</string>
+    <string name="find_it_title">راه بروید و عدد را دنبال کنید. بیشتر = نزدیک‌تر.</string>
+    <string name="find_waiting">در حال گوش دادن…</string>
+    <string name="find_lost">%1$d ثانیه است شنیده نشده. به جایی برگردید که قوی‌تر بود.</string>
+    <string name="find_lost_short">سیگنال از دست رفت</string>
+    <string name="find_warmer">▲ داغ‌تر</string>
+    <string name="find_colder">▼ سردتر</string>
+    <string name="find_steady">ثابت</string>
+    <string name="find_distance">حدود %1$s فاصله · %2$d dBm</string>
+    <string name="find_gauge_desc">سیگنال %1$d از 100، %2$s</string>
+    <string name="find_tips">آهسته راه بروید و گوشی را همیشه یک‌جور نگه دارید. بعد از هر قدم چند ثانیه بایستید: عدد بالا و پایین می‌پرد، پس روند را دنبال کنید. بدنتان سیگنال را می‌گیرد، پس دور خودتان هم بچرخید. بالای 80، کیف‌ها، جیب‌ها، صندلی‌های ماشین، زیر سپرها و داخل گلگیرها را بگردید.</string>
+    <string name="find_wifi_slow">وای‌فای فقط حدود هر 30 ثانیه به‌روز می‌شود، پس بین قدم‌ها صبر کنید.</string>
+    <string name="find_sound_beep">صدا: بوق</string>
+    <string name="find_sound_buzz">صدا: لرزش</string>
+    <string name="find_sound_off">صدا: خاموش</string>
+    <string-array name="find_buckets">
+        <item>سرد</item>
+        <item>خنک</item>
+        <item>گرم</item>
+        <item>داغ</item>
+    </string-array>
+    <string name="setting_updates">بررسی به‌روزرسانی</string>
+    <string name="setting_updates_hint">نسخهٔ شما %1$s است. صفحهٔ دانلود OwlEar را در مرورگر باز می‌کند. نسخهٔ جدید را روی همین نصب کنید؛ تنظیماتتان می‌ماند.</string>
 </resources>

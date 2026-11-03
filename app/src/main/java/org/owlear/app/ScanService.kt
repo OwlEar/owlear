@@ -112,6 +112,11 @@ class ScanService : Service() {
             handler.postDelayed({ restartScan() }, SWEEP_MS + 1_000L)
             return START_NOT_STICKY
         }
+        if (intent?.action == ACTION_FIND && Repo.running) {
+            // Find it started or stopped: switch between fast and normal listening.
+            restartScan()
+            return START_NOT_STICKY
+        }
         if (!Repo.running) {
             Repo.running = true
             startLocation()
@@ -156,7 +161,7 @@ class ScanService : Service() {
     }
 
     @SuppressLint("MissingPermission")
-    private fun restartScan(lowLatency: Boolean = false) {
+    private fun restartScan(lowLatency: Boolean = Repo.wantsFastScan(System.currentTimeMillis())) {
         val adapter = (getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager).adapter
         if (adapter == null || !adapter.isEnabled) {
             stopScan()
@@ -359,6 +364,8 @@ class ScanService : Service() {
     companion object {
         const val ACTION_SWEEP = "org.owlear.app.SWEEP"
         const val SWEEP_MS = 12_000L
+        /** Sent when Find it opens or closes, so the scan speed follows it. */
+        const val ACTION_FIND = "org.owlear.app.FIND"
         private const val STATUS_ID = 1
         private const val CELL_ID = 2
         private const val CH_STATUS = "status"

@@ -35,7 +35,22 @@ class Sighting(
     var bearing: Float? = null
     var bearingAt = 0L
 
+    /** Recent signal strengths (newest last), at most one per second, for the details graph. */
+    val history = ArrayDeque<Int>()
+    private var historyAt = 0L
+
+    fun addHistory(rssi: Int, now: Long) {
+        if (now - historyAt < 1_000L) return
+        historyAt = now
+        history.addLast(rssi)
+        while (history.size > HISTORY_MAX) history.removeFirst()
+    }
+
     val minutesTracked: Long get() = (lastSeen - firstSeen) / 60_000L
+
+    companion object {
+        const val HISTORY_MAX = 90
+    }
 }
 
 sealed class Alert {
@@ -127,8 +142,14 @@ object Repo {
         val previouslySeen = if (s.count == 0) 0L else s.lastSeen
         s.lastSeen = now
         s.rssi = rssi
+        s.addHistory(rssi, now)
         s.count++
         if (tracker != null && tracker.separated) s.separated = true
+
+        if (key == findKey) {
+            findReadings.addLast(now to rssi)
+            while (findReadings.size > 0 && now - findReadings.first().first > FIND_KEEP_MS) findReadings.removeFirst()
+        }
 
         if (now < sweepUntil && source == "BT") {
             val slice = ((((heading % 360f) + 360f) % 360f) / 10f).toInt().coerceIn(0, 35)
@@ -175,6 +196,10 @@ object Repo {
 
     @Synchronized
     fun snapshot(): List<Sighting> = sightings.values.toList()
+
+    /** Copy of a sighting's strength history, safe to read from the screen. */
+    @Synchronized
+    fun historyOf(s: Sighting): List<Int> = s.history.toList()
 
     @Synchronized
     fun ignore(address: String) {
@@ -247,11 +272,40 @@ object Repo {
         return if (best < 0) null else best * 10f + 5f
     }
 
+    // ---- "Find it" (hot/cold) ----
+
+    /** The one signal being hunted with Find it, as "source address"; null when not hunting. */
+    @Volatile var findKey: String? = null
+    private val findReadings = ArrayDeque<Pair<Long, Int>>()
+    private const val FIND_KEEP_MS = 60_000L
+
+    @Synchronized
+    fun startFind(s: Sighting) {
+        findKey = "${s.source} ${s.address}"
+        findReadings.clear()
+        // Start from the last thing heard, so the meter isn't blank while the first packet arrives.
+        if (s.count > 0) findReadings.addLast(s.lastSeen to s.rssi)
+    }
+
+    @Synchronized
+    fun stopFind() {
+        findKey = null
+        findReadings.clear()
+    }
+
+    /** Copy of every reading of the hunted signal from the last minute, oldest first. */
+    @Synchronized
+    fun findHistory(): List<Pair<Long, Int>> = findReadings.toList()
+
+    /** True while the radio should listen as fast as it can (direction sweep or Find it). */
+    fun wantsFastScan(now: Long): Boolean = findKey != null || now < sweepUntil
+
     fun hasFreshBearing(s: Sighting, now: Long): Boolean =
         s.bearing != null && now - s.bearingAt < BEARING_VALID_MS
 
     @Synchronized
     fun clear() {
+        stopFind()
         sightings.clear()
         ignored.clear()
     }

@@ -23,7 +23,7 @@
     <string name="status_erased">Cancellato.</string>
     <string name="status_erased_listening">Cancellato. Continua ad ascoltare.</string>
     <string name="section_radar">Radar</string>
-    <string name="hint_radar">Anelli = distanza approssimativa in base alla forza del segnale. I punti pieni hanno una direzione, quelli vuoti non ancora. Per trovare la direzione, tieni il telefono piatto contro il petto e gira lentamente su te stesso. Il tuo corpo blocca i segnali che arrivano da dietro.</string>
+    <string name="hint_radar">Icona = cos’è, dimensione = forza del segnale, anelli = distanza approssimativa. Tocca un’icona per i dettagli, ⓘ per imparare le icone. Per la direzione, tieni il telefono piatto contro il petto e gira lentamente su te stesso.</string>
     <string name="section_recent">Usciti di recente dal radar</string>
     <string name="hint_recent">Segnali segnalati che il radar non sente in questo momento, nell’ultima ora.</string>
     <string name="section_following">⚠ Forse ti segue</string>
@@ -207,6 +207,41 @@
     <string name="notif_following_text">%1$s è con te da %2$d min in %3$s.</string>
     <string name="notif_detected">%1$s rilevato</string>
     <string name="notif_hit_text">%1$s (%2$s, %3$d dBm)</string>
+    <string name="glyph_tracker">Tracker per oggetti</string>
+    <string name="glyph_vehicle">Router di flotte e polizia</string>
+    <string name="glyph_bodycam">Bodycam e Taser (Axon)</string>
+    <string name="glyph_camera">Telecamere Flock</string>
+    <string name="glyph_drone">Droni</string>
+    <string name="glyph_glasses">Occhiali con fotocamera</string>
+    <string name="glyph_other">Telecamere nascoste e voci tue</string>
+    <string name="dist_m">~%1$d m</string>
+    <string name="dist_ft">~%1$d ft</string>
+    <string name="radar_description">Radar. Tocca un’icona per i dettagli.</string>
+    <string name="radar_showing">%1$d di %2$d mostrati</string>
+    <string name="legend_title">Come leggere il radar</string>
+    <string name="legend_colors">Rosso = potrebbe seguirti. Giallo = nella tua lista di avvisi. Bianco = solo mostrato. Grigio = solo il produttore corrisponde, può essere innocuo.</string>
+    <string name="legend_size">Icona più grande = segnale più forte.</string>
+    <string name="legend_rings">Anelli = distanza approssimativa, stimata dalla forza del segnale. Muri, auto e persone possono sbagliarla di 2–3 volte.</string>
+    <string name="legend_filled">Piena = direzione trovata con Trova direzione. Contorno = direzione non ancora nota: sta nello spicchio del suo gruppo, quindi l’angolo indica il tipo, non la posizione.</string>
+    <string name="legend_chips">Tocca un’icona nella fila sotto il radar per nascondere o mostrare quel gruppo. I tracker ancora vicini al proprietario restano fuori dal radar; sono comunque nell’elenco sotto.</string>
+    <string name="detail_status">Stato</string>
+    <string name="detail_signal">Segnale</string>
+    <string name="detail_signal_value">%1$d dBm · a circa %2$s</string>
+    <string name="detail_direction">Direzione</string>
+    <string name="detail_direction_value">%1$d° da nord</string>
+    <string name="detail_direction_none">Non ancora nota. Usa Trova direzione.</string>
+    <string name="detail_name">Nome trasmesso</string>
+    <string name="detail_address">Indirizzo</string>
+    <string name="detail_maker">Produttore</string>
+    <string name="detail_source">Ricevuto via</string>
+    <string name="detail_drone">ID del drone</string>
+    <string name="detail_first">Prima volta</string>
+    <string name="detail_last">Ultima volta</string>
+    <string name="detail_times">Volte sentito</string>
+    <string name="detail_places">Luoghi sentito</string>
+    <string name="detail_history">Segnale nell’ultimo minuto e mezzo. Se sale = si avvicina.</string>
+    <string name="radar_group_hidden">%1$s nascosti dal radar</string>
+    <string name="radar_group_shown">%1$s mostrati sul radar</string>
     <plurals name="places_count">
         <item quantity="one">%d luogo</item>
         <item quantity="many">%d luoghi</item>
@@ -227,4 +262,28 @@
         <item quantity="many">%d altri dispositivi sentiti negli ultimi 2 minuti (telefoni, auricolari, auto, Wi-Fi).</item>
         <item quantity="other">%d altri dispositivi sentiti negli ultimi 2 minuti (telefoni, auricolari, auto, Wi-Fi).</item>
     </plurals>
+    <!-- Find it (hot/cold) -->
+    <string name="find_it">Trovalo</string>
+    <string name="find_it_title">Muoviti e segui il numero. Più alto = più vicino.</string>
+    <string name="find_waiting">In ascolto…</string>
+    <string name="find_lost">Non sentito da %1$d s. Torna dove era più forte.</string>
+    <string name="find_lost_short">Segnale perso</string>
+    <string name="find_warmer">▲ Fuocherello</string>
+    <string name="find_colder">▼ Acqua</string>
+    <string name="find_steady">Stabile</string>
+    <string name="find_distance">a circa %1$s · %2$d dBm</string>
+    <string name="find_gauge_desc">Segnale %1$d su 100, %2$s</string>
+    <string name="find_tips">Cammina piano e tieni il telefono sempre allo stesso modo. Fermati qualche secondo dopo ogni passo: il numero salta, quindi segui la tendenza. Il tuo corpo blocca il segnale, quindi girati anche. Sopra 80, controlla borse, tasche, sedili dell’auto, sotto i paraurti e nei passaruota.</string>
+    <string name="find_wifi_slow">Il Wi-Fi si aggiorna solo ogni 30 secondi circa, quindi aspetta tra un passo e l’altro.</string>
+    <string name="find_sound_beep">Suono: bip</string>
+    <string name="find_sound_buzz">Suono: vibrazione</string>
+    <string name="find_sound_off">Suono: spento</string>
+    <string-array name="find_buckets">
+        <item>Freddo</item>
+        <item>Fresco</item>
+        <item>Tiepido</item>
+        <item>Caldo</item>
+    </string-array>
+    <string name="setting_updates">Cerca aggiornamenti</string>
+    <string name="setting_updates_hint">Hai la versione %1$s. Apre la pagina di download di OwlEar nel browser. Installa la nuova versione sopra questa; le impostazioni restano.</string>
 </resources>

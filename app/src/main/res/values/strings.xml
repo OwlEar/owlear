@@ -24,7 +24,7 @@
     <string name="status_erased">Erased.</string>
     <string name="status_erased_listening">Erased. Still listening.</string>
     <string name="section_radar">Radar</string>
-    <string name="hint_radar">Rings = rough distance from signal strength. Solid dots have a direction; hollow ones don’t yet. To find direction, hold the phone flat against your chest and turn slowly in a full circle. Your body blocks signals from behind you.</string>
+    <string name="hint_radar">Icon = what it is, size = signal strength, rings = rough distance. Tap an icon for details, tap ⓘ to learn the icons. For direction, hold the phone flat against your chest and turn slowly in a full circle.</string>
     <string name="section_recent">Recently off radar</string>
     <string name="hint_recent">Flagged signals the radar can’t hear right now, from the last hour.</string>
     <string name="section_following">⚠ Possibly following you</string>
@@ -208,6 +208,42 @@
     <string name="notif_following_text">%1$s has stayed with you for %2$d min across %3$s.</string>
     <string name="notif_detected">%1$s detected</string>
     <string name="notif_hit_text">%1$s (%2$s, %3$d dBm)</string>
+    <string name="glyph_tracker">Item trackers</string>
+    <string name="glyph_vehicle">Fleet and police vehicle routers</string>
+    <string name="glyph_bodycam">Body cams and Tasers (Axon)</string>
+    <string name="glyph_camera">Flock cameras</string>
+    <string name="glyph_drone">Drones</string>
+    <string name="glyph_glasses">Camera glasses</string>
+    <string name="glyph_other">Hidden cameras and your own entries</string>
+    <string name="dist_m">~%1$d m</string>
+    <string name="dist_ft">~%1$d ft</string>
+    <string name="radar_description">Radar. Tap an icon for details.</string>
+    <string name="radar_showing">%1$d of %2$d shown</string>
+    <string name="legend_title">Reading the radar</string>
+    <string name="legend_colors">Red = may be following you. Yellow = on your alert list. White = shown only. Grey = maker match only, could be harmless.</string>
+    <string name="legend_size">Bigger icon = stronger signal.</string>
+    <string name="legend_rings">Rings = rough distance, guessed from signal strength. Walls, cars and bodies can make it 2–3 times off.</string>
+    <string name="legend_filled">Filled = direction found with Find direction. Outline = no direction yet: it sits in its group’s slice of the circle, so the angle tells you the type, not where it is.</string>
+    <string name="legend_chips">Tap an icon in the row under the radar to hide or show that group. Trackers still near their owner are left off the radar to cut clutter; they’re still listed below.</string>
+    <string name="detail_status">Status</string>
+    <string name="detail_signal">Signal</string>
+    <string name="detail_signal_value">%1$d dBm · about %2$s away</string>
+    <string name="detail_direction">Direction</string>
+    <string name="detail_direction_value">%1$d° from north</string>
+    <string name="detail_direction_none">Not known yet. Use Find direction.</string>
+    <string name="detail_name">Name it broadcasts</string>
+    <string name="detail_address">Address</string>
+    <string name="detail_maker">Maker</string>
+    <string name="detail_source">Heard over</string>
+    <string name="detail_drone">Drone ID</string>
+    <string name="detail_first">First heard</string>
+    <string name="detail_last">Last heard</string>
+    <string name="detail_times">Times heard</string>
+    <string name="detail_places">Places heard</string>
+    <string name="detail_history">Signal over the last minute and a half. Rising = getting closer.</string>
+    <string name="legend_button" translatable="false">ⓘ</string>
+    <string name="radar_group_hidden">%1$s hidden from radar</string>
+    <string name="radar_group_shown">%1$s shown on radar</string>
     <plurals name="places_count">
         <item quantity="one">%d place</item>
         <item quantity="other">%d places</item>
@@ -224,4 +260,28 @@
         <item quantity="one">%d other device heard in the last 2 minutes (phones, earbuds, cars, Wi-Fi).</item>
         <item quantity="other">%d other devices heard in the last 2 minutes (phones, earbuds, cars, Wi-Fi).</item>
     </plurals>
+    <!-- Find it (hot/cold) -->
+    <string name="find_it">Find it</string>
+    <string name="find_it_title">Walk around and follow the number. Higher = closer.</string>
+    <string name="find_waiting">Listening for it…</string>
+    <string name="find_lost">Not heard for %1$d s. Go back to where it was stronger.</string>
+    <string name="find_lost_short">Signal lost</string>
+    <string name="find_warmer">▲ Getting warmer</string>
+    <string name="find_colder">▼ Getting colder</string>
+    <string name="find_steady">Holding steady</string>
+    <string name="find_distance">about %1$s away · %2$d dBm</string>
+    <string name="find_gauge_desc">Signal %1$d out of 100, %2$s</string>
+    <string name="find_tips">Walk slowly and hold the phone the same way. Stop for a few seconds after each step: the number jumps around, so follow the trend. Your body blocks the signal, so turn around too. Above 80, check bags, pockets, car seats, under bumpers and inside wheel wells.</string>
+    <string name="find_wifi_slow">Wi-Fi only updates about every 30 seconds, so wait between steps.</string>
+    <string name="find_sound_beep">Sound: beep</string>
+    <string name="find_sound_buzz">Sound: buzz</string>
+    <string name="find_sound_off">Sound: off</string>
+    <string-array name="find_buckets">
+        <item>Cold</item>
+        <item>Cool</item>
+        <item>Warm</item>
+        <item>Hot</item>
+    </string-array>
+    <string name="setting_updates">Check for updates</string>
+    <string name="setting_updates_hint">You have version %1$s. Opens OwlEar’s download page in your browser. Install the new version over this one; your settings stay.</string>
 </resources>

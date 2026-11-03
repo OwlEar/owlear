@@ -23,7 +23,7 @@
     <string name="status_erased">Silindi.</string>
     <string name="status_erased_listening">Silindi. Dinlemeye devam ediyor.</string>
     <string name="section_radar">Radar</string>
-    <string name="hint_radar">Halkalar = sinyal gücüne göre yaklaşık mesafe. Dolu noktaların yönü belli, içi boş olanların henüz değil. Yönü bulmak için telefonu göğsüne düz yasla ve yavaşça tam bir tur dön. Vücudun arkadan gelen sinyalleri engeller.</string>
+    <string name="hint_radar">Simge = ne olduğu, boyut = sinyal gücü, halkalar = kaba mesafe. Ayrıntılar için bir simgeye, simgeleri öğrenmek için ⓘ’ye dokun. Yön için telefonu göğsüne düz tut ve yavaşça tam bir tur dön.</string>
     <string name="section_recent">Radardan yeni çıkanlar</string>
     <string name="hint_recent">Son bir saatte işaretlenen ve radarın şu an duymadığı sinyaller.</string>
     <string name="section_following">⚠ Seni takip ediyor olabilir</string>
@@ -207,6 +207,41 @@
     <string name="notif_following_text">%1$s, %2$d dk’dır seninle (%3$s).</string>
     <string name="notif_detected">%1$s algılandı</string>
     <string name="notif_hit_text">%1$s (%2$s, %3$d dBm)</string>
+    <string name="glyph_tracker">Eşya takip cihazları</string>
+    <string name="glyph_vehicle">Filo ve polis aracı yönlendiricileri</string>
+    <string name="glyph_bodycam">Yaka kameraları ve Taser’lar (Axon)</string>
+    <string name="glyph_camera">Flock kameraları</string>
+    <string name="glyph_drone">Dronlar</string>
+    <string name="glyph_glasses">Kameralı gözlükler</string>
+    <string name="glyph_other">Gizli kameralar ve kendi kayıtların</string>
+    <string name="dist_m">~%1$d m</string>
+    <string name="dist_ft">~%1$d ft</string>
+    <string name="radar_description">Radar. Ayrıntılar için bir simgeye dokun.</string>
+    <string name="radar_showing">%2$d içinden %1$d gösteriliyor</string>
+    <string name="legend_title">Radarı okuma</string>
+    <string name="legend_colors">Kırmızı = seni takip ediyor olabilir. Sarı = uyarı listende. Beyaz = yalnızca gösteriliyor. Gri = yalnızca üretici eşleşti, zararsız olabilir.</string>
+    <string name="legend_size">Büyük simge = güçlü sinyal.</string>
+    <string name="legend_rings">Halkalar = sinyal gücünden tahmin edilen kaba mesafe. Duvarlar, arabalar ve insanlar bunu 2–3 kat şaşırtabilir.</string>
+    <string name="legend_filled">Dolu = Yön bul ile yön bulundu. Çerçeve = henüz yön yok: kendi grubunun diliminde durur, yani açı yerini değil türünü gösterir.</string>
+    <string name="legend_chips">Radarın altındaki sıradan bir simgeye dokunarak o grubu gizle veya göster. Sahibinin yanındaki takip cihazları kalabalık olmasın diye radarda gösterilmez; aşağıdaki listede yine yer alır.</string>
+    <string name="detail_status">Durum</string>
+    <string name="detail_signal">Sinyal</string>
+    <string name="detail_signal_value">%1$d dBm · yaklaşık %2$s uzakta</string>
+    <string name="detail_direction">Yön</string>
+    <string name="detail_direction_value">Kuzeyden %1$d°</string>
+    <string name="detail_direction_none">Henüz bilinmiyor. Yön bul’u kullan.</string>
+    <string name="detail_name">Yayınladığı ad</string>
+    <string name="detail_address">Adres</string>
+    <string name="detail_maker">Üretici</string>
+    <string name="detail_source">Duyulduğu yol</string>
+    <string name="detail_drone">Dron kimliği</string>
+    <string name="detail_first">İlk duyulma</string>
+    <string name="detail_last">Son duyulma</string>
+    <string name="detail_times">Duyulma sayısı</string>
+    <string name="detail_places">Duyulduğu yerler</string>
+    <string name="detail_history">Son bir buçuk dakikadaki sinyal. Yükseliyorsa = yaklaşıyor.</string>
+    <string name="radar_group_hidden">%1$s radardan gizlendi</string>
+    <string name="radar_group_shown">%1$s radarda gösteriliyor</string>
     <plurals name="places_count">
         <item quantity="one">%d yer</item>
         <item quantity="other">%d yer</item>
@@ -223,4 +258,28 @@
         <item quantity="one">Son 2 dakikada %d başka cihaz duyuldu (telefonlar, kulaklıklar, arabalar, Wi-Fi).</item>
         <item quantity="other">Son 2 dakikada %d başka cihaz duyuldu (telefonlar, kulaklıklar, arabalar, Wi-Fi).</item>
     </plurals>
+    <!-- Find it (hot/cold) -->
+    <string name="find_it">Bul</string>
+    <string name="find_it_title">Dolaş ve sayıyı takip et. Yüksek = daha yakın.</string>
+    <string name="find_waiting">Dinleniyor…</string>
+    <string name="find_lost">%1$d sn’dir duyulmadı. Daha güçlü olduğu yere geri dön.</string>
+    <string name="find_lost_short">Sinyal kayboldu</string>
+    <string name="find_warmer">▲ Isınıyor</string>
+    <string name="find_colder">▼ Soğuyor</string>
+    <string name="find_steady">Sabit</string>
+    <string name="find_distance">yaklaşık %1$s uzakta · %2$d dBm</string>
+    <string name="find_gauge_desc">Sinyal 100 üzerinden %1$d, %2$s</string>
+    <string name="find_tips">Yavaş yürü ve telefonu hep aynı şekilde tut. Her adımdan sonra birkaç saniye dur: sayı zıplar, o yüzden eğilimi takip et. Vücudun sinyali engeller, bu yüzden etrafında da dön. 80’in üstünde çantalara, ceplere, araba koltuklarına, tamponların altına ve çamurluk içlerine bak.</string>
+    <string name="find_wifi_slow">Wi-Fi yaklaşık 30 saniyede bir güncellenir, adımlar arasında bekle.</string>
+    <string name="find_sound_beep">Ses: bip</string>
+    <string name="find_sound_buzz">Ses: titreşim</string>
+    <string name="find_sound_off">Ses: kapalı</string>
+    <string-array name="find_buckets">
+        <item>Soğuk</item>
+        <item>Serin</item>
+        <item>Ilık</item>
+        <item>Sıcak</item>
+    </string-array>
+    <string name="setting_updates">Güncellemeleri denetle</string>
+    <string name="setting_updates_hint">Sürümün: %1$s. OwlEar’ın indirme sayfasını tarayıcıda açar. Yeni sürümü bunun üzerine kur; ayarların korunur.</string>
 </resources>

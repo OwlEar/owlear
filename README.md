@@ -60,7 +60,7 @@ You need Android 8 or newer. There is no iPhone version yet. The app uses your p
 ## How to use it
 
 - Tap **Start listening**. OwlEar keeps listening even when the app is closed, and sends you an alert when something important shows up.
-- The **radar** shows what's around you. The closer a dot is to the middle, the closer that thing is to you.
+- The **radar** shows what's around you with simple icons: the shape says what it is, a bigger icon means a stronger signal, and the rings give a rough distance. Tap any icon to see everything OwlEar knows about it.
 - To find which way something is, tap **Find direction**. Hold the phone flat against your chest and turn slowly in a full circle.
 - If a tracker turns out to be yours or your family's, tap it and choose **Ignore**.
 

@@ -30,6 +30,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
+import android.widget.Toast
 
 /** One plain screen built in code: no layout files, no libraries. */
 class MainActivity : Activity() {
@@ -52,9 +53,12 @@ class MainActivity : Activity() {
     private lateinit var privacyBox: LinearLayout
     private var shownPlaceId: String? = "unset"
     private lateinit var radar: RadarView
+    private lateinit var radarCount: TextView
+    private val chips = ArrayList<GlyphView>()
     private lateinit var sweepButton: Button
     private var sweeping = false
     private var sensorManager: SensorManager? = null
+    private var findScreen: FindScreen? = null
 
     private val sensorListener = object : SensorEventListener {
         private val rotation = FloatArray(9)
@@ -114,6 +118,25 @@ class MainActivity : Activity() {
         super.onPause()
         handler.removeCallbacks(refresher)
         sensorManager?.unregisterListener(sensorListener)
+    }
+
+    override fun onDestroy() {
+        findScreen?.dismiss()
+        findScreen = null
+        super.onDestroy()
+    }
+
+    // ---- Find it (hot/cold) ----
+
+    private fun openFind(s: Sighting) {
+        if (!Repo.running) {
+            Repo.status = getString(R.string.status_start_first)
+            refresh()
+            Toast.makeText(this, R.string.status_start_first, Toast.LENGTH_SHORT).show()
+            return
+        }
+        findScreen?.dismiss()
+        findScreen = FindScreen(this, s, radar.colorFor(s)).also { it.show() }
     }
 
     // ---- direction sweep ----
@@ -201,6 +224,11 @@ class MainActivity : Activity() {
         } catch (e: Exception) {
             Repo.status = getString(R.string.status_couldnt_start, e.message.orEmpty())
         }
+        // First time ever: show what the radar icons mean, once.
+        if (!Store.legendSeen) {
+            Store.setLegendSeen()
+            showLegend()
+        }
     }
 
     // ---- UI building ----
@@ -223,18 +251,59 @@ class MainActivity : Activity() {
         cornerRadius = dp(14).toFloat()
     }
 
-    private fun section(title: String, hint: String?): LinearLayout {
+    /** One foldable card: its title row, the part that folds away, and the count shown when shut. */
+    private class Fold(val header: TextView, val body: View, val title: String, val startOpen: Boolean) {
+        var count = 0
+    }
+
+    private val folds = HashMap<LinearLayout, Fold>()
+
+    /**
+     * A card that folds open and shut when its title is tapped (▾ open, ▸ shut), so the screen
+     * is a short list of headings instead of one long page. Open/shut is remembered while the
+     * app runs. [startOpen] is for the radar and the "following you" warning.
+     * Mechanic version: a parts drawer. Labelled on the front, open only the one you need.
+     */
+    private fun section(title: String, hint: String?, startOpen: Boolean = false): LinearLayout {
         val box = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL }
-        val wrap = LinearLayout(this).apply {
+        val body = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            background = rounded(card)
-            setPadding(dp(14), dp(12), dp(14), dp(12))
-            addView(label(title, 16f, fg, bold = true))
             if (hint != null) addView(label(hint, 12f, dim).apply { setPadding(0, dp(2), 0, dp(6)) })
             addView(box)
         }
-        root.addView(wrap, spaced())
+        val header = label("", 16f, fg, bold = true).apply { setPadding(0, dp(2), 0, dp(2)) }
+        val fold = Fold(header, body, title, startOpen)
+        folds[box] = fold
+        header.setOnClickListener {
+            opened[title] = !(opened[title] ?: startOpen)
+            drawFold(fold)
+        }
+        root.addView(LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            background = rounded(card)
+            setPadding(dp(14), dp(12), dp(14), dp(12))
+            addView(header)
+            addView(body)
+        }, spaced())
+        drawFold(fold)
         return box
+    }
+
+    private fun drawFold(f: Fold) {
+        val open = opened.getOrPut(f.title) { f.startOpen }
+        f.body.visibility = if (open) View.VISIBLE else View.GONE
+        val rtl = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+        f.header.text = (if (open) "▾  " else if (rtl) "◂  " else "▸  ") + f.title + (if (f.count > 0) "  (${f.count})" else "")
+    }
+
+    /** Shows "(3)" after a section's title, so a folded section still says something's in it. */
+    private fun setCount(box: LinearLayout, n: Int) {
+        val f = folds[box] ?: return
+        if (f.count == n) return
+        // A new "following you" warning always unfolds its card, even if it was folded shut.
+        if (box === followingBox && n > f.count) opened[f.title] = true
+        f.count = n
+        drawFold(f)
     }
 
     private fun spaced() = LinearLayout.LayoutParams(
@@ -264,9 +333,13 @@ class MainActivity : Activity() {
         }
         root.addView(toggle, spaced().apply { height = dp(52) })
 
-        val radarBox = section(getString(R.string.section_radar), getString(R.string.hint_radar))
+        val radarBox = section(getString(R.string.section_radar), getString(R.string.hint_radar), startOpen = true)
         radar = RadarView(this)
+        radar.onPick = { showDetails(it) }
         radarBox.addView(radar)
+        radarCount = label("", 11f, dim).apply { gravity = Gravity.CENTER_HORIZONTAL }
+        radarBox.addView(radarCount)
+        radarBox.addView(chipRow(), spaced().apply { height = dp(44) })
         sweepButton = Button(this).apply {
             text = getString(R.string.find_direction)
             isAllCaps = false
@@ -281,6 +354,7 @@ class MainActivity : Activity() {
         followingBox = section(
             getString(R.string.section_following),
             getString(R.string.hint_following, (Repo.FOLLOW_MIN_MS / 60_000).toInt(), Repo.FOLLOW_MIN_PLACES),
+            startOpen = true,
         )
         hitsBox = section(getString(R.string.section_hits), getString(R.string.hint_hits))
         spottedBox = section(getString(R.string.section_spotted), getString(R.string.hint_spotted))
@@ -289,9 +363,8 @@ class MainActivity : Activity() {
         cellBox.addView(cellText)
         trackersBox = section(getString(R.string.section_trackers), getString(R.string.hint_trackers))
         val nearbyBox = section(getString(R.string.section_others), getString(R.string.hint_others))
-        nearbyText = label("", 13f, dim)
+        nearbyText = label("", 13f, dim).apply { setOnClickListener { showOthers() } }
         nearbyBox.addView(nearbyText)
-        (nearbyBox.parent as View).setOnClickListener { showOthers() }
 
         val settingsBox = section(getString(R.string.section_settings), null)
         soundRow = label("", 14f, fg)
@@ -319,6 +392,24 @@ class MainActivity : Activity() {
                 }
             })
         }
+
+        // OwlEar can't reach the internet, so updates are checked in the browser instead.
+        val version = try {
+            packageManager.getPackageInfo(packageName, 0).versionName.orEmpty()
+        } catch (e: Exception) {
+            ""
+        }
+        settingsBox.addView(row(
+            getString(R.string.setting_updates) + "  " + getString(R.string.chevron),
+            getString(R.string.setting_updates_hint, L10n.ltr(version)),
+            fg,
+        ) {
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(RELEASES_URL)))
+            } catch (e: Exception) {
+                Toast.makeText(this, RELEASES_URL, Toast.LENGTH_LONG).show()
+            }
+        })
 
         watchlistBox = section(getString(R.string.section_watchlist), getString(R.string.hint_watchlist))
 
@@ -377,13 +468,23 @@ class MainActivity : Activity() {
         val onRadar = all.filter {
             it.kind != Kind.OTHER && now - it.lastSeen < ON_RADAR_MS && !Repo.isIgnored(it.address)
         }
-        radar.items = onRadar
+        // Radar picture: trackers still with their owner are left off (passers-by), hidden icon
+        // groups are skipped, and only the most important RADAR_MAX are drawn.
+        val radarCandidates = onRadar.filter {
+            !(it.kind == Kind.TRACKER && !it.separated) && Store.radarShows(Glyph.of(it))
+        }
+        radar.items = radarCandidates.sortedWith(
+            compareByDescending<Sighting> { radarPriority(it) }.thenByDescending { it.rssi }
+        ).take(RADAR_MAX)
+        radarCount.text = if (radarCandidates.size > radar.items.size)
+            getString(R.string.radar_showing, radar.items.size, radarCandidates.size) else ""
 
         recentBox.removeAllViews()
         val recent = all.filter {
             it.kind != Kind.OTHER && it !in onRadar && now - it.lastSeen < 60 * 60_000L &&
                 !Repo.isIgnored(it.address)
         }.sortedByDescending { it.lastSeen }
+        setCount(recentBox, recent.size)
         if (recent.isEmpty()) recentBox.addView(empty(getString(R.string.empty_recent)))
         for (s in recent.take(30)) {
             val possible = s.confidence == Confidence.POSSIBLE
@@ -391,10 +492,10 @@ class MainActivity : Activity() {
                 s.label,
                 L10n.dots(
                     getString(R.string.last_heard, ago(now - s.lastSeen)), L10n.ltr(s.source),
-                    getString(R.string.was_proximity, Detection.proximity(s.rssi)),
+                    getString(R.string.was_proximity, approx(s)),
                 ),
                 if (s.kind == Kind.TRACKER || possible) dim else amber,
-            ))
+            ) { showDetails(s) })
         }
         if (radar.animating != Repo.running) {
             radar.animating = Repo.running
@@ -406,6 +507,7 @@ class MainActivity : Activity() {
         val following = all.filter {
             it.kind == Kind.TRACKER && it.separated && Repo.isFollowing(it) && !Repo.isIgnored(it.address)
         }
+        setCount(followingBox, following.size)
         if (following.isEmpty()) followingBox.addView(empty(getString(R.string.empty_following)))
         for (s in following.sortedByDescending { it.lastSeen }) {
             followingBox.addView(row(
@@ -413,17 +515,18 @@ class MainActivity : Activity() {
                 L10n.dots(
                     getString(R.string.with_you, s.minutesTracked.toInt()),
                     L10n.p(R.plurals.places_count, s.places.size),
-                    Detection.proximity(s.rssi),
+                    approx(s),
                     getString(R.string.last_heard, ago(now - s.lastSeen)),
                 ),
                 red,
-            ) { confirmIgnore(s) })
+            ) { showDetails(s) })
         }
 
         // Watchlist hits
         hitsBox.removeAllViews()
         val hits = all.filter { it.kind == Kind.WATCHLIST && now - it.lastSeen < 60 * 60_000L }
             .sortedByDescending { it.lastSeen }
+        setCount(hitsBox, hits.size)
         if (hits.isEmpty()) hitsBox.addView(empty(getString(R.string.empty_none_yet)))
         for (s in hits.take(50)) {
             val possible = s.confidence == Confidence.POSSIBLE
@@ -439,13 +542,14 @@ class MainActivity : Activity() {
                     s.mutedAt?.let { getString(R.string.muted_at, L10n.ltr(it)) },
                 ),
                 if (possible || quiet) dim else amber,
-            ))
+            ) { showDetails(s) })
         }
 
         // Drones & camera glasses
         spottedBox.removeAllViews()
         val spotted = all.filter { it.kind == Kind.SPOTTED && now - it.lastSeen < 30 * 60_000L }
             .sortedByDescending { it.lastSeen }
+        setCount(spottedBox, spotted.size)
         if (spotted.isEmpty()) spottedBox.addView(empty(getString(R.string.empty_none_yet)))
         for (s in spotted.take(30)) {
             val possible = s.confidence == Confidence.POSSIBLE
@@ -459,7 +563,7 @@ class MainActivity : Activity() {
                     s.mutedAt?.let { getString(R.string.muted_at, L10n.ltr(it)) },
                 ),
                 if (possible || quiet) dim else amber,
-            ))
+            ) { showDetails(s) })
         }
 
         // Cell network
@@ -478,17 +582,18 @@ class MainActivity : Activity() {
         val trackers = all.filter {
             it.kind == Kind.TRACKER && now - it.lastSeen < 15 * 60_000L && it !in following
         }.sortedByDescending { it.rssi }
+        setCount(trackersBox, trackers.size)
         if (trackers.isEmpty()) trackersBox.addView(empty(getString(R.string.empty_trackers)))
         for (s in trackers.take(30)) {
             val away = getString(if (s.separated) R.string.tracker_away else R.string.tracker_near)
             trackersBox.addView(row(
                 s.label,
                 L10n.dots(
-                    away, Detection.proximity(s.rssi),
+                    away, approx(s),
                     getString(R.string.tracker_heard, s.minutesTracked.toInt(), L10n.p(R.plurals.places_count, s.places.size)),
                 ),
                 fg,
-            ) { confirmIgnore(s) })
+            ) { showDetails(s) })
         }
 
         val others = all.count { it.kind == Kind.OTHER && now - it.lastSeen < 2 * 60_000L }
@@ -517,6 +622,193 @@ class MainActivity : Activity() {
             .show()
     }
 
+    // ---- radar helpers ----
+
+    /** Red (following) first, then things on your alert list, then the rest. */
+    private fun radarPriority(s: Sighting): Int = when {
+        s.kind == Kind.TRACKER && s.separated && Repo.isFollowing(s) -> 3
+        s.confidence == Confidence.HIGH && s.category != null &&
+            Store.mode(s.category) == Mode.ALERT && s.mutedAt == null -> 2
+        s.confidence == Confidence.HIGH -> 1
+        else -> 0
+    }
+
+    /** One icon per group under the radar: tap to hide/show it on the radar, ⓘ for the legend. */
+    private fun chipRow(): View {
+        val row = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER
+        }
+        chips.clear()
+        for (g in Glyph.entries) {
+            val chip = GlyphView(this, g, fg).apply {
+                contentDescription = g.title
+                // Long-press shows the group's name in a small bubble (Android's standard tooltip).
+                tooltipText = g.title
+                background = rounded(Color.parseColor("#24392E"))
+                setOnClickListener {
+                    val show = !Store.radarShows(g)
+                    Store.setRadarShows(g, show)
+                    styleChips()
+                    refresh()
+                    // Says the name and what the tap did, so the icon teaches itself.
+                    Toast.makeText(this@MainActivity,
+                        getString(if (show) R.string.radar_group_shown else R.string.radar_group_hidden, g.title),
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
+            chips.add(chip)
+            row.addView(chip, LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1f).apply {
+                marginEnd = dp(4)
+            })
+        }
+        row.addView(label(getString(R.string.legend_button), 18f, green, bold = true).apply {
+            gravity = Gravity.CENTER
+            contentDescription = getString(R.string.legend_title)
+            background = rounded(Color.parseColor("#24392E"))
+            setOnClickListener { showLegend() }
+        }, LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1f))
+        styleChips()
+        return row
+    }
+
+    private fun styleChips() {
+        for (c in chips) {
+            val on = Store.radarShows(c.glyph)
+            c.filled = on
+            c.color = if (on) fg else dim
+            c.alpha = if (on) 1f else 0.5f
+            c.invalidate()
+        }
+    }
+
+    private fun showLegend() {
+        val list = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(dp(20), dp(8), dp(20), dp(8))
+        }
+        for (g in Glyph.entries) {
+            list.addView(LinearLayout(this).apply {
+                orientation = LinearLayout.HORIZONTAL
+                gravity = Gravity.CENTER_VERTICAL
+                setPadding(0, dp(4), 0, dp(4))
+                addView(GlyphView(this@MainActivity, g, fg), LinearLayout.LayoutParams(dp(32), dp(32)))
+                addView(label(g.title, 14f, fg).apply { setPadding(dp(10), 0, 0, 0) })
+            })
+        }
+        for (id in intArrayOf(R.string.legend_colors, R.string.legend_size, R.string.legend_rings,
+            R.string.legend_filled, R.string.legend_chips)) {
+            list.addView(label(getString(id), 13f, dim).apply { setPadding(0, dp(8), 0, 0) })
+        }
+        AlertDialog.Builder(this)
+            .setTitle(R.string.legend_title)
+            .setView(ScrollView(this).apply { addView(list) })
+            .setPositiveButton(R.string.close, null)
+            .show()
+    }
+
+    // ---- details card ----
+
+    /** Everything OwlEar knows about one signal. Refreshes every second while it's open. */
+    private fun showDetails(s: Sighting) {
+        val list = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(dp(20), dp(8), dp(20), dp(8))
+        }
+        val title = if (s.kind == Kind.OTHER) Detection.describeOther(s) else s.label
+        // "Find it" sits above the details, so the way to walk to it is one tap away.
+        val findButton = Button(this).apply {
+            text = getString(R.string.find_it)
+            isAllCaps = false
+            textSize = 16f
+            setTextColor(Color.BLACK)
+            background = rounded(green)
+        }
+        val content = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            addView(findButton, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(48)).apply {
+                setMargins(dp(20), dp(8), dp(20), 0)
+            })
+            addView(list)
+        }
+        val builder = AlertDialog.Builder(this)
+            .setTitle(title)
+            .setView(ScrollView(this).apply { addView(content) })
+            .setPositiveButton(R.string.close, null)
+        when {
+            s.kind == Kind.TRACKER -> builder.setNeutralButton(R.string.ignore) { _, _ -> confirmIgnore(s) }
+            s.kind == Kind.OTHER -> builder.setNeutralButton(R.string.add_to_watchlist) { _, _ -> offerWatch(s) }
+        }
+        val dialog = builder.show()
+        findButton.setOnClickListener {
+            dialog.dismiss()
+            openFind(s)
+        }
+
+        val tick = object : Runnable {
+            override fun run() {
+                if (!dialog.isShowing) return
+                fillDetails(list, s)
+                handler.postDelayed(this, 1_000L)
+            }
+        }
+        tick.run()
+    }
+
+    private fun fillDetails(list: LinearLayout, s: Sighting) {
+        val now = System.currentTimeMillis()
+        list.removeAllViews()
+        fun field(name: Int, value: String?) {
+            if (value.isNullOrEmpty()) return
+            list.addView(label(getString(name), 11f, dim).apply { setPadding(0, dp(8), 0, 0) })
+            list.addView(label(value, 14f, fg))
+        }
+
+        // Icon + group, so the card matches what was tapped on the radar.
+        // Ordinary devices from "Everything else" get no icon: the ★ means hidden cameras and
+        // your own entries, and an ordinary laptop shouldn't look like one.
+        if (s.kind != Kind.OTHER) {
+            val glyph = Glyph.of(s)
+            list.addView(LinearLayout(this).apply {
+                orientation = LinearLayout.HORIZONTAL
+                gravity = Gravity.CENTER_VERTICAL
+                addView(GlyphView(this@MainActivity, glyph, radar.colorFor(s)), LinearLayout.LayoutParams(dp(36), dp(36)))
+                addView(label(s.category?.title ?: glyph.title, 13f, dim).apply { setPadding(dp(10), 0, 0, 0) })
+            })
+        }
+
+        if (s.kind == Kind.TRACKER) {
+            val status = mutableListOf(getString(if (s.separated) R.string.tracker_away else R.string.tracker_near))
+            if (s.separated && Repo.isFollowing(s)) status.add(0, getString(R.string.section_following))
+            field(R.string.detail_status, L10n.dots(*status.toTypedArray(), getString(R.string.with_you, s.minutesTracked.toInt())))
+        }
+        if (s.confidence == Confidence.POSSIBLE) field(R.string.detail_status, getString(R.string.maker_only))
+
+        // The sentence already says "about", so drop the "~" from the distance here.
+        field(R.string.detail_signal,
+            getString(R.string.detail_signal_value, s.rssi, Distance.label(Distance.meters(s.rssi, s.source)).replace("~", "")))
+        list.addView(SparkView(this, Repo.historyOf(s), green, dim), LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, dp(56)).apply { topMargin = dp(4) })
+        list.addView(label(getString(R.string.detail_history), 10f, dim))
+
+        field(R.string.detail_direction,
+            if (Repo.hasFreshBearing(s, now)) getString(R.string.detail_direction_value, (s.bearing ?: 0f).toInt())
+            else getString(R.string.detail_direction_none))
+        field(R.string.detail_name, s.heardName?.takeIf { it.isNotBlank() }?.let { getString(R.string.quoted, L10n.ltr(it)) })
+        field(R.string.detail_address,
+            if (s.kind != Kind.TRACKER && Detection.isPrivateAddress(s.address)) getString(R.string.private_address)
+            else L10n.ltr(s.address))
+        field(R.string.detail_maker, Detection.brand(s.companyId))
+        field(R.string.detail_source, L10n.ltr(if (s.source == "BT") "Bluetooth" else s.source))
+        field(R.string.detail_drone, s.detail?.let { L10n.ltr(it) })
+        field(R.string.detail_first, ago(now - s.firstSeen))
+        field(R.string.detail_last, ago(now - s.lastSeen))
+        field(R.string.detail_times, s.count.toString())
+        if (s.kind != Kind.OTHER) field(R.string.detail_places, L10n.p(R.plurals.places_count, s.places.size))
+        field(R.string.detail_status, s.regularAt?.let { getString(R.string.regular_at, L10n.ltr(it)) })
+        field(R.string.detail_status, s.mutedAt?.let { getString(R.string.muted_at, L10n.ltr(it)) })
+    }
+
     // ---- "Everything else" list ----
 
     private fun showOthers() {
@@ -536,7 +828,7 @@ class MainActivity : Activity() {
                 Detection.describeOther(s),
                 L10n.dots(L10n.ltr(s.source), strength(s), addr, ago(now - s.lastSeen)),
                 fg,
-            ) { offerWatch(s) })
+            ) { showDetails(s) })
         }
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.others_title, others.size))
@@ -824,7 +1116,10 @@ class MainActivity : Activity() {
 
     /** e.g. "very close (-58 dBm)", in the phone's language. */
     private fun strength(s: Sighting) =
-        getString(R.string.strength, Detection.proximity(s.rssi), s.rssi)
+        getString(R.string.strength, approx(s), s.rssi)
+
+    /** Rough distance like "~10 m" / "~30 ft". */
+    private fun approx(s: Sighting) = Distance.label(Distance.meters(s.rssi, s.source))
 
     private fun input(hintText: String) = EditText(this).apply {
         hint = hintText
@@ -840,7 +1135,12 @@ class MainActivity : Activity() {
 
     companion object {
         private const val REQ_PERMS = 7
+        private const val RELEASES_URL = "https://github.com/OwlEar/owlear/releases/latest"
         /** Bluetooth repeats several times a second and Wi-Fi is re-read every 30 s. */
         private const val ON_RADAR_MS = 45_000L
+        /** Most icons drawn on the radar at once; the rest stay in the lists below. */
+        private const val RADAR_MAX = 12
+        /** Which sections are folded open, kept while the app runs (screen rotation etc.). */
+        private val opened = HashMap<String, Boolean>()
     }
 }

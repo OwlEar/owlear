@@ -23,7 +23,7 @@
     <string name="status_erased">تم المسح.</string>
     <string name="status_erased_listening">تم المسح. ما زال يستمع.</string>
     <string name="section_radar">الرادار</string>
-    <string name="hint_radar">الحلقات = مسافة تقريبية حسب قوة الإشارة. النقاط الممتلئة لها اتجاه، والفارغة ليس لها اتجاه بعد. لمعرفة الاتجاه، أمسك الهاتف مسطّحًا على صدرك واستدر ببطء دورة كاملة. جسمك يحجب الإشارات القادمة من خلفك.</string>
+    <string name="hint_radar">الرمز = ما هو، الحجم = قوة الإشارة، الحلقات = مسافة تقريبية. اضغط على رمز للتفاصيل، و ⓘ لتعلّم الرموز. لمعرفة الاتجاه، أمسك الهاتف مسطّحًا على صدرك واستدر ببطء دورة كاملة.</string>
     <string name="section_recent">خرجت من الرادار مؤخرًا</string>
     <string name="hint_recent">إشارات مُعلَّمة من آخر ساعة لا يسمعها الرادار الآن.</string>
     <string name="section_following">⚠ قد يكون يتبعك</string>
@@ -207,6 +207,41 @@
     <string name="notif_following_text">&#x200F;%1$s معك منذ %2$d دقيقة (%3$s).</string>
     <string name="notif_detected">تم رصد %1$s</string>
     <string name="notif_hit_text">&#x200F;%1$s (%2$s، %3$d dBm)</string>
+    <string name="glyph_tracker">أجهزة تتبع الأغراض</string>
+    <string name="glyph_vehicle">موجّهات سيارات الأساطيل والشرطة</string>
+    <string name="glyph_bodycam">كاميرات الجسم وأجهزة الصعق (Axon)</string>
+    <string name="glyph_camera">كاميرات Flock</string>
+    <string name="glyph_drone">طائرات مسيّرة</string>
+    <string name="glyph_glasses">نظارات بكاميرا</string>
+    <string name="glyph_other">كاميرات مخفية وإدخالاتك</string>
+    <string name="dist_m">&#x200F;~%1$d م</string>
+    <string name="dist_ft">&#x200F;~%1$d قدم</string>
+    <string name="radar_description">الرادار. اضغط على رمز لعرض التفاصيل.</string>
+    <string name="radar_showing">&#x200F;معروض %1$d من %2$d</string>
+    <string name="legend_title">قراءة الرادار</string>
+    <string name="legend_colors">أحمر = قد يتبعك. أصفر = في قائمة تنبيهاتك. أبيض = معروض فقط. رمادي = تطابق الشركة المصنّعة فقط، قد يكون غير ضار.</string>
+    <string name="legend_size">رمز أكبر = إشارة أقوى.</string>
+    <string name="legend_rings">الحلقات = مسافة تقريبية مقدّرة من قوة الإشارة. الجدران والسيارات والأجسام قد تجعلها خاطئة بمرتين أو ثلاث.</string>
+    <string name="legend_filled">ممتلئ = تم إيجاد الاتجاه عبر «إيجاد الاتجاه». مُفرّغ = لا اتجاه بعد: يقع في قطاع مجموعته، فالزاوية تدل على النوع لا على المكان.</string>
+    <string name="legend_chips">اضغط على رمز في الصف أسفل الرادار لإخفاء تلك المجموعة أو إظهارها. أجهزة التتبع القريبة من أصحابها لا تظهر على الرادار لتقليل الازدحام؛ وتبقى في القائمة أدناه.</string>
+    <string name="detail_status">الحالة</string>
+    <string name="detail_signal">الإشارة</string>
+    <string name="detail_signal_value">&#x200F;%1$d dBm · على بُعد نحو %2$s</string>
+    <string name="detail_direction">الاتجاه</string>
+    <string name="detail_direction_value">&#x200F;%1$d° من الشمال</string>
+    <string name="detail_direction_none">غير معروف بعد. استخدم «إيجاد الاتجاه».</string>
+    <string name="detail_name">الاسم الذي يبثّه</string>
+    <string name="detail_address">العنوان</string>
+    <string name="detail_maker">الشركة المصنّعة</string>
+    <string name="detail_source">سُمع عبر</string>
+    <string name="detail_drone">معرّف المسيّرة</string>
+    <string name="detail_first">أول سماع</string>
+    <string name="detail_last">آخر سماع</string>
+    <string name="detail_times">عدد مرات السماع</string>
+    <string name="detail_places">أماكن السماع</string>
+    <string name="detail_history">الإشارة خلال آخر دقيقة ونصف. الارتفاع = يقترب.</string>
+    <string name="radar_group_hidden">&#x200F;أُخفيت %1$s من الرادار</string>
+    <string name="radar_group_shown">&#x200F;تظهر %1$s على الرادار</string>
     <plurals name="places_count">
         <item quantity="zero">لا أماكن</item>
         <item quantity="one">مكان واحد</item>
@@ -239,4 +274,28 @@
         <item quantity="many">سُمع %d جهازًا آخر في آخر دقيقتين (هواتف، سماعات، سيارات، Wi-Fi).</item>
         <item quantity="other">سُمع %d جهاز آخر في آخر دقيقتين (هواتف، سماعات، سيارات، Wi-Fi).</item>
     </plurals>
+    <!-- Find it (hot/cold) -->
+    <string name="find_it">ابحث عنه</string>
+    <string name="find_it_title">تجوّل واتبع الرقم. أعلى = أقرب.</string>
+    <string name="find_waiting">جارٍ الاستماع…</string>
+    <string name="find_lost">لم يُسمع منذ %1$d ث. عُد إلى حيث كان أقوى.</string>
+    <string name="find_lost_short">فُقدت الإشارة</string>
+    <string name="find_warmer">▲ يقترب</string>
+    <string name="find_colder">▼ يبتعد</string>
+    <string name="find_steady">ثابت</string>
+    <string name="find_distance">على بُعد %1$s تقريبًا · %2$d dBm</string>
+    <string name="find_gauge_desc">الإشارة %1$d من 100، %2$s</string>
+    <string name="find_tips">امشِ ببطء وأمسك الهاتف بالطريقة نفسها دائمًا. توقف بضع ثوانٍ بعد كل خطوة: الرقم يقفز، فاتبع الاتجاه العام. جسمك يحجب الإشارة، فاستدر أيضًا. فوق 80، افحص الحقائب والجيوب ومقاعد السيارة وأسفل المصدّات وداخل تجاويف العجلات.</string>
+    <string name="find_wifi_slow">الواي فاي يتحدث كل 30 ثانية تقريبًا فقط، فانتظر بين الخطوات.</string>
+    <string name="find_sound_beep">الصوت: صفير</string>
+    <string name="find_sound_buzz">الصوت: اهتزاز</string>
+    <string name="find_sound_off">الصوت: مغلق</string>
+    <string-array name="find_buckets">
+        <item>بارد</item>
+        <item>فاتر</item>
+        <item>دافئ</item>
+        <item>ساخن</item>
+    </string-array>
+    <string name="setting_updates">التحقق من التحديثات</string>
+    <string name="setting_updates_hint">لديك الإصدار %1$s. يفتح صفحة تنزيل OwlEar في متصفحك. ثبّت الإصدار الجديد فوق هذا؛ تبقى إعداداتك.</string>
 </resources>

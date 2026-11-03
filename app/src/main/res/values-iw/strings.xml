@@ -23,7 +23,7 @@
     <string name="status_erased">נמחק.</string>
     <string name="status_erased_listening">נמחק. ממשיך להאזין.</string>
     <string name="section_radar">מכ״ם</string>
-    <string name="hint_radar">הטבעות = מרחק משוער לפי עוצמת האות. לנקודות מלאות יש כיוון; לחלולות עוד אין. כדי למצוא כיוון, מחזיקים את הטלפון שטוח צמוד לחזה ומסתובבים לאט סיבוב שלם. הגוף חוסם אותות שמגיעים מאחור.</string>
+    <string name="hint_radar">סמל = מה זה, גודל = עוצמת האות, טבעות = מרחק משוער. הקש על סמל לפרטים, ועל ⓘ כדי ללמוד את הסמלים. לכיוון, החזק את הטלפון שטוח צמוד לחזה והסתובב לאט סיבוב שלם.</string>
     <string name="section_recent">יצאו לאחרונה מהמכ״ם</string>
     <string name="hint_recent">אותות מסומנים מהשעה האחרונה שהמכ״ם לא שומע כרגע.</string>
     <string name="section_following">⚠ ייתכן שעוקב אחריך</string>
@@ -207,6 +207,41 @@
     <string name="notif_following_text">&#x200F;%1$s איתך כבר %2$d דק׳ (%3$s).</string>
     <string name="notif_detected">זוהה: %1$s</string>
     <string name="notif_hit_text">&#x200F;%1$s (%2$s, %3$d dBm)</string>
+    <string name="glyph_tracker">מכשירי מעקב לחפצים</string>
+    <string name="glyph_vehicle">נתבים ברכבי צי ומשטרה</string>
+    <string name="glyph_bodycam">מצלמות גוף וטייזרים (Axon)</string>
+    <string name="glyph_camera">מצלמות Flock</string>
+    <string name="glyph_drone">רחפנים</string>
+    <string name="glyph_glasses">משקפי מצלמה</string>
+    <string name="glyph_other">מצלמות נסתרות ופריטים שלך</string>
+    <string name="dist_m">&#x200F;~%1$d מ׳</string>
+    <string name="dist_ft">&#x200F;~%1$d רגל</string>
+    <string name="radar_description">מכ״ם. הקש על סמל לפרטים.</string>
+    <string name="radar_showing">&#x200F;מוצגים %1$d מתוך %2$d</string>
+    <string name="legend_title">קריאת המכ״ם</string>
+    <string name="legend_colors">אדום = ייתכן שעוקב אחריך. צהוב = ברשימת ההתראות שלך. לבן = מוצג בלבד. אפור = רק היצרן תואם, ייתכן שאינו מזיק.</string>
+    <string name="legend_size">סמל גדול יותר = אות חזק יותר.</string>
+    <string name="legend_rings">טבעות = מרחק משוער לפי עוצמת האות. קירות, מכוניות ואנשים עלולים לשבש אותו פי 2–3.</string>
+    <string name="legend_filled">מלא = הכיוון נמצא עם „מצא כיוון”. קו מתאר = אין עדיין כיוון: הוא ממוקם בפלח של הקבוצה שלו, כך שהזווית מציינת סוג ולא מיקום.</string>
+    <string name="legend_chips">הקש על סמל בשורה שמתחת למכ״ם כדי להסתיר או להציג את הקבוצה. מכשירי מעקב שעדיין ליד בעליהם לא מוצגים במכ״ם כדי להפחית עומס; הם עדיין ברשימה למטה.</string>
+    <string name="detail_status">מצב</string>
+    <string name="detail_signal">אות</string>
+    <string name="detail_signal_value">&#x200F;%1$d dBm · במרחק של כ־%2$s</string>
+    <string name="detail_direction">כיוון</string>
+    <string name="detail_direction_value">&#x200F;%1$d° מהצפון</string>
+    <string name="detail_direction_none">עדיין לא ידוע. השתמש ב„מצא כיוון”.</string>
+    <string name="detail_name">השם שמשודר</string>
+    <string name="detail_address">כתובת</string>
+    <string name="detail_maker">יצרן</string>
+    <string name="detail_source">נקלט דרך</string>
+    <string name="detail_drone">מזהה רחפן</string>
+    <string name="detail_first">נשמע לראשונה</string>
+    <string name="detail_last">נשמע לאחרונה</string>
+    <string name="detail_times">מספר פעמים</string>
+    <string name="detail_places">מספר מקומות</string>
+    <string name="detail_history">האות בדקה וחצי האחרונות. עלייה = מתקרב.</string>
+    <string name="radar_group_hidden">&#x200F;%1$s הוסתרו מהמכ״ם</string>
+    <string name="radar_group_shown">&#x200F;%1$s מוצגים במכ״ם</string>
     <plurals name="places_count">
         <item quantity="one">מקום אחד</item>
         <item quantity="two">שני מקומות</item>
@@ -227,4 +262,28 @@
         <item quantity="two">עוד שני מכשירים נשמעו בשתי הדקות האחרונות (טלפונים, אוזניות, רכבים, Wi-Fi).</item>
         <item quantity="other">עוד %d מכשירים נשמעו בשתי הדקות האחרונות (טלפונים, אוזניות, רכבים, Wi-Fi).</item>
     </plurals>
+    <!-- Find it (hot/cold) -->
+    <string name="find_it">למצוא</string>
+    <string name="find_it_title">הסתובב ועקוב אחרי המספר. גבוה יותר = קרוב יותר.</string>
+    <string name="find_waiting">מאזין…</string>
+    <string name="find_lost">לא נשמע כבר %1$d שנ׳. חזור למקום שבו היה חזק יותר.</string>
+    <string name="find_lost_short">האות אבד</string>
+    <string name="find_warmer">▲ חם יותר</string>
+    <string name="find_colder">▼ קר יותר</string>
+    <string name="find_steady">יציב</string>
+    <string name="find_distance">במרחק של כ־%1$s · %2$d dBm</string>
+    <string name="find_gauge_desc">אות %1$d מתוך 100, %2$s</string>
+    <string name="find_tips">הלך לאט והחזק את הטלפון תמיד באותה צורה. עצור כמה שניות אחרי כל צעד: המספר קופץ, אז עקוב אחרי המגמה. הגוף שלך חוסם את האות, אז הסתובב גם. מעל 80, בדוק תיקים, כיסים, מושבי רכב, מתחת לפגושים ובתוך בתי הגלגלים.</string>
+    <string name="find_wifi_slow">ה־Wi-Fi מתעדכן רק בערך כל 30 שניות, אז חכה בין הצעדים.</string>
+    <string name="find_sound_beep">צליל: צפצוף</string>
+    <string name="find_sound_buzz">צליל: רטט</string>
+    <string name="find_sound_off">צליל: כבוי</string>
+    <string-array name="find_buckets">
+        <item>קר</item>
+        <item>קריר</item>
+        <item>חמים</item>
+        <item>חם</item>
+    </string-array>
+    <string name="setting_updates">בדיקת עדכונים</string>
+    <string name="setting_updates_hint">יש לך גרסה %1$s. פותח את דף ההורדה של OwlEar בדפדפן. התקן את הגרסה החדשה מעל זו; ההגדרות שלך נשמרות.</string>
 </resources>

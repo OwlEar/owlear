@@ -23,7 +23,7 @@
     <string name="status_erased">Стерто.</string>
     <string name="status_erased_listening">Стерто. Слухання триває.</string>
     <string name="section_radar">Радар</string>
-    <string name="hint_radar">Кільця = приблизна відстань за силою сигналу. Заповнені точки мають напрямок, порожні ще ні. Щоб знайти напрямок, тримайте телефон пласко біля грудей і повільно поверніться по колу. Ваше тіло затуляє сигнали ззаду.</string>
+    <string name="hint_radar">Значок = що це, розмір = сила сигналу, кільця = приблизна відстань. Торкніться значка для подробиць, ⓘ, щоб вивчити значки. Для напрямку тримайте телефон пласко біля грудей і повільно оберніться повним колом.</string>
     <string name="section_recent">Нещодавно зникли з радара</string>
     <string name="hint_recent">Позначені сигнали за останню годину, яких радар зараз не чує.</string>
     <string name="section_following">⚠ Можливо, стежить за вами</string>
@@ -207,6 +207,41 @@
     <string name="notif_following_text">%1$s з вами вже %2$d хв (%3$s).</string>
     <string name="notif_detected">Виявлено: %1$s</string>
     <string name="notif_hit_text">%1$s (%2$s, %3$d dBm)</string>
+    <string name="glyph_tracker">Трекери для речей</string>
+    <string name="glyph_vehicle">Роутери службових і поліцейських авто</string>
+    <string name="glyph_bodycam">Нагрудні камери й тайзери (Axon)</string>
+    <string name="glyph_camera">Камери Flock</string>
+    <string name="glyph_drone">Дрони</string>
+    <string name="glyph_glasses">Окуляри з камерою</string>
+    <string name="glyph_other">Приховані камери та ваші записи</string>
+    <string name="dist_m">~%1$d м</string>
+    <string name="dist_ft">~%1$d фут</string>
+    <string name="radar_description">Радар. Торкніться значка, щоб побачити подробиці.</string>
+    <string name="radar_showing">Показано %1$d з %2$d</string>
+    <string name="legend_title">Як читати радар</string>
+    <string name="legend_colors">Червоний = можливо, стежить за вами. Жовтий = у вашому списку сповіщень. Білий = лише показано. Сірий = збіг лише за виробником, може бути нешкідливим.</string>
+    <string name="legend_size">Більший значок = сильніший сигнал.</string>
+    <string name="legend_rings">Кільця = приблизна відстань, оцінена за силою сигналу. Стіни, авто й люди можуть помилити її у 2–3 рази.</string>
+    <string name="legend_filled">Заповнений = напрямок знайдено через «Знайти напрямок». Контур = напрямку ще немає: значок стоїть у секторі своєї групи, тож кут показує тип, а не місце.</string>
+    <string name="legend_chips">Торкніться значка в ряду під радаром, щоб приховати або показати цю групу. Трекери поруч із власником не показуються на радарі, щоб не захаращувати; вони є в списку нижче.</string>
+    <string name="detail_status">Стан</string>
+    <string name="detail_signal">Сигнал</string>
+    <string name="detail_signal_value">%1$d dBm · приблизно %2$s</string>
+    <string name="detail_direction">Напрямок</string>
+    <string name="detail_direction_value">%1$d° від півночі</string>
+    <string name="detail_direction_none">Поки невідомо. Скористайтеся «Знайти напрямок».</string>
+    <string name="detail_name">Назва в ефірі</string>
+    <string name="detail_address">Адреса</string>
+    <string name="detail_maker">Виробник</string>
+    <string name="detail_source">Почуто через</string>
+    <string name="detail_drone">ID дрона</string>
+    <string name="detail_first">Уперше почуто</string>
+    <string name="detail_last">Востаннє почуто</string>
+    <string name="detail_times">Скільки разів</string>
+    <string name="detail_places">Скільки місць</string>
+    <string name="detail_history">Сигнал за останні півтори хвилини. Зростає = наближається.</string>
+    <string name="radar_group_hidden">%1$s приховано з радара</string>
+    <string name="radar_group_shown">%1$s показано на радарі</string>
     <plurals name="places_count">
         <item quantity="one">%d місце</item>
         <item quantity="few">%d місця</item>
@@ -231,4 +266,28 @@
         <item quantity="many">%d інших пристроїв почуто за останні 2 хвилини (телефони, навушники, авто, Wi-Fi).</item>
         <item quantity="other">%d іншого пристрою почуто за останні 2 хвилини (телефони, навушники, авто, Wi-Fi).</item>
     </plurals>
+    <!-- Find it (hot/cold) -->
+    <string name="find_it">Знайти</string>
+    <string name="find_it_title">Ходіть і стежте за числом. Більше = ближче.</string>
+    <string name="find_waiting">Слухаю…</string>
+    <string name="find_lost">Не чути вже %1$d с. Поверніться туди, де було сильніше.</string>
+    <string name="find_lost_short">Сигнал втрачено</string>
+    <string name="find_warmer">▲ Тепліше</string>
+    <string name="find_colder">▼ Холодніше</string>
+    <string name="find_steady">Без змін</string>
+    <string name="find_distance">приблизно %1$s · %2$d дБм</string>
+    <string name="find_gauge_desc">Сигнал %1$d зі 100, %2$s</string>
+    <string name="find_tips">Ідіть повільно й тримайте телефон завжди однаково. Після кожного кроку зупиняйтеся на кілька секунд: число стрибає, тож стежте за тенденцією. Ваше тіло блокує сигнал, тому також обертайтеся. Понад 80 перевірте сумки, кишені, сидіння авто, під бамперами й у колісних арках.</string>
+    <string name="find_wifi_slow">Wi-Fi оновлюється лише приблизно раз на 30 секунд, тож чекайте між кроками.</string>
+    <string name="find_sound_beep">Звук: сигнал</string>
+    <string name="find_sound_buzz">Звук: вібрація</string>
+    <string name="find_sound_off">Звук: вимкнено</string>
+    <string-array name="find_buckets">
+        <item>Холодно</item>
+        <item>Прохолодно</item>
+        <item>Тепло</item>
+        <item>Гаряче</item>
+    </string-array>
+    <string name="setting_updates">Перевірити оновлення</string>
+    <string name="setting_updates_hint">У вас версія %1$s. Відкриває сторінку завантаження OwlEar у браузері. Встановіть нову версію поверх цієї; налаштування збережуться.</string>
 </resources>

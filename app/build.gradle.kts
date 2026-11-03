@@ -11,8 +11,8 @@ android {
         applicationId = "org.owlear.app"
         minSdk = 26
         targetSdk = 36
-        versionCode = 4
-        versionName = "0.3.1"
+        versionCode = 5
+        versionName = "0.4.0"
     }
 
     // Release signing key comes from CI secrets only; it is never committed.
@@ -27,9 +27,27 @@ android {
                 keyPassword = System.getenv("OWLEAR_KEY_PASSWORD")
             }
         }
+        // Optional fixed test key (private dev repo only), so each "OwlEar Test" build
+        // installs over the last. Uses the standard test-key password and alias.
+        System.getenv("OWLEAR_TEST_KEYSTORE_PATH")?.let { testKey ->
+            getByName("debug") {
+                storeFile = file(testKey)
+                storePassword = "android"
+                keyAlias = "androiddebugkey"
+                keyPassword = "android"
+            }
+        }
     }
 
     buildTypes {
+        // Test builds (debug) install beside the real app as "OwlEar Test" instead of
+        // clashing with it: they're signed with a throwaway key, and Android refuses to
+        // update an app with a different key. Mechanic version: a loaner car with its own
+        // keys, parked next to yours, so you never have to give up your own to try it.
+        debug {
+            applicationIdSuffix = ".test"
+            versionNameSuffix = "-test"
+        }
         release {
             isMinifyEnabled = false
             if (keystorePath != null) signingConfig = signingConfigs.getByName("release")

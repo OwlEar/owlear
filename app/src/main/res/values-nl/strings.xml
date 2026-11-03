@@ -23,7 +23,7 @@
     <string name="status_erased">Gewist.</string>
     <string name="status_erased_listening">Gewist. Luistert nog steeds.</string>
     <string name="section_radar">Radar</string>
-    <string name="hint_radar">Ringen = ruwe afstand op basis van signaalsterkte. Volle stippen hebben een richting, holle nog niet. Om de richting te vinden, houd je de telefoon plat tegen je borst en draai je langzaam een heel rondje. Je lichaam blokkeert signalen van achteren.</string>
+    <string name="hint_radar">Pictogram = wat het is, grootte = signaalsterkte, ringen = ruwe afstand. Tik op een pictogram voor details, op ⓘ om de pictogrammen te leren. Voor de richting: houd de telefoon plat tegen je borst en draai langzaam een hele cirkel.</string>
     <string name="section_recent">Net van de radar verdwenen</string>
     <string name="hint_recent">Gemarkeerde signalen uit het laatste uur die de radar nu niet hoort.</string>
     <string name="section_following">⚠ Volgt je misschien</string>
@@ -207,6 +207,41 @@
     <string name="notif_following_text">%1$s is al %2$d min bij je (%3$s).</string>
     <string name="notif_detected">%1$s gevonden</string>
     <string name="notif_hit_text">%1$s (%2$s, %3$d dBm)</string>
+    <string name="glyph_tracker">Itemtrackers</string>
+    <string name="glyph_vehicle">Routers in vloot- en politievoertuigen</string>
+    <string name="glyph_bodycam">Bodycams en Tasers (Axon)</string>
+    <string name="glyph_camera">Flock-camera’s</string>
+    <string name="glyph_drone">Drones</string>
+    <string name="glyph_glasses">Camerabrillen</string>
+    <string name="glyph_other">Verborgen camera’s en je eigen items</string>
+    <string name="dist_m">~%1$d m</string>
+    <string name="dist_ft">~%1$d ft</string>
+    <string name="radar_description">Radar. Tik op een pictogram voor details.</string>
+    <string name="radar_showing">%1$d van %2$d getoond</string>
+    <string name="legend_title">De radar lezen</string>
+    <string name="legend_colors">Rood = volgt je misschien. Geel = op je alarmlijst. Wit = alleen getoond. Grijs = alleen fabrikant herkend, kan onschuldig zijn.</string>
+    <string name="legend_size">Groter pictogram = sterker signaal.</string>
+    <string name="legend_rings">Ringen = ruwe afstand, geschat uit de signaalsterkte. Muren, auto’s en mensen kunnen dat 2 à 3 keer verkeerd maken.</string>
+    <string name="legend_filled">Gevuld = richting gevonden met Richting zoeken. Omtrek = nog geen richting: het staat in het vak van zijn groep, de hoek zegt dus het soort, niet de plek.</string>
+    <string name="legend_chips">Tik op een pictogram in de rij onder de radar om die groep te verbergen of te tonen. Trackers die nog bij hun eigenaar zijn blijven van de radar af; ze staan nog wel in de lijst hieronder.</string>
+    <string name="detail_status">Status</string>
+    <string name="detail_signal">Signaal</string>
+    <string name="detail_signal_value">%1$d dBm · ongeveer %2$s weg</string>
+    <string name="detail_direction">Richting</string>
+    <string name="detail_direction_value">%1$d° vanaf noord</string>
+    <string name="detail_direction_none">Nog onbekend. Gebruik Richting zoeken.</string>
+    <string name="detail_name">Naam die het uitzendt</string>
+    <string name="detail_address">Adres</string>
+    <string name="detail_maker">Fabrikant</string>
+    <string name="detail_source">Gehoord via</string>
+    <string name="detail_drone">Drone-ID</string>
+    <string name="detail_first">Eerst gehoord</string>
+    <string name="detail_last">Laatst gehoord</string>
+    <string name="detail_times">Keer gehoord</string>
+    <string name="detail_places">Plekken gehoord</string>
+    <string name="detail_history">Signaal van de laatste anderhalve minuut. Stijgend = komt dichterbij.</string>
+    <string name="radar_group_hidden">%1$s verborgen op de radar</string>
+    <string name="radar_group_shown">%1$s getoond op de radar</string>
     <plurals name="places_count">
         <item quantity="one">%d plek</item>
         <item quantity="other">%d plekken</item>
@@ -223,4 +258,28 @@
         <item quantity="one">%d ander apparaat gehoord in de laatste 2 minuten (telefoons, oordopjes, auto’s, wifi).</item>
         <item quantity="other">%d andere apparaten gehoord in de laatste 2 minuten (telefoons, oordopjes, auto’s, wifi).</item>
     </plurals>
+    <!-- Find it (hot/cold) -->
+    <string name="find_it">Zoeken</string>
+    <string name="find_it_title">Loop rond en volg het getal. Hoger = dichterbij.</string>
+    <string name="find_waiting">Aan het luisteren…</string>
+    <string name="find_lost">%1$d s niet gehoord. Ga terug naar waar het sterker was.</string>
+    <string name="find_lost_short">Signaal kwijt</string>
+    <string name="find_warmer">▲ Warmer</string>
+    <string name="find_colder">▼ Kouder</string>
+    <string name="find_steady">Blijft gelijk</string>
+    <string name="find_distance">ongeveer %1$s weg · %2$d dBm</string>
+    <string name="find_gauge_desc">Signaal %1$d van 100, %2$s</string>
+    <string name="find_tips">Loop langzaam en houd de telefoon steeds op dezelfde manier vast. Sta na elke stap een paar seconden stil: het getal springt, dus volg de trend. Je lichaam blokkeert het signaal, draai je dus ook om. Boven 80: kijk in tassen, zakken, autostoelen, onder bumpers en in wielkasten.</string>
+    <string name="find_wifi_slow">Wifi ververst maar ongeveer elke 30 seconden, dus wacht tussen de stappen.</string>
+    <string name="find_sound_beep">Geluid: piep</string>
+    <string name="find_sound_buzz">Geluid: trillen</string>
+    <string name="find_sound_off">Geluid: uit</string>
+    <string-array name="find_buckets">
+        <item>Koud</item>
+        <item>Koel</item>
+        <item>Lauw</item>
+        <item>Heet</item>
+    </string-array>
+    <string name="setting_updates">Zoeken naar updates</string>
+    <string name="setting_updates_hint">Je hebt versie %1$s. Opent de downloadpagina van OwlEar in je browser. Installeer de nieuwe versie over deze heen; je instellingen blijven.</string>
 </resources>

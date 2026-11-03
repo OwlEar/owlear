@@ -59,8 +59,17 @@ jobs:
 
       - name: Build test APK (no signing key available, e.g. pull requests from forks)
         if: env.OWLEAR_KEYSTORE_B64 == ''
+        env:
+          # Optional, private repo only: one fixed test key, so each "OwlEar Test" build
+          # installs over the last instead of needing an uninstall. Never the release key.
+          OWLEAR_TEST_KEYSTORE_B64: ${{ secrets.OWLEAR_TEST_KEYSTORE_B64 }}
         run: |
+          if [ -n "$OWLEAR_TEST_KEYSTORE_B64" ]; then
+            echo "$OWLEAR_TEST_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/test.keystore"
+            export OWLEAR_TEST_KEYSTORE_PATH="$RUNNER_TEMP/test.keystore"
+          fi
           gradle assembleDebug --no-daemon --stacktrace
+          rm -f "$RUNNER_TEMP/test.keystore"
           cp app/build/outputs/apk/debug/app-debug.apk owlear.apk
 
       - name: Show signing certificate and checksum
@@ -89,10 +98,18 @@ jobs:
           name: owlear-play-bundle
           path: owlear.aab
 
+      - name: Work out the release title
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: echo "OWLEAR_VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+
       - name: Publish release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
+          # Plain-language notes for everyday people; edit .github/release-notes.md
+          # (the "What's new" list) before tagging each release.
+          name: OwlEar ${{ env.OWLEAR_VERSION }}
+          body_path: .github/release-notes.md
           files: |
             owlear.apk
             owlear.apk.sha256

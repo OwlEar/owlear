@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Test builds only: name shown under the icon, so the test app is easy to tell apart. -->
+<resources>
+    <string name="app_name" translatable="false">OwlEar Test</string>
+</resources>

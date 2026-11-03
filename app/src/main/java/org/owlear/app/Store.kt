@@ -64,6 +64,13 @@ object Store {
 
     @Volatile var secureScreen = false
         private set
+
+    /** True once the radar legend has been shown automatically (it only pops up once). */
+    var legendSeen = false
+        private set
+
+    /** Radar icon groups the person has hidden from the radar picture (detection keeps running). */
+    private val radarHidden = HashSet<String>()
     var watchlistRaw: String? = null
         private set
     /** Which set of built-in watchlist entries this install has already been offered. */
@@ -93,6 +100,23 @@ object Store {
     @Synchronized
     fun setMode(c: Category, m: Mode) {
         modes[c] = if (m == Mode.ALERT && !c.canAlert) Mode.SHOW else m
+        save()
+    }
+
+    // ---- radar filter chips ----
+
+    @Synchronized
+    fun radarShows(g: Glyph): Boolean = g.name !in radarHidden
+
+    @Synchronized
+    fun setRadarShows(g: Glyph, show: Boolean) {
+        if (show) radarHidden.remove(g.name) else radarHidden.add(g.name)
+        save()
+    }
+
+    @Synchronized
+    fun setLegendSeen() {
+        legendSeen = true
         save()
     }
 
@@ -187,6 +211,8 @@ object Store {
         places.clear()
         learned.clear()
         secureScreen = false
+        radarHidden.clear()
+        legendSeen = false
         watchlistRaw = null
         watchlistDefaultsVersion = 1
         dirty = false
@@ -235,6 +261,8 @@ object Store {
             }
         })
         put("secure", secureScreen)
+        put("radarHidden", JSONArray(radarHidden.toList()))
+        put("legendSeen", legendSeen)
         watchlistRaw?.let { put("watchlist", it) }
         put("watchlistDefaults", watchlistDefaultsVersion)
     }
@@ -273,6 +301,8 @@ object Store {
             }
         }
         secureScreen = o.optBoolean("secure", false)
+        legendSeen = o.optBoolean("legendSeen", false)
+        o.optJSONArray("radarHidden")?.let { a -> for (i in 0 until a.length()) radarHidden.add(a.optString(i)) }
         watchlistRaw = if (o.has("watchlist")) o.optString("watchlist") else null
         watchlistDefaultsVersion = o.optInt("watchlistDefaults", 1)
     }
