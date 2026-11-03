@@ -147,7 +147,7 @@ class FindScreen(private val act: Activity, private val s: Sighting, private val
     private val dialog = Dialog(act, android.R.style.Theme_Black_NoTitleBar_Fullscreen)
     private val density = act.resources.displayMetrics.density
     private val wifi = s.source == "Wi-Fi"
-    private val staleMs = if (wifi) 75_000L else 8_000L
+    private val staleMs = if (wifi) 75_000L else 5_000L
 
     private val fg = Color.parseColor("#E8EEEA")
     private val dim = Color.parseColor("#8A968F")

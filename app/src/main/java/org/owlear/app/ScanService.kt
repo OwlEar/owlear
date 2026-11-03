@@ -43,6 +43,11 @@ class ScanService : Service() {
     private val handler = Handler(Looper.getMainLooper())
     private var scanner: BluetoothLeScanner? = null
     private var scanning = false
+    private var scanFast = false
+    // When each of the last few scans was started. Android quietly blocks an app that starts
+    // more than 5 scans in 30 seconds: no error, just no results until the 30 seconds pass.
+    private val scanStarts = ArrayDeque<Long>()
+    private val pendingRestart = Runnable { restartScan() }
     private var locationManager: LocationManager? = null
     private var lastWifiScanRequest = 0L
 
@@ -76,7 +81,7 @@ class ScanService : Service() {
 
     private val restarter = object : Runnable {
         override fun run() {
-            restartScan()
+            restartScan(force = true)
             handler.postDelayed(this, if (scanning) RESTART_MS else RETRY_MS)
         }
     }
@@ -161,11 +166,25 @@ class ScanService : Service() {
     }
 
     @SuppressLint("MissingPermission")
-    private fun restartScan(lowLatency: Boolean = Repo.wantsFastScan(System.currentTimeMillis())) {
+    private fun restartScan(
+        lowLatency: Boolean = Repo.wantsFastScan(System.currentTimeMillis()),
+        force: Boolean = false,
+    ) {
         val adapter = (getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager).adapter
         if (adapter == null || !adapter.isEnabled) {
             stopScan()
             Repo.status = getString(R.string.status_bt_off)
+            return
+        }
+        // Already listening at the speed we want: leave it alone instead of spending a start.
+        if (scanning && lowLatency == scanFast && !force) return
+        // Out of starts for this 30 seconds: keep the current scan going and switch once a
+        // start frees up, rather than getting silently blocked (that empties the radar).
+        val t = SystemClock.elapsedRealtime()
+        while (scanStarts.isNotEmpty() && t - scanStarts.first() >= START_WINDOW_MS) scanStarts.removeFirst()
+        handler.removeCallbacks(pendingRestart)
+        if (scanStarts.size >= MAX_STARTS) {
+            handler.postDelayed(pendingRestart, START_WINDOW_MS - (t - scanStarts.first()) + 250L)
             return
         }
         stopScan()
@@ -181,6 +200,8 @@ class ScanService : Service() {
             s.startScan(listOf(ScanFilter.Builder().build()), settings, callback)
             scanner = s
             scanning = true
+            scanFast = lowLatency
+            scanStarts.addLast(t)
             Repo.status = getString(
                 if (hasLocation()) R.string.status_scanning_both else R.string.status_scanning_bt_only
             )
@@ -375,5 +396,7 @@ class ScanService : Service() {
         private const val RETRY_MS = 30_000L
         private const val TICK_MS = 30_000L
         private const val WIFI_SCAN_MS = 2 * 60_000L
+        private const val START_WINDOW_MS = 30_000L
+        private const val MAX_STARTS = 4
     }
 }

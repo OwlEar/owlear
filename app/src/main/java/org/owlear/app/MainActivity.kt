@@ -466,7 +466,7 @@ class MainActivity : Activity() {
 
         // Only what's being heard right now goes on the radar; the rest drops to "Recently off radar".
         val onRadar = all.filter {
-            it.kind != Kind.OTHER && now - it.lastSeen < ON_RADAR_MS && !Repo.isIgnored(it.address)
+            it.kind != Kind.OTHER && now - it.lastSeen < (if (it.source == "Wi-Fi") ON_RADAR_WIFI_MS else ON_RADAR_MS) && !Repo.isIgnored(it.address)
         }
         // Radar picture: trackers still with their owner are left off (passers-by), hidden icon
         // groups are skipped, and only the most important RADAR_MAX are drawn.
@@ -1137,7 +1137,9 @@ class MainActivity : Activity() {
         private const val REQ_PERMS = 7
         private const val RELEASES_URL = "https://github.com/OwlEar/owlear/releases/latest"
         /** Bluetooth repeats several times a second and Wi-Fi is re-read every 30 s. */
-        private const val ON_RADAR_MS = 45_000L
+        private const val ON_RADAR_MS = 20_000L
+        // Wi-Fi is only scanned every couple of minutes, so it needs longer or it would flicker.
+        private const val ON_RADAR_WIFI_MS = 45_000L
         /** Most icons drawn on the radar at once; the rest stay in the lists below. */
         private const val RADAR_MAX = 12
         /** Which sections are folded open, kept while the app runs (screen rotation etc.). */
