@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -163,6 +164,7 @@ class FindScreen(private val act: Activity, private val s: Sighting, private val
     private var tone: ToneGenerator? = null
     private var lastSaid = ""
     private var latest: FindMeter.Reading? = null
+    private var savedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
     private fun dp(v: Int) = (v * density).toInt()
 
@@ -181,6 +183,10 @@ class FindScreen(private val act: Activity, private val s: Sighting, private val
     }
 
     fun show() {
+        // Hold the screen in whatever way it's facing right now. Turning the phone would
+        // otherwise rebuild the main screen, and that tears Find it down mid-walk.
+        savedOrientation = act.requestedOrientation
+        act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED
         Repo.startFind(s)
         nudgeScanner()
         try {
@@ -210,6 +216,7 @@ class FindScreen(private val act: Activity, private val s: Sighting, private val
         nudgeScanner()
         tone?.release()
         tone = null
+        act.requestedOrientation = savedOrientation
     }
 
     /** Tells the scanner to switch speed (fast while Find it is open, normal after). */
