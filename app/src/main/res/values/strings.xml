@@ -2,7 +2,7 @@
 <!-- Generated translation file. Fix wording here, keep the %1$s / %1$d markers. &#x200F; is an invisible right-to-left mark; keep it. -->
 <resources>
     <string name="app_name" translatable="false">OwlEar</string>
-    <string name="app_tagline">Listens for hidden trackers, Flock cameras, drones, camera glasses, fake cell towers and signals you choose. Nothing ever leaves this phone.</string>
+    <string name="app_tagline">Listens for hidden trackers, Flock cameras, camera glasses, fake cell towers and signals you choose. Nothing ever leaves this phone.</string>
     <string name="start_listening">Start listening</string>
     <string name="stop_listening">Stop listening</string>
     <string name="find_direction">Find direction</string>
@@ -31,8 +31,8 @@
     <string name="hint_following">Same tag, away from its owner, with you %1$d min+ across %2$d places. Tap one to ignore it if it’s yours.</string>
     <string name="section_hits">Watchlist hits</string>
     <string name="hint_hits">Flock cameras, Axon gear, possible hidden cameras and anything you added, heard in the last hour.</string>
-    <string name="section_spotted">Drones &amp; camera glasses</string>
-    <string name="hint_spotted">Drones broadcasting their Remote ID, and smart glasses that can record. Heard in the last 30 minutes.</string>
+    <string name="section_spotted">Camera glasses</string>
+    <string name="hint_spotted">Smart glasses that can record. Heard in the last 30 minutes.</string>
     <string name="section_cell">Cell network</string>
     <string name="hint_cell">Warning signs of a fake cell tower. A warning means look closer, not proof.</string>
     <string name="cell_waiting">Starts checking when you start listening.</string>
@@ -68,7 +68,6 @@
     <string name="maker_only">Maker match only, could be a bus or store</string>
     <string name="regular_at">regular at %1$s</string>
     <string name="muted_at">muted at %1$s</string>
-    <string name="drone_id">ID %1$s</string>
     <string name="tracker_away">away from owner</string>
     <string name="tracker_near">near its owner</string>
     <string name="tracker_heard">heard %1$d min, %2$s</string>
@@ -150,7 +149,6 @@
     <string name="cat_axon">Axon gear (body cams, Tasers)</string>
     <string name="cat_fleet">Police fleet routers</string>
     <string name="cat_possible_fleet">Possible fleet routers (maker match only)</string>
-    <string name="cat_drone">Drones (Remote ID)</string>
     <string name="cat_glasses">Camera glasses (Ray-Ban / Oakley Meta)</string>
     <string name="cat_possible_glasses">Possible camera glasses (Meta maker match only)</string>
     <string name="cat_hidden_cam">Possible hidden Wi-Fi cameras</string>
@@ -160,7 +158,6 @@
     <string name="label_tile">Tile tracker</string>
     <string name="label_chipolo">Chipolo tracker</string>
     <string name="label_google">Google Find My Device tag</string>
-    <string name="label_drone">Drone (Remote ID)</string>
     <string name="label_glasses">Camera glasses (Ray-Ban / Oakley Meta)</string>
     <string name="label_possible_glasses">Possible camera glasses (Meta device, could be a Quest headset)</string>
     <string name="unknown_device">Unknown device</string>
@@ -202,7 +199,7 @@
     <string name="ch_alerts">Alerts</string>
     <string name="ch_watch">Watchlist alerts</string>
     <string name="notif_listening_title">OwlEar is listening</string>
-    <string name="notif_listening_text">Trackers, cameras, drones, glasses, cell network and your watchlist. Nothing leaves this phone.</string>
+    <string name="notif_listening_text">Trackers, cameras, glasses, cell network and your watchlist. Nothing leaves this phone.</string>
     <string name="notif_cell_title">Cell network looks off</string>
     <string name="notif_following_title">Possible tracker following you</string>
     <string name="notif_following_text">%1$s has stayed with you for %2$d min across %3$s.</string>
@@ -212,7 +209,6 @@
     <string name="glyph_vehicle">Fleet and police vehicle routers</string>
     <string name="glyph_bodycam">Body cams and Tasers (Axon)</string>
     <string name="glyph_camera">Flock cameras</string>
-    <string name="glyph_drone">Drones</string>
     <string name="glyph_glasses">Camera glasses</string>
     <string name="glyph_other">Hidden cameras and your own entries</string>
     <string name="dist_m">~%1$d m</string>
@@ -235,7 +231,6 @@
     <string name="detail_address">Address</string>
     <string name="detail_maker">Maker</string>
     <string name="detail_source">Heard over</string>
-    <string name="detail_drone">Drone ID</string>
     <string name="detail_first">First heard</string>
     <string name="detail_last">Last heard</string>
     <string name="detail_times">Times heard</string>

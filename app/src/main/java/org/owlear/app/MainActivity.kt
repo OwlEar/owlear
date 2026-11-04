@@ -545,7 +545,7 @@ class MainActivity : Activity() {
             ) { showDetails(s) })
         }
 
-        // Drones & camera glasses
+        // Camera glasses
         spottedBox.removeAllViews()
         val spotted = all.filter { it.kind == Kind.SPOTTED && now - it.lastSeen < 30 * 60_000L }
             .sortedByDescending { it.lastSeen }
@@ -558,7 +558,6 @@ class MainActivity : Activity() {
                 s.label,
                 L10n.dots(
                     strength(s), L10n.ltr(s.source),
-                    s.detail?.let { getString(R.string.drone_id, L10n.ltr(it)) },
                     ago(now - s.lastSeen),
                     s.mutedAt?.let { getString(R.string.muted_at, L10n.ltr(it)) },
                 ),
@@ -800,7 +799,6 @@ class MainActivity : Activity() {
             else L10n.ltr(s.address))
         field(R.string.detail_maker, Detection.brand(s.companyId))
         field(R.string.detail_source, L10n.ltr(if (s.source == "BT") "Bluetooth" else s.source))
-        field(R.string.detail_drone, s.detail?.let { L10n.ltr(it) })
         field(R.string.detail_first, ago(now - s.firstSeen))
         field(R.string.detail_last, ago(now - s.lastSeen))
         field(R.string.detail_times, s.count.toString())

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated translation file. Fix wording here, keep the %1$s / %1$d markers. &#x200F; is an invisible right-to-left mark; keep it. -->
 <resources>
-    <string name="app_tagline">Luistert naar verborgen trackers, Flock-camera’s, drones, camerabrillen, nep-zendmasten en signalen die jij kiest. Niets verlaat ooit deze telefoon.</string>
+    <string name="app_tagline">Luistert naar verborgen trackers, Flock-camera’s, camerabrillen, nep-zendmasten en signalen die jij kiest. Niets verlaat ooit deze telefoon.</string>
     <string name="start_listening">Begin met luisteren</string>
     <string name="stop_listening">Stop met luisteren</string>
     <string name="find_direction">Richting zoeken</string>
@@ -30,8 +30,8 @@
     <string name="hint_following">Dezelfde tracker, weg van de eigenaar, al %1$d+ min bij je op %2$d plekken. Tik erop om hem te negeren als hij van jou is.</string>
     <string name="section_hits">Treffers uit je lijst</string>
     <string name="hint_hits">Flock-camera’s, Axon-uitrusting, mogelijke verborgen camera’s en alles wat je hebt toegevoegd, gehoord in het laatste uur.</string>
-    <string name="section_spotted">Drones &amp; camerabrillen</string>
-    <string name="hint_spotted">Drones die hun Remote ID uitzenden en slimme brillen die kunnen filmen. Gehoord in de laatste 30 minuten.</string>
+    <string name="section_spotted">Camerabrillen</string>
+    <string name="hint_spotted">Slimme brillen die kunnen filmen. Gehoord in de laatste 30 minuten.</string>
     <string name="section_cell">Mobiel netwerk</string>
     <string name="hint_cell">Waarschuwingstekens van een nep-zendmast. Een waarschuwing betekent: kijk beter, geen bewijs.</string>
     <string name="cell_waiting">Begint met controleren zodra je begint met luisteren.</string>
@@ -67,7 +67,6 @@
     <string name="maker_only">Alleen de fabrikant komt overeen, kan een bus of winkel zijn</string>
     <string name="regular_at">vaste gast bij %1$s</string>
     <string name="muted_at">stil bij %1$s</string>
-    <string name="drone_id">ID %1$s</string>
     <string name="tracker_away">weg van de eigenaar</string>
     <string name="tracker_near">bij de eigenaar</string>
     <string name="tracker_heard">gehoord %1$d min, %2$s</string>
@@ -149,7 +148,6 @@
     <string name="cat_axon">Axon-uitrusting (bodycams, tasers)</string>
     <string name="cat_fleet">Routers in politiewagens</string>
     <string name="cat_possible_fleet">Mogelijke politierouters (alleen fabrikant komt overeen)</string>
-    <string name="cat_drone">Drones (Remote ID)</string>
     <string name="cat_glasses">Camerabrillen (Ray-Ban / Oakley Meta)</string>
     <string name="cat_possible_glasses">Mogelijke camerabrillen (alleen fabrikant Meta komt overeen)</string>
     <string name="cat_hidden_cam">Mogelijke verborgen wifi-camera’s</string>
@@ -159,7 +157,6 @@
     <string name="label_tile">Tile-tracker</string>
     <string name="label_chipolo">Chipolo-tracker</string>
     <string name="label_google">Google Vind mijn apparaat-tag</string>
-    <string name="label_drone">Drone (Remote ID)</string>
     <string name="label_glasses">Camerabril (Ray-Ban / Oakley Meta)</string>
     <string name="label_possible_glasses">Mogelijke camerabril (Meta-apparaat, kan een Quest-headset zijn)</string>
     <string name="unknown_device">Onbekend apparaat</string>
@@ -201,7 +198,7 @@
     <string name="ch_alerts">Waarschuwingen</string>
     <string name="ch_watch">Waarschuwingen uit je lijst</string>
     <string name="notif_listening_title">OwlEar luistert</string>
-    <string name="notif_listening_text">Trackers, camera’s, drones, brillen, mobiel netwerk en je lijst. Niets verlaat deze telefoon.</string>
+    <string name="notif_listening_text">Trackers, camera’s, brillen, mobiel netwerk en je lijst. Niets verlaat deze telefoon.</string>
     <string name="notif_cell_title">Mobiel netwerk lijkt niet in orde</string>
     <string name="notif_following_title">Een tracker volgt je misschien</string>
     <string name="notif_following_text">%1$s is al %2$d min bij je (%3$s).</string>
@@ -211,7 +208,6 @@
     <string name="glyph_vehicle">Routers in vloot- en politievoertuigen</string>
     <string name="glyph_bodycam">Bodycams en Tasers (Axon)</string>
     <string name="glyph_camera">Flock-camera’s</string>
-    <string name="glyph_drone">Drones</string>
     <string name="glyph_glasses">Camerabrillen</string>
     <string name="glyph_other">Verborgen camera’s en je eigen items</string>
     <string name="dist_m">~%1$d m</string>
@@ -234,7 +230,6 @@
     <string name="detail_address">Adres</string>
     <string name="detail_maker">Fabrikant</string>
     <string name="detail_source">Gehoord via</string>
-    <string name="detail_drone">Drone-ID</string>
     <string name="detail_first">Eerst gehoord</string>
     <string name="detail_last">Laatst gehoord</string>
     <string name="detail_times">Keer gehoord</string>

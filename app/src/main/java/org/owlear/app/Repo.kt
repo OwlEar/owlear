@@ -20,7 +20,6 @@ class Sighting(
     var source = "BT"
     var heardName: String? = null
     var confidence = Confidence.HIGH
-    var detail: String? = null
     /** Bluetooth SIG company ID from the advertisement, or -1. Used to name the maker. */
     var companyId = -1
 
@@ -101,9 +100,9 @@ object Repo {
             tracker, spotted, now, "BT", companyId)
     }
 
-    /** A Wi-Fi network: watchlist, plus drones that send Remote ID in their beacons. */
-    fun recordWifi(bssid: String, ssid: String?, rssi: Int, spotted: Spotted?, now: Long): List<Alert> =
-        recordDevice(bssid, ssid, rssi, null, spotted, now, "Wi-Fi")
+    /** A Wi-Fi network: watchlist matches only. */
+    fun recordWifi(bssid: String, ssid: String?, rssi: Int, now: Long): List<Alert> =
+        recordDevice(bssid, ssid, rssi, null, null, now, "Wi-Fi")
 
     @Synchronized
     private fun recordDevice(
@@ -136,7 +135,6 @@ object Repo {
         if (watch != null) s.confidence = watch.confidence
         if (spotted != null) {
             s.confidence = spotted.confidence
-            if (spotted.detail != null) s.detail = spotted.detail
         }
 
         val previouslySeen = if (s.count == 0) 0L else s.lastSeen

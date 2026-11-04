@@ -13,7 +13,6 @@ Elle ne coûte rien, n'a pas de publicité, ne demande aucun compte et n'envoie 
 - **Un traceur caché qui vous suit.** Par exemple un AirTag, un Tile, un Samsung SmartTag, un Chipolo ou une balise Google glissé dans votre sac, votre manteau ou votre voiture. OwlEar ne vous prévient que si le même traceur reste avec vous un certain temps et apparaît à plusieurs endroits différents : les clés d'un inconnu dans le bus ne déclenchent donc pas d'alerte.
 - **Les caméras de lecture de plaques.** Les caméras Flock Safety qui photographient chaque voiture qui passe.
 - **Le matériel de police.** Les caméras-piétons et Tasers Axon, ainsi que le Wi-Fi utilisé dans certains véhicules de police, y compris banalisés.
-- **Les drones** à proximité qui diffusent leur identifiant obligatoire.
 - **Les lunettes connectées capables de filmer,** comme les Ray-Ban et Oakley Meta.
 - **Certaines caméras cachées,** comme des caméras Wi-Fi bon marché pas encore entièrement configurées. Pratique pour vérifier une location ou une chambre d'hôtel.
 - **Les fausses antennes-relais.** Des signes qu'on utilise peut-être un appareil qui se fait passer pour une antenne de téléphonie afin d'espionner les téléphones alentour.

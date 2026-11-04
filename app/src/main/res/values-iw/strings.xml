@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated translation file. Fix wording here, keep the %1$s / %1$d markers. &#x200F; is an invisible right-to-left mark; keep it. -->
 <resources>
-    <string name="app_tagline">מאזין לאיתורנים מוסתרים, מצלמות Flock, רחפנים, משקפי מצלמה, אנטנות סלולר מזויפות ואותות שבוחרים בעצמכם. שום דבר לא יוצא אף פעם מהטלפון הזה.</string>
+    <string name="app_tagline">מאזין לאיתורנים מוסתרים, מצלמות Flock, משקפי מצלמה, אנטנות סלולר מזויפות ואותות שבוחרים בעצמכם. שום דבר לא יוצא אף פעם מהטלפון הזה.</string>
     <string name="start_listening">להתחיל להאזין</string>
     <string name="stop_listening">להפסיק להאזין</string>
     <string name="find_direction">למצוא כיוון</string>
@@ -30,8 +30,8 @@
     <string name="hint_following">אותו איתורן, רחוק מהבעלים, איתך כבר %1$d+ דק׳ ב-%2$d מקומות. אם הוא שלך, אפשר לגעת בו כדי להתעלם.</string>
     <string name="section_hits">ממצאים מהרשימה שלך</string>
     <string name="hint_hits">מצלמות Flock, ציוד Axon, מצלמות נסתרות אפשריות וכל מה שהוספת, שנשמעו בשעה האחרונה.</string>
-    <string name="section_spotted">רחפנים ומשקפי מצלמה</string>
-    <string name="hint_spotted">רחפנים שמשדרים את ה-Remote ID שלהם, ומשקפיים חכמים שיכולים לצלם. נשמעו ב-30 הדקות האחרונות.</string>
+    <string name="section_spotted">משקפי מצלמה</string>
+    <string name="hint_spotted">משקפיים חכמים שיכולים לצלם. נשמעו ב-30 הדקות האחרונות.</string>
     <string name="section_cell">רשת סלולרית</string>
     <string name="hint_cell">סימני אזהרה לאנטנת סלולר מזויפת. אזהרה פירושה להסתכל מקרוב, לא הוכחה.</string>
     <string name="cell_waiting">הבדיקה מתחילה כשמתחילים להאזין.</string>
@@ -67,7 +67,6 @@
     <string name="maker_only">רק היצרן מתאים, יכול להיות אוטובוס או חנות</string>
     <string name="regular_at">קבוע ב%1$s</string>
     <string name="muted_at">מושתק ב%1$s</string>
-    <string name="drone_id">מזהה %1$s</string>
     <string name="tracker_away">רחוק מהבעלים</string>
     <string name="tracker_near">ליד הבעלים</string>
     <string name="tracker_heard">נשמע %1$d דק׳, %2$s</string>
@@ -149,7 +148,6 @@
     <string name="cat_axon">ציוד Axon (מצלמות גוף, טייזרים)</string>
     <string name="cat_fleet">נתבים בניידות משטרה</string>
     <string name="cat_possible_fleet">נתבי משטרה אפשריים (רק היצרן מתאים)</string>
-    <string name="cat_drone">רחפנים (Remote ID)</string>
     <string name="cat_glasses">משקפי מצלמה (Ray-Ban / Oakley Meta)</string>
     <string name="cat_possible_glasses">משקפי מצלמה אפשריים (רק היצרן Meta מתאים)</string>
     <string name="cat_hidden_cam">מצלמות Wi-Fi נסתרות אפשריות</string>
@@ -159,7 +157,6 @@
     <string name="label_tile">איתורן Tile</string>
     <string name="label_chipolo">איתורן Chipolo</string>
     <string name="label_google">איתורן Google „איתור המכשיר”</string>
-    <string name="label_drone">רחפן (Remote ID)</string>
     <string name="label_glasses">משקפי מצלמה (Ray-Ban / Oakley Meta)</string>
     <string name="label_possible_glasses">משקפי מצלמה אפשריים (מכשיר Meta, אולי משקפת Quest)</string>
     <string name="unknown_device">מכשיר לא מוכר</string>
@@ -201,7 +198,7 @@
     <string name="ch_alerts">התראות</string>
     <string name="ch_watch">התראות מהרשימה</string>
     <string name="notif_listening_title">&#x200F;&#x200F;OwlEar מאזין</string>
-    <string name="notif_listening_text">איתורנים, מצלמות, רחפנים, משקפיים, רשת סלולרית והרשימה שלך. שום דבר לא יוצא מהטלפון הזה.</string>
+    <string name="notif_listening_text">איתורנים, מצלמות, משקפיים, רשת סלולרית והרשימה שלך. שום דבר לא יוצא מהטלפון הזה.</string>
     <string name="notif_cell_title">הרשת הסלולרית נראית חשודה</string>
     <string name="notif_following_title">ייתכן שאיתורן עוקב אחריך</string>
     <string name="notif_following_text">&#x200F;%1$s איתך כבר %2$d דק׳ (%3$s).</string>
@@ -211,7 +208,6 @@
     <string name="glyph_vehicle">נתבים ברכבי צי ומשטרה</string>
     <string name="glyph_bodycam">מצלמות גוף וטייזרים (Axon)</string>
     <string name="glyph_camera">מצלמות Flock</string>
-    <string name="glyph_drone">רחפנים</string>
     <string name="glyph_glasses">משקפי מצלמה</string>
     <string name="glyph_other">מצלמות נסתרות ופריטים שלך</string>
     <string name="dist_m">&#x200F;~%1$d מ׳</string>
@@ -234,7 +230,6 @@
     <string name="detail_address">כתובת</string>
     <string name="detail_maker">יצרן</string>
     <string name="detail_source">נקלט דרך</string>
-    <string name="detail_drone">מזהה רחפן</string>
     <string name="detail_first">נשמע לראשונה</string>
     <string name="detail_last">נשמע לאחרונה</string>
     <string name="detail_times">מספר פעמים</string>

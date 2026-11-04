@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated translation file. Fix wording here, keep the %1$s / %1$d markers. &#x200F; is an invisible right-to-left mark; keep it. -->
 <resources>
-    <string name="app_tagline">Gizli takip cihazlarını, Flock kameralarını, dronları, kameralı gözlükleri, sahte baz istasyonlarını ve seçtiğin sinyalleri dinler. Hiçbir şey bu telefondan dışarı çıkmaz.</string>
+    <string name="app_tagline">Gizli takip cihazlarını, Flock kameralarını, kameralı gözlükleri, sahte baz istasyonlarını ve seçtiğin sinyalleri dinler. Hiçbir şey bu telefondan dışarı çıkmaz.</string>
     <string name="start_listening">Dinlemeye başla</string>
     <string name="stop_listening">Dinlemeyi durdur</string>
     <string name="find_direction">Yönü bul</string>
@@ -30,8 +30,8 @@
     <string name="hint_following">Aynı takip cihazı, sahibinden uzakta, %1$d dk’dan fazla süredir %2$d farklı yerde seninle. Seninse yok saymak için dokun.</string>
     <string name="section_hits">Listendeki eşleşmeler</string>
     <string name="hint_hits">Flock kameraları, Axon ekipmanı, olası gizli kameralar ve eklediğin her şey; son bir saatte duyulanlar.</string>
-    <string name="section_spotted">Dronlar ve kameralı gözlükler</string>
-    <string name="hint_spotted">Remote ID yayını yapan dronlar ve kayıt yapabilen akıllı gözlükler. Son 30 dakikada duyulanlar.</string>
+    <string name="section_spotted">Kameralı gözlükler</string>
+    <string name="hint_spotted">Kayıt yapabilen akıllı gözlükler. Son 30 dakikada duyulanlar.</string>
     <string name="section_cell">Mobil şebeke</string>
     <string name="hint_cell">Sahte baz istasyonunun uyarı işaretleri. Uyarı, daha dikkatli bak demektir; kanıt değildir.</string>
     <string name="cell_waiting">Dinlemeye başladığında kontrol başlar.</string>
@@ -67,7 +67,6 @@
     <string name="maker_only">Yalnızca üretici eşleşiyor, bir otobüs ya da mağaza olabilir</string>
     <string name="regular_at">müdavim: %1$s</string>
     <string name="muted_at">sessiz: %1$s</string>
-    <string name="drone_id">Kimlik %1$s</string>
     <string name="tracker_away">sahibinden uzakta</string>
     <string name="tracker_near">sahibinin yanında</string>
     <string name="tracker_heard">%1$d dk duyuldu, %2$s</string>
@@ -149,7 +148,6 @@
     <string name="cat_axon">Axon ekipmanı (yaka kameraları, Taser)</string>
     <string name="cat_fleet">Polis aracı yönlendiricileri</string>
     <string name="cat_possible_fleet">Olası polis yönlendiricileri (yalnızca üretici eşleşiyor)</string>
-    <string name="cat_drone">Dronlar (Remote ID)</string>
     <string name="cat_glasses">Kameralı gözlükler (Ray-Ban / Oakley Meta)</string>
     <string name="cat_possible_glasses">Olası kameralı gözlükler (yalnızca Meta üreticisi eşleşiyor)</string>
     <string name="cat_hidden_cam">Olası gizli Wi-Fi kameraları</string>
@@ -159,7 +157,6 @@
     <string name="label_tile">Tile takip cihazı</string>
     <string name="label_chipolo">Chipolo takip cihazı</string>
     <string name="label_google">Google Cihazımı Bul etiketi</string>
-    <string name="label_drone">Dron (Remote ID)</string>
     <string name="label_glasses">Kameralı gözlük (Ray-Ban / Oakley Meta)</string>
     <string name="label_possible_glasses">Olası kameralı gözlük (Meta cihazı, Quest başlığı olabilir)</string>
     <string name="unknown_device">Bilinmeyen cihaz</string>
@@ -201,7 +198,7 @@
     <string name="ch_alerts">Uyarılar</string>
     <string name="ch_watch">Liste uyarıları</string>
     <string name="notif_listening_title">OwlEar dinliyor</string>
-    <string name="notif_listening_text">Takip cihazları, kameralar, dronlar, gözlükler, mobil şebeke ve listen. Hiçbir şey bu telefondan çıkmaz.</string>
+    <string name="notif_listening_text">Takip cihazları, kameralar, gözlükler, mobil şebeke ve listen. Hiçbir şey bu telefondan çıkmaz.</string>
     <string name="notif_cell_title">Mobil şebeke tuhaf görünüyor</string>
     <string name="notif_following_title">Bir takip cihazı seni izliyor olabilir</string>
     <string name="notif_following_text">%1$s, %2$d dk’dır seninle (%3$s).</string>
@@ -211,7 +208,6 @@
     <string name="glyph_vehicle">Filo ve polis aracı yönlendiricileri</string>
     <string name="glyph_bodycam">Yaka kameraları ve Taser’lar (Axon)</string>
     <string name="glyph_camera">Flock kameraları</string>
-    <string name="glyph_drone">Dronlar</string>
     <string name="glyph_glasses">Kameralı gözlükler</string>
     <string name="glyph_other">Gizli kameralar ve kendi kayıtların</string>
     <string name="dist_m">~%1$d m</string>
@@ -234,7 +230,6 @@
     <string name="detail_address">Adres</string>
     <string name="detail_maker">Üretici</string>
     <string name="detail_source">Duyulduğu yol</string>
-    <string name="detail_drone">Dron kimliği</string>
     <string name="detail_first">İlk duyulma</string>
     <string name="detail_last">Son duyulma</string>
     <string name="detail_times">Duyulma sayısı</string>

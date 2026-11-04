@@ -8,7 +8,7 @@ import android.os.Handler
 import android.os.Looper
 
 /**
- * The sound played when a watchlist match (or drone / camera glasses) shows up.
+ * The sound played when a watchlist match (or camera glasses) shows up.
  *
  * Tech: the watchlist notification channel is created silent, and the app plays the chosen
  * sound itself. Android locks a channel's sound once it's created, so this is the only way

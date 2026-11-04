@@ -23,7 +23,6 @@ enum class Glyph(val titleRes: Int, val sector: Float) {
     VEHICLE(R.string.glyph_vehicle, 60f),      // square
     BODYCAM(R.string.glyph_bodycam, 120f),     // diamond
     CAMERA(R.string.glyph_camera, 180f),       // triangle
-    DRONE(R.string.glyph_drone, 240f),         // X
     GLASSES(R.string.glyph_glasses, 300f),     // two rings
     OTHER(R.string.glyph_other, 330f);         // star (hidden cams, your own entries)
 
@@ -35,7 +34,6 @@ enum class Glyph(val titleRes: Int, val sector: Float) {
             Category.FLEET, Category.POSSIBLE_FLEET -> VEHICLE
             Category.AXON -> BODYCAM
             Category.FLOCK -> CAMERA
-            Category.DRONE -> DRONE
             Category.GLASSES, Category.POSSIBLE_GLASSES -> GLASSES
             else -> if (s.kind == Kind.TRACKER) TRACKER else OTHER
         }
@@ -58,18 +56,6 @@ enum class Glyph(val titleRes: Int, val sector: Float) {
                     path.moveTo(x, y - size * 1.15f); path.lineTo(x + size * 1.1f, y + size * 0.85f)
                     path.lineTo(x - size * 1.1f, y + size * 0.85f); path.close()
                     canvas.drawPath(path, paint)
-                }
-                DRONE -> {
-                    // An X is only lines, so draw it as a thick stroke whatever the paint style.
-                    val oldStyle = paint.style
-                    val oldWidth = paint.strokeWidth
-                    paint.style = Paint.Style.STROKE
-                    paint.strokeWidth = size * 0.55f
-                    paint.strokeCap = Paint.Cap.ROUND
-                    canvas.drawLine(x - size, y - size, x + size, y + size, paint)
-                    canvas.drawLine(x - size, y + size, x + size, y - size, paint)
-                    paint.style = oldStyle
-                    paint.strokeWidth = oldWidth
                 }
                 GLASSES -> {
                     canvas.drawCircle(x - size * 0.6f, y, size * 0.55f, paint)

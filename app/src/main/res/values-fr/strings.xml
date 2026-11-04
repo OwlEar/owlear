@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated translation file. Fix wording here, keep the %1$s / %1$d markers. &#x200F; is an invisible right-to-left mark; keep it. -->
 <resources>
-    <string name="app_tagline">Écoute les traceurs cachés, les caméras Flock, les drones, les lunettes à caméra, les fausses antennes relais et les signaux de votre choix. Rien ne quitte jamais ce téléphone.</string>
+    <string name="app_tagline">Écoute les traceurs cachés, les caméras Flock, les lunettes à caméra, les fausses antennes relais et les signaux de votre choix. Rien ne quitte jamais ce téléphone.</string>
     <string name="start_listening">Commencer l’écoute</string>
     <string name="stop_listening">Arrêter l’écoute</string>
     <string name="find_direction">Trouver la direction</string>
@@ -30,8 +30,8 @@
     <string name="hint_following">Le même traceur, loin de son propriétaire, avec vous depuis %1$d min ou plus dans %2$d lieux. Touchez-le pour l’ignorer s’il est à vous.</string>
     <string name="section_hits">Trouvés dans votre liste</string>
     <string name="hint_hits">Caméras Flock, matériel Axon, caméras cachées possibles et tout ce que vous avez ajouté, entendus dans la dernière heure.</string>
-    <string name="section_spotted">Drones et lunettes à caméra</string>
-    <string name="hint_spotted">Drones qui diffusent leur Remote ID et lunettes connectées capables de filmer. Entendus dans les 30 dernières minutes.</string>
+    <string name="section_spotted">Lunettes à caméra</string>
+    <string name="hint_spotted">Lunettes connectées capables de filmer. Entendues dans les 30 dernières minutes.</string>
     <string name="section_cell">Réseau mobile</string>
     <string name="hint_cell">Signes d’une fausse antenne relais. Une alerte veut dire regardez de plus près, pas une preuve.</string>
     <string name="cell_waiting">La vérification commence quand vous lancez l’écoute.</string>
@@ -67,7 +67,6 @@
     <string name="maker_only">Seul le fabricant correspond, peut-être un bus ou un magasin</string>
     <string name="regular_at">habituel à %1$s</string>
     <string name="muted_at">en silence à %1$s</string>
-    <string name="drone_id">ID %1$s</string>
     <string name="tracker_away">loin de son propriétaire</string>
     <string name="tracker_near">près de son propriétaire</string>
     <string name="tracker_heard">entendu %1$d min, %2$s</string>
@@ -149,7 +148,6 @@
     <string name="cat_axon">Matériel Axon (caméras-piétons, Tasers)</string>
     <string name="cat_fleet">Routeurs de véhicules de police</string>
     <string name="cat_possible_fleet">Routeurs de police possibles (seul le fabricant correspond)</string>
-    <string name="cat_drone">Drones (Remote ID)</string>
     <string name="cat_glasses">Lunettes à caméra (Ray-Ban / Oakley Meta)</string>
     <string name="cat_possible_glasses">Lunettes à caméra possibles (seul le fabricant Meta correspond)</string>
     <string name="cat_hidden_cam">Caméras Wi-Fi cachées possibles</string>
@@ -159,7 +157,6 @@
     <string name="label_tile">Traceur Tile</string>
     <string name="label_chipolo">Traceur Chipolo</string>
     <string name="label_google">Traceur Localiser mon appareil de Google</string>
-    <string name="label_drone">Drone (Remote ID)</string>
     <string name="label_glasses">Lunettes à caméra (Ray-Ban / Oakley Meta)</string>
     <string name="label_possible_glasses">Lunettes à caméra possibles (appareil Meta, peut-être un casque Quest)</string>
     <string name="unknown_device">Appareil inconnu</string>
@@ -201,7 +198,7 @@
     <string name="ch_alerts">Alertes</string>
     <string name="ch_watch">Alertes de la liste</string>
     <string name="notif_listening_title">OwlEar est à l’écoute</string>
-    <string name="notif_listening_text">Traceurs, caméras, drones, lunettes, réseau mobile et votre liste. Rien ne quitte ce téléphone.</string>
+    <string name="notif_listening_text">Traceurs, caméras, lunettes, réseau mobile et votre liste. Rien ne quitte ce téléphone.</string>
     <string name="notif_cell_title">Le réseau mobile semble anormal</string>
     <string name="notif_following_title">Un traceur vous suit peut-être</string>
     <string name="notif_following_text">%1$s est resté avec vous %2$d min dans %3$s.</string>
@@ -211,7 +208,6 @@
     <string name="glyph_vehicle">Routeurs de flottes et de police</string>
     <string name="glyph_bodycam">Caméras-piétons et Tasers (Axon)</string>
     <string name="glyph_camera">Caméras Flock</string>
-    <string name="glyph_drone">Drones</string>
     <string name="glyph_glasses">Lunettes à caméra</string>
     <string name="glyph_other">Caméras cachées et vos propres entrées</string>
     <string name="dist_m">~%1$d m</string>
@@ -234,7 +230,6 @@
     <string name="detail_address">Adresse</string>
     <string name="detail_maker">Fabricant</string>
     <string name="detail_source">Capté via</string>
-    <string name="detail_drone">ID du drone</string>
     <string name="detail_first">Première écoute</string>
     <string name="detail_last">Dernière écoute</string>
     <string name="detail_times">Nombre d’écoutes</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated translation file. Fix wording here, keep the %1$s / %1$d markers. &#x200F; is an invisible right-to-left mark; keep it. -->
 <resources>
-    <string name="app_tagline">Escucha rastreadores ocultos, cámaras Flock, drones, lentes con cámara, antenas celulares falsas y las señales que tú elijas. Nada sale nunca de este teléfono.</string>
+    <string name="app_tagline">Escucha rastreadores ocultos, cámaras Flock, lentes con cámara, antenas celulares falsas y las señales que tú elijas. Nada sale nunca de este teléfono.</string>
     <string name="start_listening">Empezar a escuchar</string>
     <string name="stop_listening">Dejar de escuchar</string>
     <string name="find_direction">Buscar dirección</string>
@@ -30,8 +30,8 @@
     <string name="hint_following">La misma etiqueta, lejos de su dueño, contigo %1$d min o más en %2$d lugares. Tócala para ignorarla si es tuya.</string>
     <string name="section_hits">Coincidencias de tu lista</string>
     <string name="hint_hits">Cámaras Flock, equipo Axon, posibles cámaras ocultas y todo lo que agregaste, escuchados en la última hora.</string>
-    <string name="section_spotted">Drones y lentes con cámara</string>
-    <string name="hint_spotted">Drones que transmiten su Remote ID y lentes inteligentes que pueden grabar. Escuchados en los últimos 30 minutos.</string>
+    <string name="section_spotted">Lentes con cámara</string>
+    <string name="hint_spotted">Lentes inteligentes que pueden grabar. Escuchados en los últimos 30 minutos.</string>
     <string name="section_cell">Red celular</string>
     <string name="hint_cell">Señales de alerta de una antena celular falsa. Una alerta significa que mires con más cuidado, no es una prueba.</string>
     <string name="cell_waiting">Empieza a revisar cuando empiezas a escuchar.</string>
@@ -67,7 +67,6 @@
     <string name="maker_only">Solo coincide el fabricante, podría ser un autobús o una tienda</string>
     <string name="regular_at">habitual en %1$s</string>
     <string name="muted_at">silenciado en %1$s</string>
-    <string name="drone_id">ID %1$s</string>
     <string name="tracker_away">lejos de su dueño</string>
     <string name="tracker_near">cerca de su dueño</string>
     <string name="tracker_heard">escuchado %1$d min, %2$s</string>
@@ -149,7 +148,6 @@
     <string name="cat_axon">Equipo Axon (cámaras corporales, Tasers)</string>
     <string name="cat_fleet">Routers de patrullas de policía</string>
     <string name="cat_possible_fleet">Posibles routers de patrullas (solo coincide el fabricante)</string>
-    <string name="cat_drone">Drones (Remote ID)</string>
     <string name="cat_glasses">Lentes con cámara (Ray-Ban / Oakley Meta)</string>
     <string name="cat_possible_glasses">Posibles lentes con cámara (solo coincide el fabricante Meta)</string>
     <string name="cat_hidden_cam">Posibles cámaras Wi-Fi ocultas</string>
@@ -159,7 +157,6 @@
     <string name="label_tile">Rastreador Tile</string>
     <string name="label_chipolo">Rastreador Chipolo</string>
     <string name="label_google">Etiqueta Encontrar mi dispositivo de Google</string>
-    <string name="label_drone">Dron (Remote ID)</string>
     <string name="label_glasses">Lentes con cámara (Ray-Ban / Oakley Meta)</string>
     <string name="label_possible_glasses">Posibles lentes con cámara (aparato Meta, podría ser un visor Quest)</string>
     <string name="unknown_device">Dispositivo desconocido</string>
@@ -201,7 +198,7 @@
     <string name="ch_alerts">Alertas</string>
     <string name="ch_watch">Alertas de tu lista</string>
     <string name="notif_listening_title">OwlEar está escuchando</string>
-    <string name="notif_listening_text">Rastreadores, cámaras, drones, lentes, red celular y tu lista. Nada sale de este teléfono.</string>
+    <string name="notif_listening_text">Rastreadores, cámaras, lentes, red celular y tu lista. Nada sale de este teléfono.</string>
     <string name="notif_cell_title">La red celular se ve rara</string>
     <string name="notif_following_title">Posible rastreador siguiéndote</string>
     <string name="notif_following_text">%1$s ha estado contigo %2$d min en %3$s.</string>
@@ -211,7 +208,6 @@
     <string name="glyph_vehicle">Routers de flotas y patrullas</string>
     <string name="glyph_bodycam">Cámaras corporales y Tasers (Axon)</string>
     <string name="glyph_camera">Cámaras Flock</string>
-    <string name="glyph_drone">Drones</string>
     <string name="glyph_glasses">Gafas con cámara</string>
     <string name="glyph_other">Cámaras ocultas y tus propias entradas</string>
     <string name="dist_m">~%1$d m</string>
@@ -234,7 +230,6 @@
     <string name="detail_address">Dirección MAC</string>
     <string name="detail_maker">Fabricante</string>
     <string name="detail_source">Detectado por</string>
-    <string name="detail_drone">ID del dron</string>
     <string name="detail_first">Primera vez</string>
     <string name="detail_last">Última vez</string>
     <string name="detail_times">Veces detectado</string>

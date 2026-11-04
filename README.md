@@ -13,7 +13,6 @@ It costs nothing, has no ads, needs no account, and never sends anything off you
 - **A hidden tracker following you.** For example an AirTag, Tile, Samsung SmartTag, Chipolo or Google tag slipped into your bag, coat or car. OwlEar only warns you when the same tracker stays with you for a while and shows up in several different places, so a stranger's keys on the bus won't set it off.
 - **License-plate cameras.** Flock Safety cameras that photograph every car that drives past.
 - **Police equipment.** Axon body cameras and Tasers, and the Wi-Fi used in some police vehicles, including unmarked ones.
-- **Drones** flying nearby that broadcast their required ID.
 - **Smart glasses that can record you,** such as Ray-Ban and Oakley Meta glasses.
 - **Some hidden cameras,** like cheap Wi-Fi cameras that haven't been fully set up yet. Useful when checking a rental or hotel room.
 - **Fake cell towers.** Warning signs that someone may be using a device that pretends to be a phone tower so it can spy on phones nearby.

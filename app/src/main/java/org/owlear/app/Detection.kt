@@ -24,7 +24,6 @@ enum class Category(
     AXON(R.string.cat_axon, false),
     FLEET(R.string.cat_fleet, false),
     POSSIBLE_FLEET(R.string.cat_possible_fleet, false, canAlert = false, defaultMode = Mode.SHOW),
-    DRONE(R.string.cat_drone, false),
     GLASSES(R.string.cat_glasses, false),
     POSSIBLE_GLASSES(R.string.cat_possible_glasses, false, canAlert = false, defaultMode = Mode.SHOW),
     HIDDEN_CAM(R.string.cat_hidden_cam, false),
@@ -40,12 +39,11 @@ enum class Category(
 /** What a single Bluetooth advertisement turned out to be. */
 data class Classified(val label: String, val separated: Boolean, val category: Category)
 
-/** A drone or camera-glasses broadcast. detail = the drone's serial number when it sends one. */
+/** A camera-glasses broadcast. */
 data class Spotted(
     val label: String,
     val confidence: Confidence,
     val category: Category,
-    val detail: String? = null,
 )
 
 /**
@@ -101,16 +99,7 @@ object Detection {
         return null
     }
 
-    // ---- drones and camera glasses ----
-
-    /*
-     * Remote ID: the FAA requires most drones to broadcast an ID under the public ASTM F3411
-     * standard, over Bluetooth (service data FFFA, app code 0x0D) and Wi-Fi beacons
-     * (vendor element FA:0B:BC, type 0x0D). It's meant to be received by anyone.
-     * Mechanic version: a license plate the drone is legally required to show.
-     */
-    private val REMOTE_ID = uuid16("FFFA")
-    private const val REMOTE_ID_APP_CODE: Byte = 0x0D
+    // ---- camera glasses ----
 
     /*
      * Camera glasses: Bluetooth SIG company IDs. Luxottica (0x0D53) makes the Ray-Ban and
@@ -123,11 +112,6 @@ object Detection {
     fun classifySpotted(result: ScanResult): Spotted? {
         val record = result.scanRecord ?: return null
 
-        val rid = record.serviceData?.get(REMOTE_ID)
-        if (rid != null && rid.isNotEmpty() && rid[0] == REMOTE_ID_APP_CODE) {
-            // [app code][counter][message...]
-            return Spotted(L10n.s(R.string.label_drone), Confidence.HIGH, Category.DRONE, remoteIdSerial(rid, 2))
-        }
         if (record.getManufacturerSpecificData(LUXOTTICA_ID) != null) {
             return Spotted(L10n.s(R.string.label_glasses), Confidence.HIGH, Category.GLASSES)
         }
@@ -135,44 +119,6 @@ object Detection {
             return Spotted(L10n.s(R.string.label_possible_glasses), Confidence.POSSIBLE, Category.POSSIBLE_GLASSES)
         }
         return null
-    }
-
-    /** Remote ID inside a Wi-Fi beacon's vendor element: [FA 0B BC][0D][counter][message pack]. */
-    fun classifyWifiRemoteId(vendorElement: ByteArray): Spotted? {
-        if (vendorElement.size < 5) return null
-        if (vendorElement[0] != 0xFA.toByte() || vendorElement[1] != 0x0B.toByte() ||
-            vendorElement[2] != 0xBC.toByte() || vendorElement[3] != REMOTE_ID_APP_CODE
-        ) return null
-        return Spotted(L10n.s(R.string.label_drone), Confidence.HIGH, Category.DRONE, remoteIdSerial(vendorElement, 5))
-    }
-
-    /** Pulls the serial out of a Basic ID message (type 0), alone or inside a message pack (type 0xF). */
-    private fun remoteIdSerial(d: ByteArray, start: Int): String? {
-        if (d.size <= start) return null
-        return when ((d[start].toInt() shr 4) and 0x0F) {
-            0 -> if (d.size >= start + 22) ascii(d, start + 2, 20) else null
-            0xF -> {
-                if (d.size < start + 3) return null
-                val size = d[start + 1].toInt() and 0xFF
-                val count = d[start + 2].toInt() and 0xFF
-                if (size != 25) return null
-                (0 until count).firstNotNullOfOrNull { i ->
-                    val o = start + 3 + i * 25
-                    if (o + 22 <= d.size && ((d[o].toInt() shr 4) and 0x0F) == 0) ascii(d, o + 2, 20) else null
-                }
-            }
-            else -> null
-        }
-    }
-
-    private fun ascii(d: ByteArray, from: Int, len: Int): String? {
-        val sb = StringBuilder()
-        for (i in from until minOf(from + len, d.size)) {
-            val c = d[i].toInt() and 0xFF
-            if (c == 0) break
-            if (c in 0x20..0x7E) sb.append(c.toChar())
-        }
-        return sb.toString().trim().ifEmpty { null }
     }
 
     // ---- naming everyday devices (for the "Everything else" list) ----

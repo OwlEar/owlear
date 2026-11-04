@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated translation file. Fix wording here, keep the %1$s / %1$d markers. &#x200F; is an invisible right-to-left mark; keep it. -->
 <resources>
-    <string name="app_tagline">يستمع إلى أجهزة التتبع المخفية وكاميرات Flock والطائرات المسيّرة والنظارات المزوّدة بكاميرا وأبراج الاتصال المزيّفة والإشارات التي تختارها. لا يخرج أي شيء من هذا الهاتف أبدًا.</string>
+    <string name="app_tagline">يستمع إلى أجهزة التتبع المخفية وكاميرات Flock والنظارات المزوّدة بكاميرا وأبراج الاتصال المزيّفة والإشارات التي تختارها. لا يخرج أي شيء من هذا الهاتف أبدًا.</string>
     <string name="start_listening">ابدأ الاستماع</string>
     <string name="stop_listening">أوقف الاستماع</string>
     <string name="find_direction">اعرف الاتجاه</string>
@@ -30,8 +30,8 @@
     <string name="hint_following">جهاز التتبع نفسه، بعيدًا عن صاحبه، معك منذ %1$d دقيقة أو أكثر في %2$d أماكن. المسه لتجاهله إن كان لك.</string>
     <string name="section_hits">ما وُجد من قائمتك</string>
     <string name="hint_hits">كاميرات Flock ومعدات Axon والكاميرات المخفية المحتملة وكل ما أضفته، مما سُمع في آخر ساعة.</string>
-    <string name="section_spotted">الطائرات المسيّرة والنظارات المزوّدة بكاميرا</string>
-    <string name="hint_spotted">طائرات مسيّرة تبث هويتها (Remote ID)، ونظارات ذكية يمكنها التسجيل. سُمعت في آخر 30 دقيقة.</string>
+    <string name="section_spotted">النظارات المزوّدة بكاميرا</string>
+    <string name="hint_spotted">نظارات ذكية يمكنها التسجيل. سُمعت في آخر 30 دقيقة.</string>
     <string name="section_cell">شبكة الهاتف</string>
     <string name="hint_cell">علامات تحذيرية لبرج اتصال مزيّف. التحذير يعني انظر عن قرب، وليس دليلًا.</string>
     <string name="cell_waiting">يبدأ الفحص عندما تبدأ الاستماع.</string>
@@ -67,7 +67,6 @@
     <string name="maker_only">تطابق الشركة المصنّعة فقط، قد تكون حافلة أو متجرًا</string>
     <string name="regular_at">معتاد في %1$s</string>
     <string name="muted_at">صامت في %1$s</string>
-    <string name="drone_id">الهوية %1$s</string>
     <string name="tracker_away">بعيد عن صاحبه</string>
     <string name="tracker_near">قرب صاحبه</string>
     <string name="tracker_heard">سُمع %1$d د، %2$s</string>
@@ -149,7 +148,6 @@
     <string name="cat_axon">معدات Axon (كاميرات الجسم، صواعق Taser)</string>
     <string name="cat_fleet">أجهزة توجيه سيارات الشرطة</string>
     <string name="cat_possible_fleet">أجهزة توجيه شرطة محتملة (تطابق الشركة المصنّعة فقط)</string>
-    <string name="cat_drone">طائرات مسيّرة (Remote ID)</string>
     <string name="cat_glasses">نظارات بكاميرا (Ray-Ban / Oakley Meta)</string>
     <string name="cat_possible_glasses">نظارات بكاميرا محتملة (تطابق الشركة المصنّعة Meta فقط)</string>
     <string name="cat_hidden_cam">كاميرات Wi-Fi مخفية محتملة</string>
@@ -159,7 +157,6 @@
     <string name="label_tile">جهاز تتبع Tile</string>
     <string name="label_chipolo">جهاز تتبع Chipolo</string>
     <string name="label_google">جهاز Google «العثور على جهازي»</string>
-    <string name="label_drone">طائرة مسيّرة (Remote ID)</string>
     <string name="label_glasses">نظارات بكاميرا (Ray-Ban / Oakley Meta)</string>
     <string name="label_possible_glasses">نظارات بكاميرا محتملة (جهاز Meta، قد يكون نظارة Quest)</string>
     <string name="unknown_device">جهاز غير معروف</string>
@@ -201,7 +198,7 @@
     <string name="ch_alerts">تنبيهات</string>
     <string name="ch_watch">تنبيهات القائمة</string>
     <string name="notif_listening_title">&#x200F;OwlEar يستمع</string>
-    <string name="notif_listening_text">أجهزة التتبع والكاميرات والطائرات المسيّرة والنظارات وشبكة الهاتف وقائمتك. لا يخرج شيء من هذا الهاتف.</string>
+    <string name="notif_listening_text">أجهزة التتبع والكاميرات والنظارات وشبكة الهاتف وقائمتك. لا يخرج شيء من هذا الهاتف.</string>
     <string name="notif_cell_title">شبكة الهاتف تبدو غير طبيعية</string>
     <string name="notif_following_title">جهاز تتبع قد يكون يتبعك</string>
     <string name="notif_following_text">&#x200F;%1$s معك منذ %2$d دقيقة (%3$s).</string>
@@ -211,7 +208,6 @@
     <string name="glyph_vehicle">موجّهات سيارات الأساطيل والشرطة</string>
     <string name="glyph_bodycam">كاميرات الجسم وأجهزة الصعق (Axon)</string>
     <string name="glyph_camera">كاميرات Flock</string>
-    <string name="glyph_drone">طائرات مسيّرة</string>
     <string name="glyph_glasses">نظارات بكاميرا</string>
     <string name="glyph_other">كاميرات مخفية وإدخالاتك</string>
     <string name="dist_m">&#x200F;~%1$d م</string>
@@ -234,7 +230,6 @@
     <string name="detail_address">العنوان</string>
     <string name="detail_maker">الشركة المصنّعة</string>
     <string name="detail_source">سُمع عبر</string>
-    <string name="detail_drone">معرّف المسيّرة</string>
     <string name="detail_first">أول سماع</string>
     <string name="detail_last">آخر سماع</string>
     <string name="detail_times">عدد مرات السماع</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated translation file. Fix wording here, keep the %1$s / %1$d markers. &#x200F; is an invisible right-to-left mark; keep it. -->
 <resources>
-    <string name="app_tagline">به ردیاب‌های پنهان، دوربین‌های Flock، پهپادها، عینک‌های دوربین‌دار، دکل‌های مخابراتی جعلی و سیگنال‌هایی که خودتان انتخاب می‌کنید گوش می‌دهد. هیچ چیزی هرگز از این گوشی خارج نمی‌شود.</string>
+    <string name="app_tagline">به ردیاب‌های پنهان، دوربین‌های Flock، عینک‌های دوربین‌دار، دکل‌های مخابراتی جعلی و سیگنال‌هایی که خودتان انتخاب می‌کنید گوش می‌دهد. هیچ چیزی هرگز از این گوشی خارج نمی‌شود.</string>
     <string name="start_listening">شروع گوش دادن</string>
     <string name="stop_listening">توقف گوش دادن</string>
     <string name="find_direction">پیدا کردن جهت</string>
@@ -30,8 +30,8 @@
     <string name="hint_following">همان ردیاب، دور از صاحبش، بیش از %1$d دقیقه در %2$d مکان با شماست. اگر مال شماست، برای نادیده گرفتن لمسش کنید.</string>
     <string name="section_hits">یافته‌های فهرست شما</string>
     <string name="hint_hits">دوربین‌های Flock، تجهیزات Axon، دوربین‌های پنهان احتمالی و هر چیزی که اضافه کرده‌اید، شنیده‌شده در یک ساعت گذشته.</string>
-    <string name="section_spotted">پهپادها و عینک‌های دوربین‌دار</string>
-    <string name="hint_spotted">پهپادهایی که شناسهٔ خود (Remote ID) را پخش می‌کنند و عینک‌های هوشمندی که می‌توانند فیلم بگیرند. شنیده‌شده در ۳۰ دقیقهٔ گذشته.</string>
+    <string name="section_spotted">عینک‌های دوربین‌دار</string>
+    <string name="hint_spotted">عینک‌های هوشمندی که می‌توانند فیلم بگیرند. شنیده‌شده در ۳۰ دقیقهٔ گذشته.</string>
     <string name="section_cell">شبکهٔ موبایل</string>
     <string name="hint_cell">نشانه‌های هشدار یک دکل مخابراتی جعلی. هشدار یعنی دقیق‌تر نگاه کنید، نه اینکه اثبات شده است.</string>
     <string name="cell_waiting">وقتی گوش دادن را شروع کنید، بررسی شروع می‌شود.</string>
@@ -67,7 +67,6 @@
     <string name="maker_only">فقط سازنده جور است، ممکن است اتوبوس یا مغازه باشد</string>
     <string name="regular_at">همیشگی در %1$s</string>
     <string name="muted_at">بی‌صدا در %1$s</string>
-    <string name="drone_id">شناسه %1$s</string>
     <string name="tracker_away">دور از صاحبش</string>
     <string name="tracker_near">نزدیک صاحبش</string>
     <string name="tracker_heard">&#x200F;%1$d دقیقه شنیده شد، %2$s</string>
@@ -149,7 +148,6 @@
     <string name="cat_axon">تجهیزات Axon (دوربین‌های بدنی، شوکر Taser)</string>
     <string name="cat_fleet">روترهای خودروهای پلیس</string>
     <string name="cat_possible_fleet">روترهای احتمالی پلیس (فقط سازنده جور است)</string>
-    <string name="cat_drone">پهپادها (Remote ID)</string>
     <string name="cat_glasses">عینک‌های دوربین‌دار (Ray-Ban / Oakley Meta)</string>
     <string name="cat_possible_glasses">عینک‌های دوربین‌دار احتمالی (فقط سازندهٔ Meta جور است)</string>
     <string name="cat_hidden_cam">دوربین‌های Wi-Fi پنهان احتمالی</string>
@@ -159,7 +157,6 @@
     <string name="label_tile">ردیاب Tile</string>
     <string name="label_chipolo">ردیاب Chipolo</string>
     <string name="label_google">ردیاب Google «پیدا کردن دستگاهم»</string>
-    <string name="label_drone">پهپاد (Remote ID)</string>
     <string name="label_glasses">عینک دوربین‌دار (Ray-Ban / Oakley Meta)</string>
     <string name="label_possible_glasses">عینک دوربین‌دار احتمالی (دستگاه Meta، شاید هدست Quest)</string>
     <string name="unknown_device">دستگاه ناشناخته</string>
@@ -201,7 +198,7 @@
     <string name="ch_alerts">هشدارها</string>
     <string name="ch_watch">هشدارهای فهرست</string>
     <string name="notif_listening_title">&#x200F;OwlEar گوش می‌دهد</string>
-    <string name="notif_listening_text">ردیاب‌ها، دوربین‌ها، پهپادها، عینک‌ها، شبکهٔ موبایل و فهرست شما. هیچ چیزی از این گوشی خارج نمی‌شود.</string>
+    <string name="notif_listening_text">ردیاب‌ها، دوربین‌ها، عینک‌ها، شبکهٔ موبایل و فهرست شما. هیچ چیزی از این گوشی خارج نمی‌شود.</string>
     <string name="notif_cell_title">شبکهٔ موبایل عجیب به نظر می‌رسد</string>
     <string name="notif_following_title">ممکن است ردیابی دنبالتان باشد</string>
     <string name="notif_following_text">&#x200F;%1$s به مدت %2$d دقیقه با شما بوده است (%3$s).</string>
@@ -211,7 +208,6 @@
     <string name="glyph_vehicle">روترهای خودروهای ناوگان و پلیس</string>
     <string name="glyph_bodycam">دوربین‌های بدن و تیزرها (Axon)</string>
     <string name="glyph_camera">دوربین‌های Flock</string>
-    <string name="glyph_drone">پهپادها</string>
     <string name="glyph_glasses">عینک‌های دوربین‌دار</string>
     <string name="glyph_other">دوربین‌های مخفی و موارد خودتان</string>
     <string name="dist_m">&#x200F;~%1$d متر</string>
@@ -234,7 +230,6 @@
     <string name="detail_address">نشانی</string>
     <string name="detail_maker">سازنده</string>
     <string name="detail_source">شنیده‌شده از طریق</string>
-    <string name="detail_drone">شناسهٔ پهپاد</string>
     <string name="detail_first">اولین بار</string>
     <string name="detail_last">آخرین بار</string>
     <string name="detail_times">دفعات شنیدن</string>

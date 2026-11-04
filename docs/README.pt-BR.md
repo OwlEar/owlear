@@ -13,7 +13,6 @@ Não custa nada, não tem anúncios, não precisa de conta e nunca envia nada pa
 - **Um rastreador escondido seguindo você.** Por exemplo, um AirTag, Tile, Samsung SmartTag, Chipolo ou etiqueta do Google colocado na sua bolsa, casaco ou carro. O OwlEar só avisa quando o mesmo rastreador fica com você por um bom tempo e aparece em vários lugares diferentes, então as chaves de um desconhecido no ônibus não disparam o alerta.
 - **Câmeras de leitura de placas.** Câmeras da Flock Safety que fotografam todo carro que passa.
 - **Equipamento policial.** Câmeras corporais e Tasers da Axon, e o Wi-Fi usado em alguns veículos de polícia, inclusive os descaracterizados.
-- **Drones** por perto que transmitem sua identificação obrigatória.
 - **Óculos inteligentes que podem gravar você,** como os Ray-Ban e Oakley Meta.
 - **Algumas câmeras escondidas,** como câmeras Wi-Fi baratas que ainda não foram totalmente configuradas. Útil para verificar um imóvel alugado ou quarto de hotel.
 - **Torres de celular falsas.** Sinais de que alguém pode estar usando um aparelho que finge ser uma torre de celular para espionar os telefones próximos.

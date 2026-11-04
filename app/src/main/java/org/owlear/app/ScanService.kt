@@ -242,28 +242,10 @@ class ScanService : Service() {
                 @Suppress("DEPRECATION")
                 val ssid = r.SSID?.trim('"')
                 val bssid = r.BSSID ?: continue
-                deliver(Repo.recordWifi(bssid, ssid, r.level, wifiRemoteId(r), now))
+                deliver(Repo.recordWifi(bssid, ssid, r.level, now))
             }
         } catch (e: Exception) {
             // Wi-Fi off or results unavailable; Bluetooth keeps going.
-        }
-    }
-
-    /** Drones can also send Remote ID inside Wi-Fi beacons (vendor element 221). Android 11+. */
-    private fun wifiRemoteId(r: ScanResult): Spotted? {
-        if (Build.VERSION.SDK_INT < 30) return null
-        return try {
-            r.informationElements.firstNotNullOfOrNull { ie ->
-                if (ie.id != 221) null
-                else {
-                    val buf = ie.bytes.duplicate()
-                    val arr = ByteArray(buf.remaining())
-                    buf.get(arr)
-                    Detection.classifyWifiRemoteId(arr)
-                }
-            }
-        } catch (e: Exception) {
-            null
         }
     }
 

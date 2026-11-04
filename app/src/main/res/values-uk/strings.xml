@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generated translation file. Fix wording here, keep the %1$s / %1$d markers. &#x200F; is an invisible right-to-left mark; keep it. -->
 <resources>
-    <string name="app_tagline">Слухає приховані трекери, камери Flock, дрони, окуляри з камерою, фальшиві базові станції та сигнали, які ви оберете. Ніщо ніколи не залишає цей телефон.</string>
+    <string name="app_tagline">Слухає приховані трекери, камери Flock, окуляри з камерою, фальшиві базові станції та сигнали, які ви оберете. Ніщо ніколи не залишає цей телефон.</string>
     <string name="start_listening">Почати слухати</string>
     <string name="stop_listening">Зупинити</string>
     <string name="find_direction">Знайти напрямок</string>
@@ -30,8 +30,8 @@
     <string name="hint_following">Той самий трекер, далеко від власника, з вами вже %1$d+ хв у %2$d місцях. Торкніться, щоб ігнорувати, якщо він ваш.</string>
     <string name="section_hits">Збіги з вашого списку</string>
     <string name="hint_hits">Камери Flock, обладнання Axon, можливі приховані камери та все, що ви додали, почуте за останню годину.</string>
-    <string name="section_spotted">Дрони й окуляри з камерою</string>
-    <string name="hint_spotted">Дрони, що транслюють свій Remote ID, і розумні окуляри, які можуть знімати. Почуті за останні 30 хвилин.</string>
+    <string name="section_spotted">Окуляри з камерою</string>
+    <string name="hint_spotted">Розумні окуляри, які можуть знімати. Почуті за останні 30 хвилин.</string>
     <string name="section_cell">Мобільна мережа</string>
     <string name="hint_cell">Тривожні ознаки фальшивої базової станції. Попередження означає: придивіться уважніше, це не доказ.</string>
     <string name="cell_waiting">Перевірка почнеться, коли ви почнете слухати.</string>
@@ -67,7 +67,6 @@
     <string name="maker_only">Збігається лише виробник, може бути автобус або магазин</string>
     <string name="regular_at">постійне: %1$s</string>
     <string name="muted_at">без звуку: %1$s</string>
-    <string name="drone_id">ID %1$s</string>
     <string name="tracker_away">далеко від власника</string>
     <string name="tracker_near">біля власника</string>
     <string name="tracker_heard">чути %1$d хв, %2$s</string>
@@ -149,7 +148,6 @@
     <string name="cat_axon">Обладнання Axon (нагрудні камери, тазери)</string>
     <string name="cat_fleet">Роутери поліцейських авто</string>
     <string name="cat_possible_fleet">Можливі поліцейські роутери (збігається лише виробник)</string>
-    <string name="cat_drone">Дрони (Remote ID)</string>
     <string name="cat_glasses">Окуляри з камерою (Ray-Ban / Oakley Meta)</string>
     <string name="cat_possible_glasses">Можливі окуляри з камерою (збігається лише виробник Meta)</string>
     <string name="cat_hidden_cam">Можливі приховані Wi-Fi-камери</string>
@@ -159,7 +157,6 @@
     <string name="label_tile">Трекер Tile</string>
     <string name="label_chipolo">Трекер Chipolo</string>
     <string name="label_google">Трекер Google «Знайти пристрій»</string>
-    <string name="label_drone">Дрон (Remote ID)</string>
     <string name="label_glasses">Окуляри з камерою (Ray-Ban / Oakley Meta)</string>
     <string name="label_possible_glasses">Можливі окуляри з камерою (пристрій Meta, може бути гарнітура Quest)</string>
     <string name="unknown_device">Невідомий пристрій</string>
@@ -201,7 +198,7 @@
     <string name="ch_alerts">Попередження</string>
     <string name="ch_watch">Сповіщення зі списку</string>
     <string name="notif_listening_title">OwlEar слухає</string>
-    <string name="notif_listening_text">Трекери, камери, дрони, окуляри, мобільна мережа та ваш список. Ніщо не залишає цей телефон.</string>
+    <string name="notif_listening_text">Трекери, камери, окуляри, мобільна мережа та ваш список. Ніщо не залишає цей телефон.</string>
     <string name="notif_cell_title">Мобільна мережа виглядає дивно</string>
     <string name="notif_following_title">Можливо, за вами стежить трекер</string>
     <string name="notif_following_text">%1$s з вами вже %2$d хв (%3$s).</string>
@@ -211,7 +208,6 @@
     <string name="glyph_vehicle">Роутери службових і поліцейських авто</string>
     <string name="glyph_bodycam">Нагрудні камери й тайзери (Axon)</string>
     <string name="glyph_camera">Камери Flock</string>
-    <string name="glyph_drone">Дрони</string>
     <string name="glyph_glasses">Окуляри з камерою</string>
     <string name="glyph_other">Приховані камери та ваші записи</string>
     <string name="dist_m">~%1$d м</string>
@@ -234,7 +230,6 @@
     <string name="detail_address">Адреса</string>
     <string name="detail_maker">Виробник</string>
     <string name="detail_source">Почуто через</string>
-    <string name="detail_drone">ID дрона</string>
     <string name="detail_first">Уперше почуто</string>
     <string name="detail_last">Востаннє почуто</string>
     <string name="detail_times">Скільки разів</string>

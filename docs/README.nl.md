@@ -13,7 +13,6 @@ Hij kost niets, heeft geen reclame, heeft geen account nodig en stuurt nooit iet
 - **Een verborgen tracker die je volgt.** Bijvoorbeeld een AirTag, Tile, Samsung SmartTag, Chipolo of Google-tag die in je tas, jas of auto is gestopt. OwlEar waarschuwt alleen als dezelfde tracker een tijdje bij je blijft en op meerdere plekken opduikt, dus de sleutels van een vreemde in de bus zetten hem niet af.
 - **Kentekencamera's.** Camera's van Flock Safety die elke auto fotograferen die voorbijrijdt.
 - **Politie-uitrusting.** Bodycams en Tasers van Axon, en de wifi van sommige politievoertuigen, ook onopvallende.
-- **Drones** in de buurt die hun verplichte ID uitzenden.
 - **Slimme brillen die je kunnen filmen,** zoals de Ray-Ban- en Oakley-brillen van Meta.
 - **Sommige verborgen camera's,** zoals goedkope wificamera's die nog niet helemaal zijn ingesteld. Handig om een vakantiewoning of hotelkamer te controleren.
 - **Nep-zendmasten.** Tekenen dat iemand een apparaat gebruikt dat zich voordoet als telefoonmast om telefoons in de buurt te bespioneren.
