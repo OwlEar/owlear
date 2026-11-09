@@ -48,7 +48,7 @@ Serve Android 8 o più recente. Non esiste ancora una versione per iPhone. L’a
 ## Come usarla
 
 - Tocca **Inizia ad ascoltare**. OwlEar continua ad ascoltare anche quando l'app è chiusa e ti manda un avviso quando compare qualcosa di importante.
-- Il **radar** mostra cosa c'è intorno a te. Più un punto è vicino al centro, più quella cosa è vicina a te.
+- L'elenco **Nelle vicinanze** mostra cosa c'è intorno a te in questo momento, il più vicino per primo, con una distanza approssimativa. La tua lista di controllo e i dispositivi etichettati stanno in cima.
 - Per capire in che direzione si trova qualcosa, tocca **Trova la direzione**. Tieni il telefono appoggiato piatto sul petto e gira lentamente su te stesso per un giro completo.
 - Per scovare un dispositivo preciso, come un localizzatore che pensi sia nascosto in auto o nella borsa, tocca la sua icona e scegli **Trovalo**. Cammina piano e guarda il numero: più sale, più sei vicino. L'app ti dice se ti stai avvicinando o allontanando, e può suonare o vibrare così non devi guardare sempre lo schermo.
 - Se un localizzatore risulta tuo o della tua famiglia, toccalo e scegli **Ignora**.

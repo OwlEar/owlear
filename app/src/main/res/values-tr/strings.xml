@@ -4,11 +4,7 @@
     <string name="app_tagline">Gizli takip cihazlarını, Flock kameralarını, kameralı gözlükleri, sahte baz istasyonlarını ve seçtiğin sinyalleri dinler. Hiçbir şey bu telefondan dışarı çıkmaz.</string>
     <string name="start_listening">Dinlemeye başla</string>
     <string name="stop_listening">Dinlemeyi durdur</string>
-    <string name="find_direction">Yönü bul</string>
-    <string name="sweep_turning">Yavaşça tam bir tur dön… %1$d sn</string>
-    <string name="status_start_first">Önce dinlemeye başla, sonra yönü bul.</string>
-    <string name="status_no_compass">Bu telefonda pusula yok, bu yüzden yön bulma kullanılamıyor.</string>
-    <string name="status_direction_failed">Yön anlaşılamadı. Telefonu göğsüne dayayıp daha yavaş dönerek tekrar dene.</string>
+    <string name="status_start_first">Önce dinlemeye başla.</string>
     <string name="status_need_bluetooth">OwlEar’un dinleyebilmesi için Yakındaki cihazlar / Bluetooth izni gerekiyor.</string>
     <string name="status_starting">Başlatılıyor…</string>
     <string name="status_couldnt_start">Başlatılamadı: %1$s</string>
@@ -22,10 +18,8 @@
     <string name="status_need_location_for_place">Konum izniyle dinlemeye başla, sonra yeri kaydet.</string>
     <string name="status_erased">Silindi.</string>
     <string name="status_erased_listening">Silindi. Dinlemeye devam ediyor.</string>
-    <string name="section_radar">Radar</string>
-    <string name="hint_radar">Simge = ne olduğu, boyut = sinyal gücü, halkalar = kaba mesafe. Ayrıntılar için bir simgeye, simgeleri öğrenmek için ⓘ’ye dokun. Yön için telefonu göğsüne düz tut ve yavaşça tam bir tur dön.</string>
-    <string name="section_recent">Radardan yeni çıkanlar</string>
-    <string name="hint_recent">Son bir saatte işaretlenen ve radarın şu an duymadığı sinyaller.</string>
+    <string name="section_recent">Yakın zamanda menzil dışı</string>
+    <string name="hint_recent">OwlEar’ın şu an duymadığı, son bir saatteki işaretli sinyaller.</string>
     <string name="section_following">⚠ Seni takip ediyor olabilir</string>
     <string name="hint_following">Aynı takip cihazı, sahibinden uzakta, %1$d dk’dan fazla süredir %2$d farklı yerde seninle. Seninse yok saymak için dokun.</string>
     <string name="section_hits">Listendeki eşleşmeler</string>
@@ -51,7 +45,7 @@
     <string name="hint_places">Sık gittiğin yerleri kaydet. Her birinde, orada olduğunu zaten bildiğin ekipman için titreşimi kapatabilirsin. Biri seni takip ederse takip cihazları her zaman uyarır, evde bile. Bir yerde %1$d veya daha fazla farklı günde duyulan ekipman “müdavim” etiketi alır. Bu yalnızca bir etikettir ve hiçbir şeyi susturmaz.</string>
     <string name="section_privacy">Gizlilik</string>
     <string name="hint_privacy">Kayıtlı yerler, seçimler ve listen, bu telefonun içine kilitli bir anahtarla şifrelenir. Adresler yalnızca tek yönlü parmak izleri olarak saklanır, asla nereye gittiğinin kaydı olarak değil. Yedek yok, başka telefona aktarım yok, internet yok.</string>
-    <string name="empty_recent">Radardan çıkan bir şey yok.</string>
+    <string name="empty_recent">Menzil dışına çıkan bir şey yok.</string>
     <string name="empty_following">Seni takip eden bir şey yok. 👍</string>
     <string name="empty_none_yet">Henüz bir şey duyulmadı.</string>
     <string name="empty_trackers">Şu an yok.</string>
@@ -59,6 +53,7 @@
     <string name="empty_places">Henüz kayıtlı yer yok.</string>
     <string name="just_now">az önce</string>
     <string name="minutes_ago">%1$d dk önce</string>
+    <string name="seconds_ago">%1$d sn önce</string>
     <string name="last_heard">son duyulma %1$s</string>
     <string name="was_proximity">%1$s idi</string>
     <string name="with_you">%1$d dk seninle</string>
@@ -177,7 +172,6 @@
     <string name="very_close">çok yakın</string>
     <string name="nearby">yakında</string>
     <string name="far">uzak</string>
-    <string name="compass_north">K</string>
     <string name="sound_default">Telefonun varsayılan sesi</string>
     <string name="sound_sonar">Sonar sesi</string>
     <string name="sound_double">Çift bip</string>
@@ -212,20 +206,15 @@
     <string name="glyph_other">Gizli kameralar ve kendi kayıtların</string>
     <string name="dist_m">~%1$d m</string>
     <string name="dist_ft">~%1$d ft</string>
-    <string name="radar_description">Radar. Ayrıntılar için bir simgeye dokun.</string>
-    <string name="radar_showing">%2$d içinden %1$d gösteriliyor</string>
-    <string name="legend_title">Radarı okuma</string>
+    <string name="setting_units">Mesafe birimi</string>
+    <string name="units_feet">Fit (ft)</string>
+    <string name="units_meters">Metre (m)</string>
+    <string name="units_switch">· değiştirmek için dokun</string>
+    <string name="legend_title">Simgeler ne anlama geliyor</string>
     <string name="legend_colors">Kırmızı = seni takip ediyor olabilir. Sarı = uyarı listende. Beyaz = yalnızca gösteriliyor. Gri = yalnızca üretici eşleşti, zararsız olabilir.</string>
-    <string name="legend_size">Büyük simge = güçlü sinyal.</string>
-    <string name="legend_rings">Halkalar = sinyal gücünden tahmin edilen kaba mesafe. Duvarlar, arabalar ve insanlar bunu 2–3 kat şaşırtabilir.</string>
-    <string name="legend_filled">Dolu = Yön bul ile yön bulundu. Çerçeve = henüz yön yok: kendi grubunun diliminde durur, yani açı yerini değil türünü gösterir.</string>
-    <string name="legend_chips">Radarın altındaki sıradan bir simgeye dokunarak o grubu gizle veya göster. Sahibinin yanındaki takip cihazları kalabalık olmasın diye radarda gösterilmez; aşağıdaki listede yine yer alır.</string>
     <string name="detail_status">Durum</string>
     <string name="detail_signal">Sinyal</string>
     <string name="detail_signal_value">%1$d dBm · yaklaşık %2$s uzakta</string>
-    <string name="detail_direction">Yön</string>
-    <string name="detail_direction_value">Kuzeyden %1$d°</string>
-    <string name="detail_direction_none">Henüz bilinmiyor. Yön bul’u kullan.</string>
     <string name="detail_name">Yayınladığı ad</string>
     <string name="detail_address">Adres</string>
     <string name="detail_maker">Üretici</string>
@@ -235,15 +224,9 @@
     <string name="detail_times">Duyulma sayısı</string>
     <string name="detail_places">Duyulduğu yerler</string>
     <string name="detail_history">Son bir buçuk dakikadaki sinyal. Yükseliyorsa = yaklaşıyor.</string>
-    <string name="radar_group_hidden">%1$s radardan gizlendi</string>
-    <string name="radar_group_shown">%1$s radarda gösteriliyor</string>
     <plurals name="places_count">
         <item quantity="one">%d yer</item>
         <item quantity="other">%d yer</item>
-    </plurals>
-    <plurals name="direction_found">
-        <item quantity="one">%d sinyalin yönü bulundu. Dolu noktalar artık yolu gösteriyor.</item>
-        <item quantity="other">%d sinyalin yönü bulundu. Dolu noktalar artık yolu gösteriyor.</item>
     </plurals>
     <plurals name="fingerprints_count">
         <item quantity="one">%d parmak izi</item>
@@ -277,4 +260,75 @@
     </string-array>
     <string name="setting_updates">Güncellemeleri denetle</string>
     <string name="setting_updates_hint">Sürümün: %1$s. OwlEar’ın indirme sayfasını tarayıcıda açar. Yeni sürümü bunun üzerine kur; ayarların korunur.</string>
+    <!-- Phone checkup (stalkerware signs on this phone) -->
+    <string name="section_checkup">Telefon kontrolü</string>
+    <string name="hint_checkup">Bu telefonda stalkerware (casus uygulama) belirtileri arar. Yalnızca Başlat\'a dokunduğunda çalışır, sonuçları yalnızca sana gösterir ve hiçbir şey kaydetmez.</string>
+    <string name="state_on">Açık</string>
+    <string name="state_off">Kapalı</string>
+    <string name="checkup_switch">Telefon kontrolü</string>
+    <string name="checkup_off_note">Açmak için dokun. OwlEar bu telefondaki uygulama listesini yalnızca kontrol sırasında görebilir.</string>
+    <string name="checkup_on_note">Kapatmak için dokun. Kapatmak son sonuçları da siler.</string>
+    <string name="checkup_parts">Neler kontrol edilsin (açıp kapatmak için birine dokun):</string>
+    <string name="check_known">Bilinen stalkerware</string>
+    <string name="check_known_hint">Uygulamalarını bilinen %1$d casus uygulamanın adlarıyla karşılaştırır. OwlEar yalnızca aranacak adlarını taşır, uygulamaların kendisini asla. Ad listesi her yeni sürümle güncellenir.</string>
+    <string name="check_screen">Ekranını okuyabilen uygulamalar</string>
+    <string name="check_screen_hint">Erişilebilirlik izni bir uygulamanın ekrandaki her şeyi görmesine ve dokunmasına izin verir. Şifre yöneticileri gibi yardımcılar da kullanır.</string>
+    <string name="check_notif">Bildirimlerini okuyabilen uygulamalar</string>
+    <string name="check_notif_hint">Bildirim erişimi bir uygulamanın mesajlarını gelir gelmez okumasına izin verir.</string>
+    <string name="check_admin">Cihaz yöneticisi olan uygulamalar</string>
+    <string name="check_admin_hint">Cihaz yöneticisi telefonu kilitleyebilir, silebilir veya bir uygulamanın kaldırılmasını zorlaştırabilir.</string>
+    <string name="check_hidden">Gizli uygulamalar</string>
+    <string name="check_hidden_hint">Güçlü erişimi olan ama ana ekranda simgesi olmayan uygulamalar.</string>
+    <string name="check_outside">Uygulama mağazası dışından yüklenenler</string>
+    <string name="check_outside_hint">Stalkerware genellikle mağazadan değil elle yüklenir. Yalnızca başka bir nedenle birlikte gösterilir.</string>
+    <string name="check_sensors">Kamera, mikrofon ve konum</string>
+    <string name="check_sensors_hint">Üçüne birden izni olan uygulamalar. Haritalar ve görüntülü aramalar da bunlara ihtiyaç duyduğu için yalnızca başka bir nedenle birlikte gösterilir.</string>
+    <string name="check_settings">Telefon ayarları</string>
+    <string name="check_settings_hint">USB hata ayıklama, geliştirici seçenekleri ve etkin bir VPN veya proxy.</string>
+    <string name="checkup_run">Kontrolü başlat</string>
+    <string name="checkup_running">Kontrol ediliyor…</string>
+    <string name="checkup_failed">Kontrol tamamlanamadı. Tekrar dene.</string>
+    <string name="checkup_safety">Bir şeyi kaldırmadan önce: Biri telefonuna stalkerware yüklediyse, bilgi gelmesi durduğunda bunu fark edebilir. Tehlikede olabileceğini düşünüyorsan önce bir güvenlik planı yap (aşağıdaki Yardım al bölümüne bak). OwlEar hiçbir şeyi kendisi kaldırmaz veya değiştirmez.</string>
+    <string name="checkup_summary">%1$d uygulamaya bakıldı. Bakılacak %2$d şey var.</string>
+    <string name="checkup_clean">Açık olan kontroller hiçbir şey bulmadı.</string>
+    <string name="checkup_phone_setting">Telefon ayarı</string>
+    <string name="reason_known">Bilinen stalkerware ile eşleşiyor (%1$s)</string>
+    <string name="reason_screen">ekranını okuyabilir</string>
+    <string name="reason_notif">bildirimlerini okuyabilir</string>
+    <string name="reason_admin">cihaz yöneticisi</string>
+    <string name="reason_sensors">kamera, mikrofon ve konumu kullanabilir</string>
+    <string name="reason_hidden">ana ekranda simgesi yok</string>
+    <string name="reason_outside">uygulama mağazası dışından yüklendi</string>
+    <string name="setting_found_usb">USB hata ayıklama açık. Bilgisayarı ve telefonun olan biri uygulama yükleyebilir veya kontrol edebilir. Sen açmadıysan Geliştirici seçenekleri\'nden kapat.</string>
+    <string name="setting_found_dev">Geliştirici seçenekleri açık. Sen açtıysan sorun yok; açmadıysan başka biri açmış olabilir.</string>
+    <string name="setting_found_vpn">Etkin bir VPN var. Sen kurmadıysan internet trafiğini başka biri üzerinden geçiriyor olabilir.</string>
+    <string name="setting_found_proxy">Bir proxy ayarlı. Sen ayarlamadıysan internet trafiğin başka biri üzerinden geçiyor olabilir.</string>
+    <string name="checkup_limits">Bir bulgu daha yakından bak demektir, kanıt değildir. Bir uygulamaya dokunarak Uygulama bilgileri\'ni aç; hazır olduğunda oradan erişimini kaldırabilir veya uygulamayı kaldırabilirsin. Bu kontrol Pegasus gibi devlet düzeyindeki casus yazılımları yakalayamaz. Bunun için Uluslararası Af Örgütü\'nün ücretsiz MVT aracı ve Access Now\'ın Dijital Güvenlik Yardım Hattı yardımcı olabilir.</string>
+    <string name="checkup_help">Yardım al</string>
+    <string name="checkup_help_hint">Coalition Against Stalkerware\'in ülkelere göre yardım hatları ve destek listesini tarayıcında açar.</string>
+    <!-- Device tags -->
+    <string name="glyph_tagged">Etiketlediğin cihazlar</string>
+    <string name="tag_button">Bu cihazı etiketle</string>
+    <string name="tag_button_edit">Etiketi düzenle</string>
+    <string name="tag_title">Bu cihazı etiketle</string>
+    <string name="tag_hint">Tanıyacağın bir ad, örneğin “Arabam”</string>
+    <string name="tag_silence">Uyarılarını sustur (listede görünmeye devam eder)</string>
+    <string name="tag_rotating">Bu cihaz gizliliği korumak için adresini ara sıra değiştirir, bu yüzden etiket yalnızca birkaç dakika veya saat sürebilir.</string>
+    <string name="tag_remove">Etiketi kaldır</string>
+    <string name="tag_need_name">Önce bir ad yaz.</string>
+    <string name="tag_failed">Bu telefonda etiket kaydedilemedi.</string>
+    <string name="section_tags">Etiketli cihazlar</string>
+    <string name="hint_tags">Ad verdiğin cihazlar. Yeniden adlandırmak, susturmak veya etiketi kaldırmak için birine dokun. Adres asla değil, yalnızca tek yönlü bir parmak izi olarak kaydedilir.</string>
+    <string name="empty_tags">Henüz etiket yok. Bir listedeki herhangi bir cihaza, sonra Bu cihazı etiketle’ye dokun.</string>
+    <string name="tag_alerts_on">Uyarılar açık</string>
+    <string name="tag_alerts_silenced">Uyarılar susturuldu</string>
+    <string name="detail_tag">Etiketin</string>
+    <string name="tagged_label">%1$s · %2$s</string>
+    <string name="section_nearby">Yakında</string>
+    <string name="hint_nearby">Şu an duyulan işaretli sinyaller, en yakını en üstte. Mesafe, sinyal gücünden yapılan kaba bir tahmindir. Ayrıntılar, Bul ve Bu cihazı etiketle için bir satıra dokun.</string>
+    <string name="group_pinned">İzleme listen ve etiketlerin</string>
+    <string name="empty_nearby">Şu an menzilde işaretli bir şey yok.</string>
+    <string name="nearby_more">+%1$d tane daha</string>
+    <string name="legend_link">ⓘ Simgeler ne anlama geliyor</string>
+    <string name="legend_distance">Mesafeler sinyal gücünden tahmin edilir. Duvarlar, arabalar ve insanlar bunu 2–3 kat yanıltabilir.</string>
 </resources>

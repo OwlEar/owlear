@@ -16,7 +16,6 @@ class Sighting(
     var separated = false
     val places = mutableListOf<Location>()
     var followAlerted = false
-    var watchAlertedAt = 0L
     var source = "BT"
     var heardName: String? = null
     var confidence = Confidence.HIGH
@@ -28,6 +27,10 @@ class Sighting(
     /** Name of the saved place that muted this signal's alert, if any. */
     var mutedAt: String? = null
     var fingerprint: String? = null
+    /** The person's own name for this device, if they tagged it. */
+    var tag: DeviceTag? = null
+    /** What OwlEar calls it, before any tag name is added in front. */
+    var baseLabel = label
 
     /** Strongest signal heard in each 10° compass slice during a sweep. */
     val sweep = IntArray(36) { Int.MIN_VALUE }
@@ -72,7 +75,32 @@ object Repo {
 
     private const val KEEP_TAGGED_MS = 6 * 60 * 60_000L
     private const val KEEP_OTHER_MS = 10 * 60_000L
-    private const val WATCH_REALERT_GAP_MS = 10 * 60_000L
+
+    /**
+     * How long a signal stays on the Nearby list after it was last heard. Bluetooth repeats
+     * several times a second; Wi-Fi is only re-read every 30 s, so it needs a little longer.
+     * Dropping off the list is also what counts as "left" for watchlist alerts.
+     */
+    const val LIVE_BT_MS = 10_000L
+    const val LIVE_WIFI_MS = 35_000L
+
+    /**
+     * Watchlist (and camera glasses) alerts sound once when a device is first heard, then stay
+     * quiet. The device has to leave (drop off the list) and stay gone for this long before
+     * coming back sounds again, so one camera parked down the street doesn't keep beeping.
+     */
+    const val WATCH_COOLDOWN_MS = 10 * 60_000L
+
+    fun liveMs(s: Sighting): Long = if (s.source == "Wi-Fi") LIVE_WIFI_MS else LIVE_BT_MS
+    fun isLive(s: Sighting, now: Long): Boolean = now - s.lastSeen < liveMs(s)
+
+    /**
+     * Watch-alert memory per "source address": when it last sounded and when it was last heard.
+     * Kept apart from [Sighting] on purpose: a sighting can be rebuilt (category changed, a
+     * nameless advertisement in between), and that must not count as a "first detection".
+     */
+    private class WatchState(var alertedAt: Long, var heardAt: Long)
+    private val watchStates = HashMap<String, WatchState>()
 
     private val sightings = LinkedHashMap<String, Sighting>()
     private val ignored = HashSet<String>()
@@ -109,7 +137,13 @@ object Repo {
         address: String, name: String?, rssi: Int, tracker: Classified?, spotted: Spotted?,
         now: Long, source: String, companyId: Int = -1,
     ): List<Alert> {
-        val watch = if (tracker == null && spotted == null) Watchlist.match(address, name) else null
+        val key = "$source $address"
+        val existing = sightings[key]
+        // Bluetooth devices often send their name only in every other packet. Without this, a
+        // name-matched watchlist device would flip to "everything else" and back, and every
+        // flip back looked like a brand new detection (and beeped again).
+        val matchName = name ?: existing?.takeIf { it.kind == Kind.WATCHLIST }?.heardName
+        val watch = if (tracker == null && spotted == null) Watchlist.match(address, matchName) else null
         val category = tracker?.category ?: spotted?.category ?: watch?.category
 
         // Category switched off: drop it before it's even held in memory.
@@ -124,20 +158,18 @@ object Repo {
         }
         val label = tracker?.label ?: spotted?.label ?: watch?.displayLabel ?: (name ?: L10n.s(R.string.unknown_device))
 
-        val key = "$source $address"
-        val existing = sightings[key]
         val s = if (existing != null && existing.kind == kind && existing.category == category) existing
         else Sighting(address, label, kind, now, category).also { sightings[key] = it }
         s.source = source
-        s.label = label // refreshed each time, so it follows a language change
+        s.baseLabel = label
         if (name != null) s.heardName = name
         if (companyId >= 0) s.companyId = companyId
         if (watch != null) s.confidence = watch.confidence
         if (spotted != null) {
             s.confidence = spotted.confidence
         }
+        applyTag(s, key)
 
-        val previouslySeen = if (s.count == 0) 0L else s.lastSeen
         s.lastSeen = now
         s.rssi = rssi
         s.addHistory(rssi, now)
@@ -169,21 +201,53 @@ object Repo {
         }
 
         val alerts = ArrayList<Alert>(1)
-        if (kind == Kind.TRACKER && mode == Mode.ALERT && s.separated && !s.followAlerted &&
+        // Tagged devices still alert unless the person chose to silence that tag.
+        val silenced = s.tag?.silent == true
+        if (kind == Kind.TRACKER && mode == Mode.ALERT && !silenced && s.separated && !s.followAlerted &&
             address !in ignored && isFollowing(s)
         ) {
             s.followAlerted = true
             alerts.add(Alert.Following(s))
         }
         // "Possible" maker-only matches show in the app but don't buzz your phone.
-        if ((kind == Kind.WATCHLIST || kind == Kind.SPOTTED) && mode == Mode.ALERT &&
-            s.confidence == Confidence.HIGH && s.mutedAt == null &&
-            (s.watchAlertedAt == 0L || now - previouslySeen > WATCH_REALERT_GAP_MS)
-        ) {
-            s.watchAlertedAt = now
-            alerts.add(Alert.WatchHit(s))
+        if (kind == Kind.WATCHLIST || kind == Kind.SPOTTED) {
+            val st = watchStates.getOrPut(key) { WatchState(0L, 0L) }
+            // A new visit: heard for the first time, or back after being gone the whole cooldown.
+            if (st.heardAt == 0L || now - st.heardAt >= WATCH_COOLDOWN_MS) st.alertedAt = 0L
+            st.heardAt = now
+            // One sound per visit, the first moment it's allowed to sound.
+            if (mode == Mode.ALERT && !silenced && s.confidence == Confidence.HIGH && s.mutedAt == null &&
+                st.alertedAt == 0L
+            ) {
+                st.alertedAt = now
+                alerts.add(Alert.WatchHit(s))
+            }
         }
         return alerts
+    }
+
+    /**
+     * Looks up the person's tag for this signal by the one-way fingerprint of "source address"
+     * (the same fingerprint saved places use), and puts the tag name in front of the label.
+     * The label is rebuilt every time, so it follows a language change.
+     */
+    private fun applyTag(s: Sighting, key: String) {
+        s.tag = if (Store.hasTags()) {
+            (s.fingerprint ?: Vault.fingerprint(key)?.also { s.fingerprint = it })?.let { Store.tagFor(it) }
+        } else null
+        val what = if (s.kind == Kind.OTHER) Detection.describeOther(s) else s.baseLabel
+        s.label = s.tag?.let { L10n.s(R.string.tagged_label, it.name, what) } ?: s.baseLabel
+    }
+
+    /** One-way fingerprint for tagging this signal, or null if the Keystore misbehaves. */
+    @Synchronized
+    fun fingerprintOf(s: Sighting): String? =
+        s.fingerprint ?: Vault.fingerprint("${s.source} ${s.address}")?.also { s.fingerprint = it }
+
+    /** Re-applies tags to everything in memory, right after a tag is added, changed or removed. */
+    @Synchronized
+    fun retag() {
+        for (s in sightings.values) applyTag(s, "${s.source} ${s.address}")
     }
 
     /** True if the person has switched this sighting's category off since it was heard. */
@@ -215,6 +279,7 @@ object Repo {
             val keep = if (s.kind == Kind.OTHER) KEEP_OTHER_MS else KEEP_TAGGED_MS
             if (now - s.lastSeen > keep) it.remove()
         }
+        watchStates.values.removeAll { now - it.heardAt > KEEP_TAGGED_MS }
     }
 
     // ---- direction finding ("fox hunt" sweep) ----
@@ -306,5 +371,6 @@ object Repo {
         stopFind()
         sightings.clear()
         ignored.clear()
+        watchStates.clear()
     }
 }

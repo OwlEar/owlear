@@ -4,11 +4,7 @@
     <string name="app_tagline">Luistert naar verborgen trackers, Flock-camera’s, camerabrillen, nep-zendmasten en signalen die jij kiest. Niets verlaat ooit deze telefoon.</string>
     <string name="start_listening">Begin met luisteren</string>
     <string name="stop_listening">Stop met luisteren</string>
-    <string name="find_direction">Richting zoeken</string>
-    <string name="sweep_turning">Draai langzaam een heel rondje… %1$ds</string>
-    <string name="status_start_first">Begin eerst met luisteren en zoek dan de richting.</string>
-    <string name="status_no_compass">Deze telefoon heeft geen kompas, dus richting zoeken kan niet.</string>
-    <string name="status_direction_failed">Richting niet gevonden. Probeer het opnieuw en draai langzamer, met de telefoon tegen je borst.</string>
+    <string name="status_start_first">Begin eerst met luisteren.</string>
     <string name="status_need_bluetooth">OwlEar heeft de toestemming Apparaten in de buurt / Bluetooth nodig om te luisteren.</string>
     <string name="status_starting">Starten…</string>
     <string name="status_couldnt_start">Kon niet starten: %1$s</string>
@@ -22,10 +18,8 @@
     <string name="status_need_location_for_place">Begin met luisteren met locatie toegestaan en sla dan de plek op.</string>
     <string name="status_erased">Gewist.</string>
     <string name="status_erased_listening">Gewist. Luistert nog steeds.</string>
-    <string name="section_radar">Radar</string>
-    <string name="hint_radar">Pictogram = wat het is, grootte = signaalsterkte, ringen = ruwe afstand. Tik op een pictogram voor details, op ⓘ om de pictogrammen te leren. Voor de richting: houd de telefoon plat tegen je borst en draai langzaam een hele cirkel.</string>
-    <string name="section_recent">Net van de radar verdwenen</string>
-    <string name="hint_recent">Gemarkeerde signalen uit het laatste uur die de radar nu niet hoort.</string>
+    <string name="section_recent">Onlangs buiten bereik</string>
+    <string name="hint_recent">Gemarkeerde signalen van het afgelopen uur die OwlEar nu niet hoort.</string>
     <string name="section_following">⚠ Volgt je misschien</string>
     <string name="hint_following">Dezelfde tracker, weg van de eigenaar, al %1$d+ min bij je op %2$d plekken. Tik erop om hem te negeren als hij van jou is.</string>
     <string name="section_hits">Treffers uit je lijst</string>
@@ -51,7 +45,7 @@
     <string name="hint_places">Sla plekken op waar je vaak komt. Op elke plek kun je het trillen uitzetten voor apparatuur waarvan je al weet dat die er is. Trackers waarschuwen altijd als er een je volgt, ook thuis. Apparatuur die op een plek op %1$d+ verschillende dagen wordt gehoord, krijgt het label “vaste gast”. Het is alleen een label en zet nooit iets stil.</string>
     <string name="section_privacy">Privacy</string>
     <string name="hint_privacy">Opgeslagen plekken, keuzes en je lijst zijn versleuteld met een sleutel die in deze telefoon zit opgesloten. Adressen worden alleen bewaard als eenrichtings-vingerafdrukken, nooit als overzicht van waar je was. Geen back-ups, niet overzetten naar een andere telefoon, geen internet.</string>
-    <string name="empty_recent">Niets is van de radar verdwenen.</string>
+    <string name="empty_recent">Niets is buiten bereik geraakt.</string>
     <string name="empty_following">Niets volgt je. 👍</string>
     <string name="empty_none_yet">Nog niets gehoord.</string>
     <string name="empty_trackers">Nu geen.</string>
@@ -59,6 +53,7 @@
     <string name="empty_places">Nog geen plekken opgeslagen.</string>
     <string name="just_now">zojuist</string>
     <string name="minutes_ago">%1$d min geleden</string>
+    <string name="seconds_ago">%1$d s geleden</string>
     <string name="last_heard">laatst gehoord %1$s</string>
     <string name="was_proximity">was %1$s</string>
     <string name="with_you">%1$d min bij je</string>
@@ -177,7 +172,6 @@
     <string name="very_close">heel dichtbij</string>
     <string name="nearby">in de buurt</string>
     <string name="far">ver weg</string>
-    <string name="compass_north">N</string>
     <string name="sound_default">Standaardgeluid van de telefoon</string>
     <string name="sound_sonar">Sonarping</string>
     <string name="sound_double">Dubbele piep</string>
@@ -212,20 +206,15 @@
     <string name="glyph_other">Verborgen camera’s en je eigen items</string>
     <string name="dist_m">~%1$d m</string>
     <string name="dist_ft">~%1$d ft</string>
-    <string name="radar_description">Radar. Tik op een pictogram voor details.</string>
-    <string name="radar_showing">%1$d van %2$d getoond</string>
-    <string name="legend_title">De radar lezen</string>
+    <string name="setting_units">Afstandseenheid</string>
+    <string name="units_feet">Voet (ft)</string>
+    <string name="units_meters">Meter (m)</string>
+    <string name="units_switch">· tik om te wisselen</string>
+    <string name="legend_title">Wat de pictogrammen betekenen</string>
     <string name="legend_colors">Rood = volgt je misschien. Geel = op je alarmlijst. Wit = alleen getoond. Grijs = alleen fabrikant herkend, kan onschuldig zijn.</string>
-    <string name="legend_size">Groter pictogram = sterker signaal.</string>
-    <string name="legend_rings">Ringen = ruwe afstand, geschat uit de signaalsterkte. Muren, auto’s en mensen kunnen dat 2 à 3 keer verkeerd maken.</string>
-    <string name="legend_filled">Gevuld = richting gevonden met Richting zoeken. Omtrek = nog geen richting: het staat in het vak van zijn groep, de hoek zegt dus het soort, niet de plek.</string>
-    <string name="legend_chips">Tik op een pictogram in de rij onder de radar om die groep te verbergen of te tonen. Trackers die nog bij hun eigenaar zijn blijven van de radar af; ze staan nog wel in de lijst hieronder.</string>
     <string name="detail_status">Status</string>
     <string name="detail_signal">Signaal</string>
     <string name="detail_signal_value">%1$d dBm · ongeveer %2$s weg</string>
-    <string name="detail_direction">Richting</string>
-    <string name="detail_direction_value">%1$d° vanaf noord</string>
-    <string name="detail_direction_none">Nog onbekend. Gebruik Richting zoeken.</string>
     <string name="detail_name">Naam die het uitzendt</string>
     <string name="detail_address">Adres</string>
     <string name="detail_maker">Fabrikant</string>
@@ -235,15 +224,9 @@
     <string name="detail_times">Keer gehoord</string>
     <string name="detail_places">Plekken gehoord</string>
     <string name="detail_history">Signaal van de laatste anderhalve minuut. Stijgend = komt dichterbij.</string>
-    <string name="radar_group_hidden">%1$s verborgen op de radar</string>
-    <string name="radar_group_shown">%1$s getoond op de radar</string>
     <plurals name="places_count">
         <item quantity="one">%d plek</item>
         <item quantity="other">%d plekken</item>
-    </plurals>
-    <plurals name="direction_found">
-        <item quantity="one">Richting gevonden voor %d signaal. Volle stippen wijzen nu de weg.</item>
-        <item quantity="other">Richting gevonden voor %d signalen. Volle stippen wijzen nu de weg.</item>
     </plurals>
     <plurals name="fingerprints_count">
         <item quantity="one">%d vingerafdruk</item>
@@ -277,4 +260,75 @@
     </string-array>
     <string name="setting_updates">Zoeken naar updates</string>
     <string name="setting_updates_hint">Je hebt versie %1$s. Opent de downloadpagina van OwlEar in je browser. Installeer de nieuwe versie over deze heen; je instellingen blijven.</string>
+    <!-- Phone checkup (stalkerware signs on this phone) -->
+    <string name="section_checkup">Telefooncheck</string>
+    <string name="hint_checkup">Zoekt naar tekenen van stalkerware (spionage-apps) op deze telefoon. Draait alleen als je op Start tikt, toont de resultaten alleen aan jou en bewaart niets.</string>
+    <string name="state_on">Aan</string>
+    <string name="state_off">Uit</string>
+    <string name="checkup_switch">Telefooncheck</string>
+    <string name="checkup_off_note">Tik om aan te zetten. OwlEar kan dan de lijst met apps op deze telefoon zien, alleen tijdens een check.</string>
+    <string name="checkup_on_note">Tik om uit te zetten. Dat wist ook de laatste resultaten.</string>
+    <string name="checkup_parts">Wat te controleren (tik om aan of uit te zetten):</string>
+    <string name="check_known">Bekende stalkerware</string>
+    <string name="check_known_hint">Controleert je apps aan de hand van de namen van %1$d bekende spionage-apps. OwlEar bevat alleen hun namen om naar te zoeken, nooit de apps zelf. De namenlijst wordt bij elke nieuwe versie bijgewerkt.</string>
+    <string name="check_screen">Apps die je scherm kunnen lezen</string>
+    <string name="check_screen_hint">Toegankelijkheidstoegang laat een app alles op het scherm zien en aantikken. Hulpjes zoals wachtwoordmanagers gebruiken het ook.</string>
+    <string name="check_notif">Apps die je meldingen kunnen lezen</string>
+    <string name="check_notif_hint">Meldingstoegang laat een app je berichten lezen zodra ze binnenkomen.</string>
+    <string name="check_admin">Apps met apparaatbeheer</string>
+    <string name="check_admin_hint">Apparaatbeheer kan de telefoon vergrendelen, wissen of een app moeilijk te verwijderen maken.</string>
+    <string name="check_hidden">Verborgen apps</string>
+    <string name="check_hidden_hint">Apps met krachtige toegang maar zonder pictogram op je startscherm.</string>
+    <string name="check_outside">Buiten een appwinkel geïnstalleerd</string>
+    <string name="check_outside_hint">Stalkerware wordt meestal met de hand geïnstalleerd, niet uit een winkel. Alleen getoond samen met een andere reden.</string>
+    <string name="check_sensors">Camera, microfoon en locatie</string>
+    <string name="check_sensors_hint">Apps die alle drie tegelijk mogen. Alleen getoond samen met een andere reden, omdat kaarten en videobellen ze ook nodig hebben.</string>
+    <string name="check_settings">Telefooninstellingen</string>
+    <string name="check_settings_hint">USB-foutopsporing, ontwikkelaarsopties en een actieve vpn of proxy.</string>
+    <string name="checkup_run">Check starten</string>
+    <string name="checkup_running">Bezig met controleren…</string>
+    <string name="checkup_failed">De check kon niet worden afgerond. Probeer het opnieuw.</string>
+    <string name="checkup_safety">Voordat je iets verwijdert: als iemand stalkerware op je telefoon heeft gezet, kan diegene merken dat er niets meer doorkomt. Als je misschien in gevaar bent, maak dan eerst een veiligheidsplan (zie Hulp zoeken hieronder). OwlEar verwijdert of verandert zelf nooit iets.</string>
+    <string name="checkup_summary">%1$d apps bekeken. %2$d om naar te kijken.</string>
+    <string name="checkup_clean">De ingeschakelde controles vonden niets.</string>
+    <string name="checkup_phone_setting">Telefooninstelling</string>
+    <string name="reason_known">Komt overeen met bekende stalkerware (%1$s)</string>
+    <string name="reason_screen">kan je scherm lezen</string>
+    <string name="reason_notif">kan je meldingen lezen</string>
+    <string name="reason_admin">heeft apparaatbeheer</string>
+    <string name="reason_sensors">kan camera, microfoon en locatie gebruiken</string>
+    <string name="reason_hidden">heeft geen pictogram op het startscherm</string>
+    <string name="reason_outside">buiten een appwinkel geïnstalleerd</string>
+    <string name="setting_found_usb">USB-foutopsporing staat aan. Iemand met een computer en jouw telefoon zou apps kunnen installeren of besturen. Zet het uit bij Ontwikkelaarsopties als jij het niet aanzette.</string>
+    <string name="setting_found_dev">Ontwikkelaarsopties staan aan. Prima als jij dat deed; zo niet, dan heeft iemand anders het misschien gedaan.</string>
+    <string name="setting_found_vpn">Er is een vpn actief. Als jij die niet hebt ingesteld, kan je internetverkeer via iemand anders lopen.</string>
+    <string name="setting_found_proxy">Er is een proxy ingesteld. Als jij die niet hebt ingesteld, loopt je internetverkeer misschien via iemand anders.</string>
+    <string name="checkup_limits">Een vondst betekent: kijk beter, geen bewijs. Tik op een app om de App-info te openen, waar je toegang kunt intrekken of de app kunt verwijderen als je er klaar voor bent. Deze check vindt geen spionagesoftware van overheidsniveau zoals Pegasus. Daarvoor kunnen de gratis MVT-tool van Amnesty International en de Digital Security Helpline van Access Now helpen.</string>
+    <string name="checkup_help">Hulp zoeken</string>
+    <string name="checkup_help_hint">Opent in je browser de lijst met hulplijnen en ondersteuning per land van de Coalition Against Stalkerware.</string>
+    <!-- Device tags -->
+    <string name="glyph_tagged">Apparaten die je hebt gelabeld</string>
+    <string name="tag_button">Dit apparaat labelen</string>
+    <string name="tag_button_edit">Label bewerken</string>
+    <string name="tag_title">Dit apparaat labelen</string>
+    <string name="tag_hint">Een naam die je herkent, zoals ‘Mijn auto’</string>
+    <string name="tag_silence">Meldingen dempen (blijft in de lijst staan)</string>
+    <string name="tag_rotating">Dit apparaat verandert af en toe van adres om privacy te beschermen, dus het label blijft misschien maar minuten of uren werken.</string>
+    <string name="tag_remove">Label verwijderen</string>
+    <string name="tag_need_name">Typ eerst een naam.</string>
+    <string name="tag_failed">Kon geen label opslaan op deze telefoon.</string>
+    <string name="section_tags">Gelabelde apparaten</string>
+    <string name="hint_tags">Apparaten die je een naam gaf. Tik erop om de naam te wijzigen, te dempen of het label te verwijderen. Alleen opgeslagen als eenrichtingsvingerafdruk, nooit het adres.</string>
+    <string name="empty_tags">Nog geen labels. Tik op een apparaat in een lijst en dan op Dit apparaat labelen.</string>
+    <string name="tag_alerts_on">Meldingen aan</string>
+    <string name="tag_alerts_silenced">Meldingen gedempt</string>
+    <string name="detail_tag">Jouw label</string>
+    <string name="tagged_label">%1$s · %2$s</string>
+    <string name="section_nearby">Dichtbij</string>
+    <string name="hint_nearby">Gemarkeerde signalen die nu te horen zijn, dichtstbijzijnde eerst. De afstand is een ruwe schatting op basis van de signaalsterkte. Tik op een regel voor details, Zoeken en Dit apparaat labelen.</string>
+    <string name="group_pinned">Je watchlist en labels</string>
+    <string name="empty_nearby">Op dit moment niets gemarkeerds binnen bereik.</string>
+    <string name="nearby_more">+%1$d meer</string>
+    <string name="legend_link">ⓘ Wat de pictogrammen betekenen</string>
+    <string name="legend_distance">Afstanden worden geschat op basis van de signaalsterkte. Muren, auto’s en mensen kunnen ze 2 à 3 keer verkeerd maken.</string>
 </resources>

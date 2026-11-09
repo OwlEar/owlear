@@ -47,7 +47,7 @@ O OwlEar não está na Google Play. Você instala direto desta página.
 ## Como usar
 
 - Toque em **Começar a escutar**. O OwlEar continua escutando mesmo com o aplicativo fechado e envia um alerta quando aparece algo importante.
-- O **radar** mostra o que está ao seu redor. Quanto mais perto do centro está um ponto, mais perto de você está aquela coisa.
+- A lista **Por perto** mostra o que está ao seu redor agora, o mais próximo primeiro, com uma distância aproximada. Sua lista de alerta e os dispositivos etiquetados ficam no topo.
 - Para descobrir a direção de algo, toque em **Achar a direção**. Segure o celular deitado contra o peito e gire devagar dando uma volta completa.
 - Para achar uma coisa específica, como um rastreador que você acha que está escondido no carro ou na bolsa, toque no ícone dele e escolha **Encontrar**. Ande devagar e observe o número: quanto mais alto, mais perto você está. O app avisa se você está chegando mais perto ou se afastando, e pode apitar ou vibrar para você não precisar ficar olhando para a tela.
 - Se um rastreador for seu ou da sua família, toque nele e escolha **Ignorar**.

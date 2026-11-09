@@ -4,11 +4,7 @@
     <string name="app_tagline">Écoute les traceurs cachés, les caméras Flock, les lunettes à caméra, les fausses antennes relais et les signaux de votre choix. Rien ne quitte jamais ce téléphone.</string>
     <string name="start_listening">Commencer l’écoute</string>
     <string name="stop_listening">Arrêter l’écoute</string>
-    <string name="find_direction">Trouver la direction</string>
-    <string name="sweep_turning">Tournez lentement sur vous-même… %1$ds</string>
-    <string name="status_start_first">Commencez d’abord l’écoute, puis cherchez la direction.</string>
-    <string name="status_no_compass">Ce téléphone n’a pas de boussole, la recherche de direction n’est donc pas possible.</string>
-    <string name="status_direction_failed">Impossible de trouver la direction. Réessayez en tournant plus lentement, le téléphone contre la poitrine.</string>
+    <string name="status_start_first">Commencez d’abord l’écoute.</string>
     <string name="status_need_bluetooth">OwlEar a besoin de l’autorisation Appareils à proximité / Bluetooth pour écouter.</string>
     <string name="status_starting">Démarrage…</string>
     <string name="status_couldnt_start">Impossible de démarrer : %1$s</string>
@@ -22,10 +18,8 @@
     <string name="status_need_location_for_place">Commencez l’écoute avec la localisation autorisée, puis enregistrez le lieu.</string>
     <string name="status_erased">Effacé.</string>
     <string name="status_erased_listening">Effacé. L’écoute continue.</string>
-    <string name="section_radar">Radar</string>
-    <string name="hint_radar">Icône = ce que c’est, taille = force du signal, anneaux = distance approximative. Touchez une icône pour les détails, ⓘ pour apprendre les icônes. Pour la direction, tenez le téléphone à plat contre la poitrine et tournez lentement sur un tour complet.</string>
-    <string name="section_recent">Récemment sortis du radar</string>
-    <string name="hint_recent">Signaux repérés que le radar n’entend plus en ce moment, dans la dernière heure.</string>
+    <string name="section_recent">Récemment hors de portée</string>
+    <string name="hint_recent">Signaux signalés de la dernière heure qu’OwlEar ne capte plus en ce moment.</string>
     <string name="section_following">⚠ Vous suit peut-être</string>
     <string name="hint_following">Le même traceur, loin de son propriétaire, avec vous depuis %1$d min ou plus dans %2$d lieux. Touchez-le pour l’ignorer s’il est à vous.</string>
     <string name="section_hits">Trouvés dans votre liste</string>
@@ -51,7 +45,7 @@
     <string name="hint_places">Enregistrez les lieux où vous allez souvent. Dans chacun, vous pouvez couper la vibration pour le matériel que vous savez déjà présent. Les traceurs vous alertent toujours si l’un d’eux vous suit, même chez vous. Le matériel entendu dans un lieu %1$d jours différents ou plus reçoit l’étiquette « habituel ». Ce n’est qu’une étiquette, elle ne fait jamais taire une alerte.</string>
     <string name="section_privacy">Confidentialité</string>
     <string name="hint_privacy">Vos lieux, vos choix et votre liste sont chiffrés avec une clé enfermée dans ce téléphone. Les adresses ne sont gardées que sous forme d’empreintes à sens unique, jamais comme un historique de vos déplacements. Pas de sauvegarde, pas de transfert vers un autre téléphone, pas d’internet.</string>
-    <string name="empty_recent">Rien n’a quitté le radar.</string>
+    <string name="empty_recent">Rien n’est passé hors de portée.</string>
     <string name="empty_following">Rien ne vous suit. 👍</string>
     <string name="empty_none_yet">Rien entendu pour l’instant.</string>
     <string name="empty_trackers">Aucun pour le moment.</string>
@@ -59,6 +53,7 @@
     <string name="empty_places">Aucun lieu enregistré.</string>
     <string name="just_now">à l’instant</string>
     <string name="minutes_ago">il y a %1$d min</string>
+    <string name="seconds_ago">il y a %1$d s</string>
     <string name="last_heard">entendu %1$s</string>
     <string name="was_proximity">était %1$s</string>
     <string name="with_you">avec vous depuis %1$d min</string>
@@ -177,7 +172,6 @@
     <string name="very_close">tout près</string>
     <string name="nearby">à proximité</string>
     <string name="far">loin</string>
-    <string name="compass_north">N</string>
     <string name="sound_default">Son par défaut du téléphone</string>
     <string name="sound_sonar">Ping de sonar</string>
     <string name="sound_double">Double bip</string>
@@ -212,20 +206,15 @@
     <string name="glyph_other">Caméras cachées et vos propres entrées</string>
     <string name="dist_m">~%1$d m</string>
     <string name="dist_ft">~%1$d ft</string>
-    <string name="radar_description">Radar. Touchez une icône pour les détails.</string>
-    <string name="radar_showing">%1$d sur %2$d affichés</string>
-    <string name="legend_title">Lire le radar</string>
+    <string name="setting_units">Unité de distance</string>
+    <string name="units_feet">Pieds (ft)</string>
+    <string name="units_meters">Mètres (m)</string>
+    <string name="units_switch">· touchez pour changer</string>
+    <string name="legend_title">Ce que signifient les icônes</string>
     <string name="legend_colors">Rouge = vous suit peut-être. Jaune = dans votre liste d’alertes. Blanc = affiché seulement. Gris = seul le fabricant correspond, peut-être inoffensif.</string>
-    <string name="legend_size">Icône plus grande = signal plus fort.</string>
-    <string name="legend_rings">Anneaux = distance approximative, estimée d’après la force du signal. Murs, voitures et personnes peuvent la fausser de 2 à 3 fois.</string>
-    <string name="legend_filled">Plein = direction trouvée avec Trouver la direction. Contour = pas encore de direction : l’icône est placée dans la part de son groupe, l’angle indique donc le type, pas l’emplacement.</string>
-    <string name="legend_chips">Touchez une icône de la rangée sous le radar pour masquer ou afficher ce groupe. Les traceurs encore près de leur propriétaire ne sont pas affichés sur le radar ; ils restent dans la liste plus bas.</string>
     <string name="detail_status">État</string>
     <string name="detail_signal">Signal</string>
     <string name="detail_signal_value">%1$d dBm · à environ %2$s</string>
-    <string name="detail_direction">Direction</string>
-    <string name="detail_direction_value">%1$d° depuis le nord</string>
-    <string name="detail_direction_none">Inconnue pour l’instant. Utilisez Trouver la direction.</string>
     <string name="detail_name">Nom diffusé</string>
     <string name="detail_address">Adresse</string>
     <string name="detail_maker">Fabricant</string>
@@ -235,17 +224,10 @@
     <string name="detail_times">Nombre d’écoutes</string>
     <string name="detail_places">Lieux d’écoute</string>
     <string name="detail_history">Signal sur la dernière minute et demie. Qui monte = se rapproche.</string>
-    <string name="radar_group_hidden">%1$s masqués sur le radar</string>
-    <string name="radar_group_shown">%1$s affichés sur le radar</string>
     <plurals name="places_count">
         <item quantity="one">%d lieu</item>
         <item quantity="many">%d lieux</item>
         <item quantity="other">%d lieux</item>
-    </plurals>
-    <plurals name="direction_found">
-        <item quantity="one">Direction trouvée pour %d signal. Les points pleins indiquent maintenant le chemin.</item>
-        <item quantity="many">Direction trouvée pour %d signaux. Les points pleins indiquent maintenant le chemin.</item>
-        <item quantity="other">Direction trouvée pour %d signaux. Les points pleins indiquent maintenant le chemin.</item>
     </plurals>
     <plurals name="fingerprints_count">
         <item quantity="one">%d empreinte</item>
@@ -281,4 +263,75 @@
     </string-array>
     <string name="setting_updates">Rechercher des mises à jour</string>
     <string name="setting_updates_hint">Vous avez la version %1$s. Ouvre la page de téléchargement d’OwlEar dans votre navigateur. Installez la nouvelle version par-dessus celle-ci ; vos réglages sont conservés.</string>
+    <!-- Phone checkup (stalkerware signs on this phone) -->
+    <string name="section_checkup">Contrôle du téléphone</string>
+    <string name="hint_checkup">Cherche des signes de stalkerware (logiciel espion) sur ce téléphone. Ne s’exécute que lorsque vous touchez Lancer, montre les résultats à vous seul et n’enregistre rien.</string>
+    <string name="state_on">Activé</string>
+    <string name="state_off">Désactivé</string>
+    <string name="checkup_switch">Contrôle du téléphone</string>
+    <string name="checkup_off_note">Touchez pour l’activer. OwlEar pourra alors voir la liste des applis de ce téléphone, uniquement pendant un contrôle.</string>
+    <string name="checkup_on_note">Touchez pour le désactiver. Cela efface aussi les derniers résultats.</string>
+    <string name="checkup_parts">Quoi vérifier (touchez une ligne pour l’activer ou la désactiver) :</string>
+    <string name="check_known">Stalkerware connu</string>
+    <string name="check_known_hint">Vérifie vos applis à partir des noms de %1$d logiciels espions connus. OwlEar contient seulement leurs noms pour les repérer, jamais les applis elles-mêmes. La liste des noms est mise à jour à chaque nouvelle version.</string>
+    <string name="check_screen">Applis qui peuvent lire votre écran</string>
+    <string name="check_screen_hint">L’accès Accessibilité permet à une appli de voir et toucher tout ce qui est à l’écran. Des outils comme les gestionnaires de mots de passe l’utilisent aussi.</string>
+    <string name="check_notif">Applis qui peuvent lire vos notifications</string>
+    <string name="check_notif_hint">L’accès aux notifications permet à une appli de lire vos messages dès leur arrivée.</string>
+    <string name="check_admin">Applis administrateur de l’appareil</string>
+    <string name="check_admin_hint">Un administrateur de l’appareil peut verrouiller le téléphone, l’effacer ou rendre une appli difficile à désinstaller.</string>
+    <string name="check_hidden">Applis cachées</string>
+    <string name="check_hidden_hint">Applis aux accès puissants mais sans icône sur l’écran d’accueil.</string>
+    <string name="check_outside">Installées hors d’une boutique d’applis</string>
+    <string name="check_outside_hint">Un stalkerware est généralement installé à la main, pas depuis une boutique. Affiché seulement avec une autre raison.</string>
+    <string name="check_sensors">Caméra, micro et position</string>
+    <string name="check_sensors_hint">Applis autorisées aux trois à la fois. Affiché seulement avec une autre raison, car les cartes et les appels vidéo en ont aussi besoin.</string>
+    <string name="check_settings">Réglages du téléphone</string>
+    <string name="check_settings_hint">Débogage USB, options pour les développeurs, et VPN ou proxy actif.</string>
+    <string name="checkup_run">Lancer le contrôle</string>
+    <string name="checkup_running">Contrôle en cours…</string>
+    <string name="checkup_failed">Le contrôle n’a pas pu se terminer. Réessayez.</string>
+    <string name="checkup_safety">Avant de supprimer quoi que ce soit : si quelqu’un a installé un stalkerware sur votre téléphone, il peut remarquer qu’il ne transmet plus. Si vous êtes peut-être en danger, préparez d’abord un plan de sécurité (voir Obtenir de l’aide ci-dessous). OwlEar ne supprime ni ne modifie jamais rien lui-même.</string>
+    <string name="checkup_summary">%1$d applis examinées. %2$d à regarder.</string>
+    <string name="checkup_clean">Rien trouvé par les vérifications activées.</string>
+    <string name="checkup_phone_setting">Réglage du téléphone</string>
+    <string name="reason_known">Correspond à un stalkerware connu (%1$s)</string>
+    <string name="reason_screen">peut lire votre écran</string>
+    <string name="reason_notif">peut lire vos notifications</string>
+    <string name="reason_admin">est administrateur de l’appareil</string>
+    <string name="reason_sensors">peut utiliser caméra, micro et position</string>
+    <string name="reason_hidden">n’a pas d’icône sur l’écran d’accueil</string>
+    <string name="reason_outside">installée hors d’une boutique d’applis</string>
+    <string name="setting_found_usb">Le débogage USB est activé. Quelqu’un avec un ordinateur et votre téléphone pourrait installer ou contrôler des applis. Désactivez-le dans les Options pour les développeurs si ce n’est pas vous.</string>
+    <string name="setting_found_dev">Les options pour les développeurs sont activées. Pas de souci si c’est vous ; sinon, quelqu’un d’autre l’a peut-être fait.</string>
+    <string name="setting_found_vpn">Un VPN est actif. Si vous ne l’avez pas configuré, il pourrait faire passer votre trafic internet par quelqu’un d’autre.</string>
+    <string name="setting_found_proxy">Un proxy est configuré. Si ce n’est pas vous, votre trafic internet passe peut-être par quelqu’un d’autre.</string>
+    <string name="checkup_limits">Un résultat veut dire « regardez de plus près », pas une preuve. Touchez une appli pour ouvrir ses Infos sur l’appli, où vous pourrez retirer ses accès ou la désinstaller quand vous serez prêt. Ce contrôle ne détecte pas les logiciels espions de niveau étatique comme Pegasus. Pour cela, l’outil gratuit MVT d’Amnesty International et la ligne d’assistance en sécurité numérique d’Access Now peuvent aider.</string>
+    <string name="checkup_help">Obtenir de l’aide</string>
+    <string name="checkup_help_hint">Ouvre dans votre navigateur la liste des lignes d’écoute et d’aide par pays de la Coalition Against Stalkerware.</string>
+    <!-- Device tags -->
+    <string name="glyph_tagged">Appareils que vous avez étiquetés</string>
+    <string name="tag_button">Étiqueter cet appareil</string>
+    <string name="tag_button_edit">Modifier l’étiquette</string>
+    <string name="tag_title">Étiqueter cet appareil</string>
+    <string name="tag_hint">Un nom que vous reconnaîtrez, comme « Ma voiture »</string>
+    <string name="tag_silence">Couper ses alertes (il reste dans la liste)</string>
+    <string name="tag_rotating">Cet appareil change d’adresse de temps en temps pour protéger la vie privée, donc l’étiquette risque de ne durer que quelques minutes ou heures.</string>
+    <string name="tag_remove">Retirer l’étiquette</string>
+    <string name="tag_need_name">Tapez d’abord un nom.</string>
+    <string name="tag_failed">Impossible d’enregistrer une étiquette sur ce téléphone.</string>
+    <string name="section_tags">Appareils étiquetés</string>
+    <string name="hint_tags">Les appareils que vous avez nommés. Touchez-en un pour le renommer, couper ses alertes ou retirer l’étiquette. Enregistré seulement sous forme d’empreinte à sens unique, jamais l’adresse.</string>
+    <string name="empty_tags">Aucune étiquette pour l’instant. Touchez un appareil dans une liste, puis Étiqueter cet appareil.</string>
+    <string name="tag_alerts_on">Alertes activées</string>
+    <string name="tag_alerts_silenced">Alertes coupées</string>
+    <string name="detail_tag">Votre étiquette</string>
+    <string name="tagged_label">%1$s · %2$s</string>
+    <string name="section_nearby">À proximité</string>
+    <string name="hint_nearby">Signaux signalés captés en ce moment, le plus proche d’abord. La distance est une estimation grossière d’après la force du signal. Touchez une ligne pour les détails, Le trouver et Étiqueter cet appareil.</string>
+    <string name="group_pinned">Votre liste de surveillance et vos étiquettes</string>
+    <string name="empty_nearby">Rien de signalé à portée pour l’instant.</string>
+    <string name="nearby_more">+%1$d de plus</string>
+    <string name="legend_link">ⓘ Ce que signifient les icônes</string>
+    <string name="legend_distance">Les distances sont estimées d’après la force du signal. Murs, voitures et personnes peuvent les fausser d’un facteur 2 à 3.</string>
 </resources>

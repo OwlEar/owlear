@@ -237,12 +237,13 @@ class FindScreen(private val act: Activity, private val s: Sighting, private val
         col.addView(LinearLayout(act).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
-            if (s.kind != Kind.OTHER) {
+            val icon = s.kind != Kind.OTHER || s.tag != null
+            if (icon) {
                 addView(GlyphView(act, Glyph.of(s), iconColor), LinearLayout.LayoutParams(dp(40), dp(40)))
             }
-            val name = if (s.kind == Kind.OTHER) Detection.describeOther(s) else s.label
+            val name = if (s.kind == Kind.OTHER && s.tag == null) Detection.describeOther(s) else s.label
             addView(label(name, 20f, fg, bold = true).apply {
-                if (s.kind != Kind.OTHER) setPadding(dp(10), 0, 0, 0)
+                if (icon) setPadding(dp(10), 0, 0, 0)
             })
         })
         col.addView(label(act.getString(R.string.find_it_title), 13f, dim).apply { setPadding(0, dp(4), 0, 0) })

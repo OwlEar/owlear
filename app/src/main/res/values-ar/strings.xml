@@ -4,11 +4,7 @@
     <string name="app_tagline">يستمع إلى أجهزة التتبع المخفية وكاميرات Flock والنظارات المزوّدة بكاميرا وأبراج الاتصال المزيّفة والإشارات التي تختارها. لا يخرج أي شيء من هذا الهاتف أبدًا.</string>
     <string name="start_listening">ابدأ الاستماع</string>
     <string name="stop_listening">أوقف الاستماع</string>
-    <string name="find_direction">اعرف الاتجاه</string>
-    <string name="sweep_turning">استدر ببطء دورة كاملة… %1$d ث</string>
-    <string name="status_start_first">ابدأ الاستماع أولًا، ثم اعرف الاتجاه.</string>
-    <string name="status_no_compass">لا توجد بوصلة في هذا الهاتف، لذلك لا يمكن معرفة الاتجاه.</string>
-    <string name="status_direction_failed">تعذّرت معرفة الاتجاه. حاول مرة أخرى واستدر ببطء أكثر والهاتف على صدرك.</string>
+    <string name="status_start_first">ابدأ الاستماع أولًا.</string>
     <string name="status_need_bluetooth">يحتاج OwlEar إلى إذن «الأجهزة القريبة» / البلوتوث كي يستمع.</string>
     <string name="status_starting">جارٍ البدء…</string>
     <string name="status_couldnt_start">تعذّر البدء: %1$s</string>
@@ -22,10 +18,8 @@
     <string name="status_need_location_for_place">ابدأ الاستماع مع السماح بالموقع، ثم احفظ المكان.</string>
     <string name="status_erased">تم المسح.</string>
     <string name="status_erased_listening">تم المسح. ما زال يستمع.</string>
-    <string name="section_radar">الرادار</string>
-    <string name="hint_radar">الرمز = ما هو، الحجم = قوة الإشارة، الحلقات = مسافة تقريبية. اضغط على رمز للتفاصيل، و ⓘ لتعلّم الرموز. لمعرفة الاتجاه، أمسك الهاتف مسطّحًا على صدرك واستدر ببطء دورة كاملة.</string>
-    <string name="section_recent">خرجت من الرادار مؤخرًا</string>
-    <string name="hint_recent">إشارات مُعلَّمة من آخر ساعة لا يسمعها الرادار الآن.</string>
+    <string name="section_recent">خرجت من النطاق مؤخرًا</string>
+    <string name="hint_recent">إشارات مميّزة من الساعة الأخيرة لا يسمعها OwlEar الآن.</string>
     <string name="section_following">⚠ قد يكون يتبعك</string>
     <string name="hint_following">جهاز التتبع نفسه، بعيدًا عن صاحبه، معك منذ %1$d دقيقة أو أكثر في %2$d أماكن. المسه لتجاهله إن كان لك.</string>
     <string name="section_hits">ما وُجد من قائمتك</string>
@@ -51,7 +45,7 @@
     <string name="hint_places">احفظ الأماكن التي تذهب إليها كثيرًا. في كل مكان يمكنك إيقاف الاهتزاز لمعدات تعرف أنها موجودة هناك. أجهزة التتبع تنبّهك دائمًا إذا تبعك أحدها، حتى في البيت. المعدات التي تُسمع في مكان ما في %1$d أيام مختلفة أو أكثر تحصل على وسم «معتاد». إنه مجرد وسم ولا يُسكت أي شيء.</string>
     <string name="section_privacy">الخصوصية</string>
     <string name="hint_privacy">أماكنك المحفوظة واختياراتك وقائمتك مشفّرة بمفتاح مقفول داخل هذا الهاتف. تُحفظ العناوين كبصمات أحادية الاتجاه فقط، وليس كسجل للأماكن التي ذهبت إليها. لا نسخ احتياطي، ولا نقل إلى هاتف آخر، ولا إنترنت.</string>
-    <string name="empty_recent">لم يخرج شيء من الرادار.</string>
+    <string name="empty_recent">لم يخرج شيء من النطاق.</string>
     <string name="empty_following">لا شيء يتبعك. 👍</string>
     <string name="empty_none_yet">لم يُسمع شيء بعد.</string>
     <string name="empty_trackers">لا شيء الآن.</string>
@@ -59,6 +53,7 @@
     <string name="empty_places">لا توجد أماكن محفوظة بعد.</string>
     <string name="just_now">الآن</string>
     <string name="minutes_ago">قبل %1$d د</string>
+    <string name="seconds_ago">قبل %1$d ث</string>
     <string name="last_heard">آخر سماع %1$s</string>
     <string name="was_proximity">كان %1$s</string>
     <string name="with_you">معك %1$d د</string>
@@ -177,7 +172,6 @@
     <string name="very_close">قريب جدًا</string>
     <string name="nearby">قريب</string>
     <string name="far">بعيد</string>
-    <string name="compass_north">ش</string>
     <string name="sound_default">صوت الهاتف الافتراضي</string>
     <string name="sound_sonar">نبضة سونار</string>
     <string name="sound_double">صفارة مزدوجة</string>
@@ -212,20 +206,15 @@
     <string name="glyph_other">كاميرات مخفية وإدخالاتك</string>
     <string name="dist_m">&#x200F;~%1$d م</string>
     <string name="dist_ft">&#x200F;~%1$d قدم</string>
-    <string name="radar_description">الرادار. اضغط على رمز لعرض التفاصيل.</string>
-    <string name="radar_showing">&#x200F;معروض %1$d من %2$d</string>
-    <string name="legend_title">قراءة الرادار</string>
+    <string name="setting_units">وحدة المسافة</string>
+    <string name="units_feet">قدم (ft)</string>
+    <string name="units_meters">متر (m)</string>
+    <string name="units_switch">· اضغط للتبديل</string>
+    <string name="legend_title">ماذا تعني الرموز</string>
     <string name="legend_colors">أحمر = قد يتبعك. أصفر = في قائمة تنبيهاتك. أبيض = معروض فقط. رمادي = تطابق الشركة المصنّعة فقط، قد يكون غير ضار.</string>
-    <string name="legend_size">رمز أكبر = إشارة أقوى.</string>
-    <string name="legend_rings">الحلقات = مسافة تقريبية مقدّرة من قوة الإشارة. الجدران والسيارات والأجسام قد تجعلها خاطئة بمرتين أو ثلاث.</string>
-    <string name="legend_filled">ممتلئ = تم إيجاد الاتجاه عبر «إيجاد الاتجاه». مُفرّغ = لا اتجاه بعد: يقع في قطاع مجموعته، فالزاوية تدل على النوع لا على المكان.</string>
-    <string name="legend_chips">اضغط على رمز في الصف أسفل الرادار لإخفاء تلك المجموعة أو إظهارها. أجهزة التتبع القريبة من أصحابها لا تظهر على الرادار لتقليل الازدحام؛ وتبقى في القائمة أدناه.</string>
     <string name="detail_status">الحالة</string>
     <string name="detail_signal">الإشارة</string>
     <string name="detail_signal_value">&#x200F;%1$d dBm · على بُعد نحو %2$s</string>
-    <string name="detail_direction">الاتجاه</string>
-    <string name="detail_direction_value">&#x200F;%1$d° من الشمال</string>
-    <string name="detail_direction_none">غير معروف بعد. استخدم «إيجاد الاتجاه».</string>
     <string name="detail_name">الاسم الذي يبثّه</string>
     <string name="detail_address">العنوان</string>
     <string name="detail_maker">الشركة المصنّعة</string>
@@ -235,8 +224,6 @@
     <string name="detail_times">عدد مرات السماع</string>
     <string name="detail_places">أماكن السماع</string>
     <string name="detail_history">الإشارة خلال آخر دقيقة ونصف. الارتفاع = يقترب.</string>
-    <string name="radar_group_hidden">&#x200F;أُخفيت %1$s من الرادار</string>
-    <string name="radar_group_shown">&#x200F;تظهر %1$s على الرادار</string>
     <plurals name="places_count">
         <item quantity="zero">لا أماكن</item>
         <item quantity="one">مكان واحد</item>
@@ -244,14 +231,6 @@
         <item quantity="few">&#x200F;%d أماكن</item>
         <item quantity="many">&#x200F;%d مكانًا</item>
         <item quantity="other">&#x200F;%d مكان</item>
-    </plurals>
-    <plurals name="direction_found">
-        <item quantity="zero">لم يُعرف اتجاه أي إشارة.</item>
-        <item quantity="one">عُرف اتجاه إشارة واحدة. النقاط الممتلئة تشير الآن إلى الطريق.</item>
-        <item quantity="two">عُرف اتجاه إشارتين. النقاط الممتلئة تشير الآن إلى الطريق.</item>
-        <item quantity="few">عُرف اتجاه %d إشارات. النقاط الممتلئة تشير الآن إلى الطريق.</item>
-        <item quantity="many">عُرف اتجاه %d إشارة. النقاط الممتلئة تشير الآن إلى الطريق.</item>
-        <item quantity="other">عُرف اتجاه %d إشارة. النقاط الممتلئة تشير الآن إلى الطريق.</item>
     </plurals>
     <plurals name="fingerprints_count">
         <item quantity="zero">لا بصمات</item>
@@ -293,4 +272,75 @@
     </string-array>
     <string name="setting_updates">التحقق من التحديثات</string>
     <string name="setting_updates_hint">لديك الإصدار %1$s. يفتح صفحة تنزيل OwlEar في متصفحك. ثبّت الإصدار الجديد فوق هذا؛ تبقى إعداداتك.</string>
+    <!-- Phone checkup (stalkerware signs on this phone) -->
+    <string name="section_checkup">فحص الهاتف</string>
+    <string name="hint_checkup">يبحث عن علامات برامج التجسس على هذا الهاتف. لا يعمل إلا عندما تضغط «تشغيل»، ويعرض النتائج لك وحدك، ولا يحفظ شيئًا.</string>
+    <string name="state_on">تشغيل</string>
+    <string name="state_off">إيقاف</string>
+    <string name="checkup_switch">فحص الهاتف</string>
+    <string name="checkup_off_note">اضغط للتشغيل. سيتمكن OwlEar عندها من رؤية قائمة التطبيقات على هذا الهاتف، أثناء الفحص فقط.</string>
+    <string name="checkup_on_note">اضغط للإيقاف. الإيقاف يمسح آخر النتائج أيضًا.</string>
+    <string name="checkup_parts">ما الذي يُفحص (اضغط على أي بند لتشغيله أو إيقافه):</string>
+    <string name="check_known">برامج تجسس معروفة</string>
+    <string name="check_known_hint">يتحقق من تطبيقاتك مقابل أسماء %1$d تطبيق تجسس معروفًا. يحمل OwlEar أسماءها فقط للبحث عنها، وليس التطبيقات نفسها أبدًا. تُحدَّث قائمة الأسماء مع كل إصدار جديد.</string>
+    <string name="check_screen">تطبيقات يمكنها قراءة شاشتك</string>
+    <string name="check_screen_hint">إذن إمكانية الوصول يتيح للتطبيق رؤية كل ما على الشاشة والنقر عليه. تستخدمه أيضًا أدوات مساعدة مثل مديري كلمات المرور.</string>
+    <string name="check_notif">تطبيقات يمكنها قراءة إشعاراتك</string>
+    <string name="check_notif_hint">إذن الإشعارات يتيح للتطبيق قراءة رسائلك فور وصولها.</string>
+    <string name="check_admin">تطبيقات لها صلاحية مشرف الجهاز</string>
+    <string name="check_admin_hint">مشرف الجهاز يستطيع قفل الهاتف أو مسحه أو جعل إزالة التطبيق صعبة.</string>
+    <string name="check_hidden">تطبيقات مخفية</string>
+    <string name="check_hidden_hint">تطبيقات لها صلاحيات قوية لكن بلا أيقونة على الشاشة الرئيسية.</string>
+    <string name="check_outside">مثبَّتة من خارج متجر التطبيقات</string>
+    <string name="check_outside_hint">عادةً تُثبَّت برامج التجسس يدويًا لا من متجر. تظهر فقط مع سبب آخر.</string>
+    <string name="check_sensors">الكاميرا والميكروفون والموقع</string>
+    <string name="check_sensors_hint">تطبيقات مسموح لها بالثلاثة معًا. تظهر فقط مع سبب آخر، لأن الخرائط ومكالمات الفيديو تحتاجها أيضًا.</string>
+    <string name="check_settings">إعدادات الهاتف</string>
+    <string name="check_settings_hint">تصحيح أخطاء USB وخيارات المطوّرين وشبكة VPN أو وكيل نشط.</string>
+    <string name="checkup_run">تشغيل الفحص</string>
+    <string name="checkup_running">جارٍ الفحص…</string>
+    <string name="checkup_failed">تعذّر إكمال الفحص. حاول مرة أخرى.</string>
+    <string name="checkup_safety">قبل أن تزيل أي شيء: إذا وضع أحدهم برنامج تجسس على هاتفك، فقد يلاحظ عندما يتوقف عن إرسال المعلومات. إذا كنت قد تكون في خطر، ضع خطة أمان أولًا (انظر «اطلب المساعدة» أدناه). OwlEar لا يزيل ولا يغيّر أي شيء بنفسه أبدًا.</string>
+    <string name="checkup_summary">تم فحص %1$d تطبيق. %2$d تستحق النظر.</string>
+    <string name="checkup_clean">لم تجد الفحوصات المفعّلة شيئًا.</string>
+    <string name="checkup_phone_setting">إعداد في الهاتف</string>
+    <string name="reason_known">يطابق برنامج تجسس معروفًا (%1$s)</string>
+    <string name="reason_screen">يمكنه قراءة شاشتك</string>
+    <string name="reason_notif">يمكنه قراءة إشعاراتك</string>
+    <string name="reason_admin">لديه صلاحية مشرف الجهاز</string>
+    <string name="reason_sensors">يمكنه استخدام الكاميرا والميكروفون والموقع</string>
+    <string name="reason_hidden">ليس له أيقونة على الشاشة الرئيسية</string>
+    <string name="reason_outside">مثبَّت من خارج متجر التطبيقات</string>
+    <string name="setting_found_usb">تصحيح أخطاء USB مفعّل. يمكن لشخص معه حاسوب وهاتفك أن يثبّت تطبيقات أو يتحكم بها. أوقفه من خيارات المطوّرين إن لم تكن أنت من شغّله.</string>
+    <string name="setting_found_dev">خيارات المطوّرين مفعّلة. لا بأس إن كنت أنت من فعّلها؛ وإلا فربما فعّلها شخص آخر.</string>
+    <string name="setting_found_vpn">توجد شبكة VPN نشطة. إن لم تكن أنت من أعدّها، فقد تمرّر حركة الإنترنت لديك عبر شخص آخر.</string>
+    <string name="setting_found_proxy">يوجد وكيل (Proxy) مضبوط. إن لم تضبطه أنت، فقد تمر حركة الإنترنت لديك عبر شخص آخر.</string>
+    <string name="checkup_limits">النتيجة تعني «انظر عن قرب»، وليست دليلًا. اضغط على تطبيق لفتح «معلومات التطبيق»، حيث يمكنك سحب صلاحياته أو إزالته عندما تكون مستعدًا. هذا الفحص لا يكشف برامج التجسس الحكومية مثل Pegasus. لذلك يمكن أن تساعدك أداة MVT المجانية من منظمة العفو الدولية وخط مساعدة الأمن الرقمي من Access Now.</string>
+    <string name="checkup_help">اطلب المساعدة</string>
+    <string name="checkup_help_hint">يفتح في متصفحك قائمة خطوط المساعدة والدعم حسب البلد من Coalition Against Stalkerware.</string>
+    <!-- Device tags -->
+    <string name="glyph_tagged">أجهزة وسمتها</string>
+    <string name="tag_button">وسم هذا الجهاز</string>
+    <string name="tag_button_edit">تعديل الوسم</string>
+    <string name="tag_title">وسم هذا الجهاز</string>
+    <string name="tag_hint">اسم تعرفه، مثل «سيارتي»</string>
+    <string name="tag_silence">كتم تنبيهاته (يبقى ظاهرًا في القائمة)</string>
+    <string name="tag_rotating">هذا الجهاز يغيّر عنوانه من حين لآخر لحماية الخصوصية، لذا قد يدوم الوسم دقائق أو ساعات فقط.</string>
+    <string name="tag_remove">إزالة الوسم</string>
+    <string name="tag_need_name">اكتب اسمًا أولًا.</string>
+    <string name="tag_failed">تعذّر حفظ الوسم على هذا الهاتف.</string>
+    <string name="section_tags">الأجهزة الموسومة</string>
+    <string name="hint_tags">أجهزة أعطيتها أسماء. اضغط على أي منها لإعادة تسميته أو إسكاته أو إزالة الوسم. يُحفظ كبصمة أحادية الاتجاه فقط، لا العنوان أبدًا.</string>
+    <string name="empty_tags">لا وسوم بعد. اضغط على أي جهاز في قائمة، ثم وسم هذا الجهاز.</string>
+    <string name="tag_alerts_on">التنبيهات مفعّلة</string>
+    <string name="tag_alerts_silenced">التنبيهات مُسكتة</string>
+    <string name="detail_tag">وسمك</string>
+    <string name="tagged_label">%1$s · %2$s</string>
+    <string name="section_nearby">قريب منك</string>
+    <string name="hint_nearby">إشارات مميّزة تُسمع الآن، الأقرب أولًا. المسافة تقدير تقريبي من قوة الإشارة. اضغط على أي صف للتفاصيل وابحث عنه ووسم هذا الجهاز.</string>
+    <string name="group_pinned">قائمة المراقبة والوسوم</string>
+    <string name="empty_nearby">لا شيء مميّز في النطاق الآن.</string>
+    <string name="nearby_more">+%1$d أخرى</string>
+    <string name="legend_link">ⓘ ماذا تعني الرموز</string>
+    <string name="legend_distance">المسافات تُقدَّر من قوة الإشارة. قد تجعلها الجدران والسيارات والأجسام خاطئة بمقدار 2 إلى 3 أضعاف.</string>
 </resources>

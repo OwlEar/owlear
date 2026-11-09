@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Note: there is deliberately NO INTERNET permission. Nothing ever leaves the phone. -->
 
@@ -16,6 +17,13 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <!-- Only for Find it's optional "buzz" (a silent alternative to the beep). -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Phone checkup only (off by default, runs only when tapped): see the app list to compare
+         it with the bundled known-stalkerware list, and see whether a VPN or proxy is active.
+         Neither one lets OwlEar reach the internet. -->
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
 

@@ -2,34 +2,34 @@ package org.owlear.app
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
 import android.view.View
 import java.util.Locale
 import kotlin.math.cos
-import kotlin.math.ln
 import kotlin.math.pow
 import kotlin.math.sin
 
 /**
- * The radar's icon set. Each group of equipment gets its own shape so the radar needs no words.
- * Shape = what it is, colour = how worried to be, size = how strong the signal is,
- * filled = direction known, outline = direction not known yet.
+ * The icon set. Each group of equipment gets its own shape, so a row in the Nearby list can be
+ * read at a glance. Shape = what it is, colour = how worried to be.
  *
  * Mechanic version: dashboard warning lights. Learn the symbol once; the legend is the manual.
  */
-enum class Glyph(val titleRes: Int, val sector: Float) {
-    TRACKER(R.string.glyph_tracker, 0f),       // circle
-    VEHICLE(R.string.glyph_vehicle, 60f),      // square
-    BODYCAM(R.string.glyph_bodycam, 120f),     // diamond
-    CAMERA(R.string.glyph_camera, 180f),       // triangle
-    GLASSES(R.string.glyph_glasses, 300f),     // two rings
-    OTHER(R.string.glyph_other, 330f);         // star (hidden cams, your own entries)
+enum class Glyph(val titleRes: Int) {
+    TRACKER(R.string.glyph_tracker),  // circle
+    VEHICLE(R.string.glyph_vehicle),  // square
+    BODYCAM(R.string.glyph_bodycam),  // diamond
+    CAMERA(R.string.glyph_camera),    // triangle
+    TAGGED(R.string.glyph_tagged),    // hexagon (devices you named)
+    GLASSES(R.string.glyph_glasses),  // two rings
+    OTHER(R.string.glyph_other);      // star (hidden cams, your own entries)
 
     val title: String get() = L10n.s(titleRes)
 
     companion object {
-        fun of(s: Sighting): Glyph = when (s.category) {
+        fun of(s: Sighting): Glyph = if (s.tag != null) TAGGED else when (s.category) {
             Category.APPLE, Category.SAMSUNG, Category.TILE, Category.CHIPOLO, Category.GOOGLE -> TRACKER
             Category.FLEET, Category.POSSIBLE_FLEET -> VEHICLE
             Category.AXON -> BODYCAM
@@ -37,6 +37,20 @@ enum class Glyph(val titleRes: Int, val sector: Float) {
             Category.GLASSES, Category.POSSIBLE_GLASSES -> GLASSES
             else -> if (s.kind == Kind.TRACKER) TRACKER else OTHER
         }
+
+        /** Red = may be following you, yellow = on your alert list, white = shown only, grey = maker match only. */
+        fun colorFor(s: Sighting): Int = when {
+            s.kind == Kind.TRACKER && s.separated && Repo.isFollowing(s) -> RED
+            s.confidence == Confidence.POSSIBLE -> DIM
+            s.category != null && Store.mode(s.category) == Mode.ALERT && s.mutedAt == null &&
+                s.kind != Kind.TRACKER -> AMBER
+            else -> WHITE
+        }
+
+        private val RED = Color.parseColor("#FF5A5F")
+        private val AMBER = Color.parseColor("#FFC24B")
+        private val WHITE = Color.parseColor("#E8EEEA")
+        private val DIM = Color.parseColor("#8A968F")
 
         private val path = Path()
 
@@ -55,6 +69,17 @@ enum class Glyph(val titleRes: Int, val sector: Float) {
                     path.reset()
                     path.moveTo(x, y - size * 1.15f); path.lineTo(x + size * 1.1f, y + size * 0.85f)
                     path.lineTo(x - size * 1.1f, y + size * 0.85f); path.close()
+                    canvas.drawPath(path, paint)
+                }
+                TAGGED -> {
+                    path.reset()
+                    for (i in 0 until 6) {
+                        val a = Math.toRadians((i * 60 - 90).toDouble())
+                        val px = x + size * 1.1f * cos(a).toFloat()
+                        val py = y + size * 1.1f * sin(a).toFloat()
+                        if (i == 0) path.moveTo(px, py) else path.lineTo(px, py)
+                    }
+                    path.close()
                     canvas.drawPath(path, paint)
                 }
                 GLASSES -> {
@@ -78,7 +103,7 @@ enum class Glyph(val titleRes: Int, val sector: Float) {
     }
 }
 
-/** A small view that shows one radar icon: used in the filter chips and the legend. */
+/** A small view that shows one icon: used in the Nearby list, the details card and the legend. */
 class GlyphView(context: Context, val glyph: Glyph, var color: Int, var filled: Boolean = true) : View(context) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
@@ -109,14 +134,29 @@ object Distance {
         return 10.0.pow((oneMeter - rssi) / (10.0 * PATH_LOSS)).coerceIn(0.5, 500.0)
     }
 
+    private const val PREFS = "owlear_settings"
+    private const val KEY_FEET = "distance_in_feet"
+
+    /** The person's own choice from Settings; null until they pick one. */
+    @Volatile private var chosenFeet: Boolean? = null
+
     /** Countries that measure short distances in feet. */
-    val usesFeet: Boolean
+    private val countryUsesFeet: Boolean
         get() = Locale.getDefault().country.uppercase() in setOf("US", "LR", "MM")
 
-    /** Radar rings, in metres, paired with the number printed on them. */
-    fun rings(): List<Pair<Double, Int>> =
-        if (usesFeet) listOf(10, 30, 100, 300).map { it * 0.3048 to it }
-        else listOf(3, 10, 30, 100).map { it.toDouble() to it }
+    /** Feet or meters: the Settings choice if there is one, otherwise the phone's country. */
+    val usesFeet: Boolean
+        get() = chosenFeet ?: countryUsesFeet
+
+    fun load(context: Context) {
+        val p = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        chosenFeet = if (p.contains(KEY_FEET)) p.getBoolean(KEY_FEET, false) else null
+    }
+
+    fun setFeet(context: Context, feet: Boolean) {
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putBoolean(KEY_FEET, feet).apply()
+        chosenFeet = feet
+    }
 
     /** "~12 m" / "~40 ft", rounded to a sensible step. */
     fun label(meters: Double): String {
@@ -127,11 +167,5 @@ object Distance {
             else -> ((v / 50).toInt() * 50)
         }
         return L10n.s(if (usesFeet) R.string.dist_ft else R.string.dist_m, rounded)
-    }
-
-    /** 0..1 position on the radar: log scale, 1 m near the centre, outer ring at the edge. */
-    fun fraction(meters: Double): Float {
-        val outer = rings().last().first
-        return (ln(meters.coerceAtLeast(1.0)) / ln(outer)).toFloat().coerceIn(0.06f, 1f)
     }
 }

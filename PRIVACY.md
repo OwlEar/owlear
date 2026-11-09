@@ -1,6 +1,6 @@
 # OwlEar Privacy Policy
 
-_Last updated: October 29, 2026_
+_Last updated: November 4, 2026_
 
 OwlEar is a free, open-source app that listens for nearby Bluetooth and Wi-Fi signals on your phone. This policy explains what it does with information. The short version: **nothing ever leaves your phone.**
 
@@ -16,7 +16,9 @@ OwlEar is a free, open-source app that listens for nearby Bluetooth and Wi-Fi si
 | Your location (in memory only) | To tell whether a tracker has been with you across several places, and which saved place you're at | Never written to storage |
 | Places you choose to save | So you can mute alerts at spots you name, like Home | Until you delete them |
 | One-way fingerprints of fixed equipment heard at your saved places | To label gear as "regular" at a place | Forgotten after 30 days unseen |
+| Names you give devices (tags) | So a device you tagged is easy to recognise later | Until you remove the tag. Saved as a one-way fingerprint of the device's address, never the address |
 | Your settings and watchlist | So your choices survive a restart | Until you change or erase them |
+| Phone checkup results (in memory only) | To show you apps and settings worth a look | Cleared when you close the screen or turn the checkup off. Your app list is never saved |
 
 Saved data is encrypted with a key kept inside your phone's Android Keystore, which cannot be exported. Signal addresses are stored only as one-way fingerprints. OwlEar never keeps a history of where you went. Cloud backup and phone-to-phone transfer of app data are turned off.
 
@@ -25,6 +27,8 @@ Saved data is encrypted with a key kept inside your phone's Android Keystore, wh
 - **Nearby devices / Bluetooth:** to hear Bluetooth signals. OwlEar only listens; it never connects to anything.
 - **Location:** Android requires it for Wi-Fi scanning, and OwlEar uses it to check whether a tracker moves with you and to recognise your saved places.
 - **Notifications:** to warn you.
+- **See all apps** (Phone checkup only, off until you turn it on): to compare the apps on your phone with the built-in list of known stalkerware and to spot apps with screen-reading, notification or device-admin access. It runs only when you tap **Run checkup**, and the list never leaves your phone.
+- **View network connections** (Phone checkup only): to tell you whether a VPN or proxy is active. It does not let OwlEar use the internet.
 
 ## Deleting your data
 

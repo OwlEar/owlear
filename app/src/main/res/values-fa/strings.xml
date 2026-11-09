@@ -4,11 +4,7 @@
     <string name="app_tagline">به ردیاب‌های پنهان، دوربین‌های Flock، عینک‌های دوربین‌دار، دکل‌های مخابراتی جعلی و سیگنال‌هایی که خودتان انتخاب می‌کنید گوش می‌دهد. هیچ چیزی هرگز از این گوشی خارج نمی‌شود.</string>
     <string name="start_listening">شروع گوش دادن</string>
     <string name="stop_listening">توقف گوش دادن</string>
-    <string name="find_direction">پیدا کردن جهت</string>
-    <string name="sweep_turning">آرام یک دور کامل بچرخید… %1$d ث</string>
-    <string name="status_start_first">اول گوش دادن را شروع کنید، بعد جهت را پیدا کنید.</string>
-    <string name="status_no_compass">این گوشی قطب‌نما ندارد، پس پیدا کردن جهت ممکن نیست.</string>
-    <string name="status_direction_failed">جهت معلوم نشد. دوباره امتحان کنید و آرام‌تر بچرخید، با گوشی روی سینه.</string>
+    <string name="status_start_first">اول گوش دادن را شروع کنید.</string>
     <string name="status_need_bluetooth">&#x200F;OwlEar برای گوش دادن به اجازهٔ «دستگاه‌های اطراف» / بلوتوث نیاز دارد.</string>
     <string name="status_starting">در حال شروع…</string>
     <string name="status_couldnt_start">شروع نشد: %1$s</string>
@@ -22,10 +18,8 @@
     <string name="status_need_location_for_place">با اجازهٔ مکان گوش دادن را شروع کنید، بعد مکان را ذخیره کنید.</string>
     <string name="status_erased">پاک شد.</string>
     <string name="status_erased_listening">پاک شد. هنوز گوش می‌دهد.</string>
-    <string name="section_radar">رادار</string>
-    <string name="hint_radar">نماد = چیست، اندازه = قدرت سیگنال، حلقه‌ها = فاصلهٔ تقریبی. برای جزئیات روی نماد بزنید و برای یادگیری نمادها روی ⓘ. برای جهت، گوشی را صاف روی سینه نگه دارید و آهسته یک دور کامل بچرخید.</string>
-    <string name="section_recent">تازه از رادار خارج شده</string>
-    <string name="hint_recent">سیگنال‌های علامت‌خورده در یک ساعت گذشته که رادار الان آن‌ها را نمی‌شنود.</string>
+    <string name="section_recent">اخیراً خارج از محدوده</string>
+    <string name="hint_recent">سیگنال‌های علامت‌خورده یک ساعت اخیر که OwlEar الان آن‌ها را نمی‌شنود.</string>
     <string name="section_following">⚠ ممکن است دنبالتان باشد</string>
     <string name="hint_following">همان ردیاب، دور از صاحبش، بیش از %1$d دقیقه در %2$d مکان با شماست. اگر مال شماست، برای نادیده گرفتن لمسش کنید.</string>
     <string name="section_hits">یافته‌های فهرست شما</string>
@@ -51,7 +45,7 @@
     <string name="hint_places">جاهایی را که زیاد می‌روید ذخیره کنید. در هر کدام می‌توانید لرزش را برای تجهیزاتی که می‌دانید آنجاست خاموش کنید. اگر ردیابی دنبالتان باشد همیشه هشدار می‌دهد، حتی در خانه. تجهیزاتی که در یک مکان در %1$d روز مختلف یا بیشتر شنیده شوند برچسب «همیشگی» می‌گیرند. این فقط یک برچسب است و هیچ چیزی را بی‌صدا نمی‌کند.</string>
     <string name="section_privacy">حریم خصوصی</string>
     <string name="hint_privacy">مکان‌های ذخیره‌شده، انتخاب‌ها و فهرست شما با کلیدی که درون این گوشی قفل شده رمزنگاری می‌شوند. نشانی‌ها فقط به شکل اثر انگشت یک‌طرفه نگه داشته می‌شوند، هرگز به شکل سابقهٔ جاهایی که رفته‌اید. بدون پشتیبان‌گیری، بدون انتقال به گوشی دیگر، بدون اینترنت.</string>
-    <string name="empty_recent">چیزی از رادار خارج نشده.</string>
+    <string name="empty_recent">چیزی از محدوده خارج نشده است.</string>
     <string name="empty_following">هیچ چیزی دنبالتان نیست. 👍</string>
     <string name="empty_none_yet">هنوز چیزی شنیده نشده.</string>
     <string name="empty_trackers">فعلاً هیچ.</string>
@@ -59,6 +53,7 @@
     <string name="empty_places">هنوز مکانی ذخیره نشده.</string>
     <string name="just_now">همین الان</string>
     <string name="minutes_ago">&#x200F;%1$d دقیقه پیش</string>
+    <string name="seconds_ago">&#x200F;%1$d ثانیه پیش</string>
     <string name="last_heard">آخرین بار %1$s</string>
     <string name="was_proximity">&#x200F;%1$s بود</string>
     <string name="with_you">&#x200F;%1$d دقیقه با شما</string>
@@ -177,7 +172,6 @@
     <string name="very_close">خیلی نزدیک</string>
     <string name="nearby">نزدیک</string>
     <string name="far">دور</string>
-    <string name="compass_north">ش</string>
     <string name="sound_default">صدای پیش‌فرض گوشی</string>
     <string name="sound_sonar">پینگ سونار</string>
     <string name="sound_double">بوق دوتایی</string>
@@ -212,20 +206,15 @@
     <string name="glyph_other">دوربین‌های مخفی و موارد خودتان</string>
     <string name="dist_m">&#x200F;~%1$d متر</string>
     <string name="dist_ft">&#x200F;~%1$d فوت</string>
-    <string name="radar_description">رادار. برای جزئیات روی یک نماد بزنید.</string>
-    <string name="radar_showing">&#x200F;%1$d از %2$d نمایش داده شده</string>
-    <string name="legend_title">خواندن رادار</string>
+    <string name="setting_units">واحد فاصله</string>
+    <string name="units_feet">فوت (ft)</string>
+    <string name="units_meters">متر (m)</string>
+    <string name="units_switch">· برای تغییر بزنید</string>
+    <string name="legend_title">معنی نمادها</string>
     <string name="legend_colors">قرمز = شاید شما را دنبال کند. زرد = در فهرست هشدار شما. سفید = فقط نمایش. خاکستری = فقط سازنده مطابقت دارد، شاید بی‌خطر باشد.</string>
-    <string name="legend_size">نماد بزرگ‌تر = سیگنال قوی‌تر.</string>
-    <string name="legend_rings">حلقه‌ها = فاصلهٔ تقریبی، برآوردشده از قدرت سیگنال. دیوار، خودرو و بدن آدم‌ها می‌توانند آن را ۲ تا ۳ برابر اشتباه کنند.</string>
-    <string name="legend_filled">پُر = جهت با «یافتن جهت» پیدا شده. توخالی = هنوز جهتی نیست: در برش گروه خودش قرار می‌گیرد، پس زاویه نوع را نشان می‌دهد نه مکان را.</string>
-    <string name="legend_chips">روی یک نماد در ردیف زیر رادار بزنید تا آن گروه پنهان یا نمایان شود. ردیاب‌هایی که کنار صاحبشان هستند برای شلوغ نشدن روی رادار نمی‌آیند؛ در فهرست پایین هستند.</string>
     <string name="detail_status">وضعیت</string>
     <string name="detail_signal">سیگنال</string>
     <string name="detail_signal_value">&#x200F;%1$d dBm · حدود %2$s فاصله</string>
-    <string name="detail_direction">جهت</string>
-    <string name="detail_direction_value">&#x200F;%1$d° از شمال</string>
-    <string name="detail_direction_none">هنوز معلوم نیست. از «یافتن جهت» استفاده کنید.</string>
     <string name="detail_name">نامی که پخش می‌کند</string>
     <string name="detail_address">نشانی</string>
     <string name="detail_maker">سازنده</string>
@@ -235,15 +224,9 @@
     <string name="detail_times">دفعات شنیدن</string>
     <string name="detail_places">مکان‌های شنیدن</string>
     <string name="detail_history">سیگنال در یک و نیم دقیقهٔ گذشته. بالا رفتن = نزدیک شدن.</string>
-    <string name="radar_group_hidden">&#x200F;%1$s از رادار پنهان شد</string>
-    <string name="radar_group_shown">&#x200F;%1$s روی رادار نمایش داده می‌شود</string>
     <plurals name="places_count">
         <item quantity="one">&#x200F;%d مکان</item>
         <item quantity="other">&#x200F;%d مکان</item>
-    </plurals>
-    <plurals name="direction_found">
-        <item quantity="one">جهت %d سیگنال پیدا شد. نقطه‌های پر حالا راه را نشان می‌دهند.</item>
-        <item quantity="other">جهت %d سیگنال پیدا شد. نقطه‌های پر حالا راه را نشان می‌دهند.</item>
     </plurals>
     <plurals name="fingerprints_count">
         <item quantity="one">&#x200F;%d اثر انگشت</item>
@@ -277,4 +260,75 @@
     </string-array>
     <string name="setting_updates">بررسی به‌روزرسانی</string>
     <string name="setting_updates_hint">نسخهٔ شما %1$s است. صفحهٔ دانلود OwlEar را در مرورگر باز می‌کند. نسخهٔ جدید را روی همین نصب کنید؛ تنظیماتتان می‌ماند.</string>
+    <!-- Phone checkup (stalkerware signs on this phone) -->
+    <string name="section_checkup">بررسی گوشی</string>
+    <string name="hint_checkup">دنبال نشانه‌های جاسوس‌افزار روی این گوشی می‌گردد. فقط وقتی «اجرا» را بزنید کار می‌کند، نتایج را فقط به شما نشان می‌دهد و چیزی ذخیره نمی‌کند.</string>
+    <string name="state_on">روشن</string>
+    <string name="state_off">خاموش</string>
+    <string name="checkup_switch">بررسی گوشی</string>
+    <string name="checkup_off_note">برای روشن کردن بزنید. OwlEar آن‌وقت فقط هنگام بررسی می‌تواند فهرست برنامه‌های این گوشی را ببیند.</string>
+    <string name="checkup_on_note">برای خاموش کردن بزنید. با خاموش کردن، آخرین نتایج هم پاک می‌شود.</string>
+    <string name="checkup_parts">چه چیزهایی بررسی شود (برای روشن یا خاموش کردن روی هرکدام بزنید):</string>
+    <string name="check_known">جاسوس‌افزارهای شناخته‌شده</string>
+    <string name="check_known_hint">برنامه‌های شما را با نام %1$d جاسوس‌افزار شناخته‌شده بررسی می‌کند. OwlEar فقط نام آن‌ها را برای جست‌وجو دارد، هرگز خود برنامه‌ها را. فهرست نام‌ها با هر نسخهٔ جدید به‌روز می‌شود.</string>
+    <string name="check_screen">برنامه‌هایی که می‌توانند صفحه را بخوانند</string>
+    <string name="check_screen_hint">دسترسی «دسترس‌پذیری» به برنامه اجازه می‌دهد هر چیزی روی صفحه را ببیند و لمس کند. ابزارهای کمکی مثل مدیر رمز عبور هم از آن استفاده می‌کنند.</string>
+    <string name="check_notif">برنامه‌هایی که می‌توانند اعلان‌ها را بخوانند</string>
+    <string name="check_notif_hint">دسترسی به اعلان‌ها به برنامه اجازه می‌دهد پیام‌هایتان را همان لحظهٔ رسیدن بخواند.</string>
+    <string name="check_admin">برنامه‌های دارای مدیریت دستگاه</string>
+    <string name="check_admin_hint">مدیر دستگاه می‌تواند گوشی را قفل یا پاک کند، یا حذف یک برنامه را سخت کند.</string>
+    <string name="check_hidden">برنامه‌های پنهان</string>
+    <string name="check_hidden_hint">برنامه‌هایی با دسترسی قوی ولی بدون نماد در صفحهٔ اصلی.</string>
+    <string name="check_outside">نصب‌شده از بیرون فروشگاه برنامه</string>
+    <string name="check_outside_hint">جاسوس‌افزار معمولاً دستی نصب می‌شود، نه از فروشگاه. فقط همراه دلیل دیگری نشان داده می‌شود.</string>
+    <string name="check_sensors">دوربین، میکروفون و موقعیت</string>
+    <string name="check_sensors_hint">برنامه‌هایی که هر سه را هم‌زمان دارند. فقط همراه دلیل دیگری نشان داده می‌شود، چون نقشه و تماس تصویری هم به آن‌ها نیاز دارند.</string>
+    <string name="check_settings">تنظیمات گوشی</string>
+    <string name="check_settings_hint">اشکال‌زدایی USB، گزینه‌های برنامه‌نویس، و VPN یا پراکسی فعال.</string>
+    <string name="checkup_run">اجرای بررسی</string>
+    <string name="checkup_running">در حال بررسی…</string>
+    <string name="checkup_failed">بررسی تمام نشد. دوباره امتحان کنید.</string>
+    <string name="checkup_safety">پیش از حذف هر چیزی: اگر کسی جاسوس‌افزار روی گوشی‌تان گذاشته، ممکن است متوجه شود که دیگر گزارشی نمی‌رسد. اگر ممکن است در خطر باشید، اول یک برنامهٔ ایمنی بچینید («کمک بگیرید» را در پایین ببینید). OwlEar هرگز خودش چیزی را حذف یا تغییر نمی‌دهد.</string>
+    <string name="checkup_summary">%1$d برنامه بررسی شد. %2$d مورد برای نگاه کردن.</string>
+    <string name="checkup_clean">بررسی‌های روشن چیزی پیدا نکردند.</string>
+    <string name="checkup_phone_setting">تنظیم گوشی</string>
+    <string name="reason_known">با جاسوس‌افزار شناخته‌شده مطابقت دارد (%1$s)</string>
+    <string name="reason_screen">می‌تواند صفحه را بخواند</string>
+    <string name="reason_notif">می‌تواند اعلان‌ها را بخواند</string>
+    <string name="reason_admin">مدیریت دستگاه دارد</string>
+    <string name="reason_sensors">می‌تواند از دوربین، میکروفون و موقعیت استفاده کند</string>
+    <string name="reason_hidden">در صفحهٔ اصلی نماد ندارد</string>
+    <string name="reason_outside">از بیرون فروشگاه برنامه نصب شده</string>
+    <string name="setting_found_usb">اشکال‌زدایی USB روشن است. کسی با یک رایانه و گوشی شما می‌تواند برنامه نصب کند یا کنترل کند. اگر خودتان روشنش نکرده‌اید، از گزینه‌های برنامه‌نویس خاموشش کنید.</string>
+    <string name="setting_found_dev">گزینه‌های برنامه‌نویس روشن است. اگر خودتان روشن کرده‌اید مشکلی نیست؛ وگرنه شاید کس دیگری این کار را کرده.</string>
+    <string name="setting_found_vpn">یک VPN فعال است. اگر خودتان راه‌اندازی‌اش نکرده‌اید، ممکن است ترافیک اینترنت شما را از طریق شخص دیگری عبور دهد.</string>
+    <string name="setting_found_proxy">یک پراکسی تنظیم شده. اگر خودتان تنظیمش نکرده‌اید، ممکن است ترافیک اینترنت شما از طریق شخص دیگری بگذرد.</string>
+    <string name="checkup_limits">یک یافته یعنی «دقیق‌تر نگاه کنید»، نه مدرک. روی یک برنامه بزنید تا «اطلاعات برنامه» باز شود؛ هر وقت آماده بودید آنجا می‌توانید دسترسی‌اش را بگیرید یا حذفش کنید. این بررسی جاسوس‌افزارهای دولتی مثل Pegasus را پیدا نمی‌کند. برای آن، ابزار رایگان MVT از عفو بین‌الملل و خط کمک امنیت دیجیتال Access Now می‌توانند کمک کنند.</string>
+    <string name="checkup_help">کمک بگیرید</string>
+    <string name="checkup_help_hint">فهرست خطوط کمک و پشتیبانی بر اساس کشور از Coalition Against Stalkerware را در مرورگر باز می‌کند.</string>
+    <!-- Device tags -->
+    <string name="glyph_tagged">دستگاه‌هایی که برچسب زدید</string>
+    <string name="tag_button">برچسب زدن این دستگاه</string>
+    <string name="tag_button_edit">ویرایش برچسب</string>
+    <string name="tag_title">برچسب زدن این دستگاه</string>
+    <string name="tag_hint">نامی که بشناسید، مثل «ماشین من»</string>
+    <string name="tag_silence">بی‌صدا کردن هشدارهایش (همچنان در فهرست دیده می‌شود)</string>
+    <string name="tag_rotating">این دستگاه برای حفظ حریم خصوصی هر از گاهی نشانی‌اش را عوض می‌کند، پس برچسب شاید فقط چند دقیقه یا چند ساعت دوام بیاورد.</string>
+    <string name="tag_remove">حذف برچسب</string>
+    <string name="tag_need_name">اول یک نام بنویسید.</string>
+    <string name="tag_failed">ذخیرهٔ برچسب روی این گوشی ممکن نشد.</string>
+    <string name="section_tags">دستگاه‌های برچسب‌دار</string>
+    <string name="hint_tags">دستگاه‌هایی که نام‌گذاری کرده‌اید. برای تغییر نام، بی‌صدا کردن یا حذف برچسب روی یکی بزنید. فقط به‌صورت اثر انگشت یک‌طرفه ذخیره می‌شود، هرگز خود نشانی.</string>
+    <string name="empty_tags">هنوز برچسبی نیست. روی هر دستگاهی در یک فهرست بزنید، سپس برچسب زدن این دستگاه.</string>
+    <string name="tag_alerts_on">هشدارها روشن</string>
+    <string name="tag_alerts_silenced">هشدارها بی‌صدا</string>
+    <string name="detail_tag">برچسب شما</string>
+    <string name="tagged_label">%1$s · %2$s</string>
+    <string name="section_nearby">نزدیک</string>
+    <string name="hint_nearby">سیگنال‌های علامت‌خورده‌ای که همین حالا شنیده می‌شوند، نزدیک‌ترین در بالا. فاصله تخمینی تقریبی از قدرت سیگنال است. برای جزئیات، پیدا کن و برچسب زدن این دستگاه روی یک ردیف بزنید.</string>
+    <string name="group_pinned">فهرست مراقبت و برچسب‌های شما</string>
+    <string name="empty_nearby">الان چیز علامت‌خورده‌ای در محدوده نیست.</string>
+    <string name="nearby_more">+%1$d مورد دیگر</string>
+    <string name="legend_link">ⓘ معنی نمادها</string>
+    <string name="legend_distance">فاصله‌ها از قدرت سیگنال تخمین زده می‌شوند. دیوار، خودرو و بدن آدم‌ها می‌توانند آن را ۲ تا ۳ برابر اشتباه کنند.</string>
 </resources>

@@ -4,11 +4,7 @@
     <string name="app_tagline">Слухає приховані трекери, камери Flock, окуляри з камерою, фальшиві базові станції та сигнали, які ви оберете. Ніщо ніколи не залишає цей телефон.</string>
     <string name="start_listening">Почати слухати</string>
     <string name="stop_listening">Зупинити</string>
-    <string name="find_direction">Знайти напрямок</string>
-    <string name="sweep_turning">Повільно поверніться по колу… %1$d с</string>
-    <string name="status_start_first">Спочатку почніть слухати, потім шукайте напрямок.</string>
-    <string name="status_no_compass">У цьому телефоні немає компаса, тому пошук напрямку недоступний.</string>
-    <string name="status_direction_failed">Не вдалося визначити напрямок. Спробуйте ще раз, повертаючись повільніше з телефоном біля грудей.</string>
+    <string name="status_start_first">Спочатку почніть слухати.</string>
     <string name="status_need_bluetooth">OwlEar потрібен дозвіл «Пристрої поблизу» / Bluetooth, щоб слухати.</string>
     <string name="status_starting">Запуск…</string>
     <string name="status_couldnt_start">Не вдалося запустити: %1$s</string>
@@ -22,10 +18,8 @@
     <string name="status_need_location_for_place">Почніть слухати з увімкненою геолокацією, потім збережіть місце.</string>
     <string name="status_erased">Стерто.</string>
     <string name="status_erased_listening">Стерто. Слухання триває.</string>
-    <string name="section_radar">Радар</string>
-    <string name="hint_radar">Значок = що це, розмір = сила сигналу, кільця = приблизна відстань. Торкніться значка для подробиць, ⓘ, щоб вивчити значки. Для напрямку тримайте телефон пласко біля грудей і повільно оберніться повним колом.</string>
-    <string name="section_recent">Нещодавно зникли з радара</string>
-    <string name="hint_recent">Позначені сигнали за останню годину, яких радар зараз не чує.</string>
+    <string name="section_recent">Нещодавно поза зоною</string>
+    <string name="hint_recent">Позначені сигнали за останню годину, яких OwlEar зараз не чує.</string>
     <string name="section_following">⚠ Можливо, стежить за вами</string>
     <string name="hint_following">Той самий трекер, далеко від власника, з вами вже %1$d+ хв у %2$d місцях. Торкніться, щоб ігнорувати, якщо він ваш.</string>
     <string name="section_hits">Збіги з вашого списку</string>
@@ -51,7 +45,7 @@
     <string name="hint_places">Збережіть місця, де часто буваєте. У кожному можна вимкнути вібрацію для обладнання, про яке ви вже знаєте. Трекери завжди попереджають, якщо один стежить за вами, навіть удома. Обладнання, почуте в місці у %1$d+ різних днів, отримує позначку «постійне». Це лише позначка, вона ніколи нічого не вимикає.</string>
     <string name="section_privacy">Конфіденційність</string>
     <string name="hint_privacy">Збережені місця, вибір і ваш список зашифровані ключем, замкненим у цьому телефоні. Адреси зберігаються лише як односторонні відбитки, ніколи як запис того, де ви були. Без резервних копій, без перенесення на інший телефон, без інтернету.</string>
-    <string name="empty_recent">Ніщо не зникло з радара.</string>
+    <string name="empty_recent">Нічого не зникло із зони.</string>
     <string name="empty_following">Ніхто за вами не стежить. 👍</string>
     <string name="empty_none_yet">Поки нічого не почуто.</string>
     <string name="empty_trackers">Зараз немає.</string>
@@ -59,6 +53,7 @@
     <string name="empty_places">Ще немає збережених місць.</string>
     <string name="just_now">щойно</string>
     <string name="minutes_ago">%1$d хв тому</string>
+    <string name="seconds_ago">%1$d с тому</string>
     <string name="last_heard">востаннє почуто %1$s</string>
     <string name="was_proximity">було %1$s</string>
     <string name="with_you">з вами %1$d хв</string>
@@ -177,7 +172,6 @@
     <string name="very_close">дуже близько</string>
     <string name="nearby">поруч</string>
     <string name="far">далеко</string>
-    <string name="compass_north">Пн</string>
     <string name="sound_default">Типовий звук телефона</string>
     <string name="sound_sonar">Сигнал сонара</string>
     <string name="sound_double">Подвійний сигнал</string>
@@ -212,20 +206,15 @@
     <string name="glyph_other">Приховані камери та ваші записи</string>
     <string name="dist_m">~%1$d м</string>
     <string name="dist_ft">~%1$d фут</string>
-    <string name="radar_description">Радар. Торкніться значка, щоб побачити подробиці.</string>
-    <string name="radar_showing">Показано %1$d з %2$d</string>
-    <string name="legend_title">Як читати радар</string>
+    <string name="setting_units">Одиниця відстані</string>
+    <string name="units_feet">Фути (ft)</string>
+    <string name="units_meters">Метри (m)</string>
+    <string name="units_switch">· торкніться, щоб змінити</string>
+    <string name="legend_title">Що означають значки</string>
     <string name="legend_colors">Червоний = можливо, стежить за вами. Жовтий = у вашому списку сповіщень. Білий = лише показано. Сірий = збіг лише за виробником, може бути нешкідливим.</string>
-    <string name="legend_size">Більший значок = сильніший сигнал.</string>
-    <string name="legend_rings">Кільця = приблизна відстань, оцінена за силою сигналу. Стіни, авто й люди можуть помилити її у 2–3 рази.</string>
-    <string name="legend_filled">Заповнений = напрямок знайдено через «Знайти напрямок». Контур = напрямку ще немає: значок стоїть у секторі своєї групи, тож кут показує тип, а не місце.</string>
-    <string name="legend_chips">Торкніться значка в ряду під радаром, щоб приховати або показати цю групу. Трекери поруч із власником не показуються на радарі, щоб не захаращувати; вони є в списку нижче.</string>
     <string name="detail_status">Стан</string>
     <string name="detail_signal">Сигнал</string>
     <string name="detail_signal_value">%1$d dBm · приблизно %2$s</string>
-    <string name="detail_direction">Напрямок</string>
-    <string name="detail_direction_value">%1$d° від півночі</string>
-    <string name="detail_direction_none">Поки невідомо. Скористайтеся «Знайти напрямок».</string>
     <string name="detail_name">Назва в ефірі</string>
     <string name="detail_address">Адреса</string>
     <string name="detail_maker">Виробник</string>
@@ -235,19 +224,11 @@
     <string name="detail_times">Скільки разів</string>
     <string name="detail_places">Скільки місць</string>
     <string name="detail_history">Сигнал за останні півтори хвилини. Зростає = наближається.</string>
-    <string name="radar_group_hidden">%1$s приховано з радара</string>
-    <string name="radar_group_shown">%1$s показано на радарі</string>
     <plurals name="places_count">
         <item quantity="one">%d місце</item>
         <item quantity="few">%d місця</item>
         <item quantity="many">%d місць</item>
         <item quantity="other">%d місця</item>
-    </plurals>
-    <plurals name="direction_found">
-        <item quantity="one">Напрямок знайдено для %d сигналу. Заповнені точки тепер показують шлях.</item>
-        <item quantity="few">Напрямок знайдено для %d сигналів. Заповнені точки тепер показують шлях.</item>
-        <item quantity="many">Напрямок знайдено для %d сигналів. Заповнені точки тепер показують шлях.</item>
-        <item quantity="other">Напрямок знайдено для %d сигналу. Заповнені точки тепер показують шлях.</item>
     </plurals>
     <plurals name="fingerprints_count">
         <item quantity="one">%d відбиток</item>
@@ -285,4 +266,75 @@
     </string-array>
     <string name="setting_updates">Перевірити оновлення</string>
     <string name="setting_updates_hint">У вас версія %1$s. Відкриває сторінку завантаження OwlEar у браузері. Встановіть нову версію поверх цієї; налаштування збережуться.</string>
+    <!-- Phone checkup (stalkerware signs on this phone) -->
+    <string name="section_checkup">Перевірка телефона</string>
+    <string name="hint_checkup">Шукає ознаки сталкерського ПЗ (шпигунських застосунків) на цьому телефоні. Працює лише коли ви натискаєте «Запустити», показує результати лише вам і нічого не зберігає.</string>
+    <string name="state_on">Увімк.</string>
+    <string name="state_off">Вимк.</string>
+    <string name="checkup_switch">Перевірка телефона</string>
+    <string name="checkup_off_note">Торкніться, щоб увімкнути. OwlEar зможе бачити список застосунків цього телефона, лише під час перевірки.</string>
+    <string name="checkup_on_note">Торкніться, щоб вимкнути. Це також стирає останні результати.</string>
+    <string name="checkup_parts">Що перевіряти (торкніться, щоб увімкнути або вимкнути):</string>
+    <string name="check_known">Відоме сталкерське ПЗ</string>
+    <string name="check_known_hint">Перевіряє ваші застосунки за назвами %1$d відомих шпигунських застосунків. OwlEar містить лише їхні назви для пошуку, ніколи самі застосунки. Список назв оновлюється з кожною новою версією.</string>
+    <string name="check_screen">Застосунки, що можуть читати ваш екран</string>
+    <string name="check_screen_hint">Доступ до спеціальних можливостей дає застосунку бачити й натискати все на екрані. Його також використовують помічники, як-от менеджери паролів.</string>
+    <string name="check_notif">Застосунки, що можуть читати сповіщення</string>
+    <string name="check_notif_hint">Доступ до сповіщень дає застосунку читати ваші повідомлення одразу, як вони приходять.</string>
+    <string name="check_admin">Застосунки з правами адміністратора пристрою</string>
+    <string name="check_admin_hint">Адміністратор пристрою може заблокувати телефон, стерти його або ускладнити видалення застосунку.</string>
+    <string name="check_hidden">Приховані застосунки</string>
+    <string name="check_hidden_hint">Застосунки з потужним доступом, але без значка на головному екрані.</string>
+    <string name="check_outside">Встановлені не з магазину застосунків</string>
+    <string name="check_outside_hint">Сталкерське ПЗ зазвичай встановлюють вручну, а не з магазину. Показується лише разом з іншою причиною.</string>
+    <string name="check_sensors">Камера, мікрофон і геолокація</string>
+    <string name="check_sensors_hint">Застосунки з дозволом на всі три одночасно. Показується лише разом з іншою причиною, бо карти й відеодзвінки теж їх потребують.</string>
+    <string name="check_settings">Налаштування телефона</string>
+    <string name="check_settings_hint">Налагодження USB, параметри розробника та активний VPN або проксі.</string>
+    <string name="checkup_run">Запустити перевірку</string>
+    <string name="checkup_running">Перевірка…</string>
+    <string name="checkup_failed">Не вдалося завершити перевірку. Спробуйте ще раз.</string>
+    <string name="checkup_safety">Перш ніж щось видаляти: якщо хтось встановив сталкерське ПЗ на ваш телефон, ця людина може помітити, що дані перестали надходити. Якщо ви можете бути в небезпеці, спершу складіть план безпеки (див. «Отримати допомогу» нижче). OwlEar ніколи нічого не видаляє і не змінює сам.</string>
+    <string name="checkup_summary">Переглянуто застосунків: %1$d. Варто подивитися: %2$d.</string>
+    <string name="checkup_clean">Увімкнені перевірки нічого не знайшли.</string>
+    <string name="checkup_phone_setting">Налаштування телефона</string>
+    <string name="reason_known">Збігається з відомим сталкерським ПЗ (%1$s)</string>
+    <string name="reason_screen">може читати ваш екран</string>
+    <string name="reason_notif">може читати сповіщення</string>
+    <string name="reason_admin">має права адміністратора пристрою</string>
+    <string name="reason_sensors">може використовувати камеру, мікрофон і геолокацію</string>
+    <string name="reason_hidden">не має значка на головному екрані</string>
+    <string name="reason_outside">встановлено не з магазину застосунків</string>
+    <string name="setting_found_usb">Налагодження USB увімкнене. Людина з комп’ютером і вашим телефоном могла б встановлювати застосунки або керувати ними. Вимкніть його в параметрах розробника, якщо вмикали не ви.</string>
+    <string name="setting_found_dev">Параметри розробника увімкнені. Нічого страшного, якщо це ви; якщо ні, це міг зробити хтось інший.</string>
+    <string name="setting_found_vpn">Активний VPN. Якщо ви його не налаштовували, він може пропускати ваш інтернет-трафік через іншу людину.</string>
+    <string name="setting_found_proxy">Налаштовано проксі. Якщо це не ви, ваш інтернет-трафік може проходити через когось іншого.</string>
+    <string name="checkup_limits">Знахідка означає «придивіться», а не доказ. Торкніться застосунку, щоб відкрити «Про застосунок», де можна забрати в нього доступ або видалити його, коли будете готові. Ця перевірка не виявляє державне шпигунське ПЗ на кшталт Pegasus. Для цього можуть допомогти безкоштовний інструмент MVT від Amnesty International та лінія допомоги з цифрової безпеки Access Now.</string>
+    <string name="checkup_help">Отримати допомогу</string>
+    <string name="checkup_help_hint">Відкриває в браузері список гарячих ліній і служб підтримки за країнами від Coalition Against Stalkerware.</string>
+    <!-- Device tags -->
+    <string name="glyph_tagged">Позначені вами пристрої</string>
+    <string name="tag_button">Позначити цей пристрій</string>
+    <string name="tag_button_edit">Змінити позначку</string>
+    <string name="tag_title">Позначити цей пристрій</string>
+    <string name="tag_hint">Назва, яку ви впізнаєте, наприклад «Моє авто»</string>
+    <string name="tag_silence">Вимкнути сповіщення (залишиться у списку)</string>
+    <string name="tag_rotating">Цей пристрій час від часу змінює адресу для захисту приватності, тож позначка може триматися лише хвилини або години.</string>
+    <string name="tag_remove">Прибрати позначку</string>
+    <string name="tag_need_name">Спершу введіть назву.</string>
+    <string name="tag_failed">Не вдалося зберегти позначку на цьому телефоні.</string>
+    <string name="section_tags">Позначені пристрої</string>
+    <string name="hint_tags">Пристрої, яким ви дали назви. Торкніться, щоб перейменувати, вимкнути сповіщення або прибрати позначку. Зберігається лише як односторонній відбиток, ніколи не адреса.</string>
+    <string name="empty_tags">Позначок ще немає. Торкніться будь-якого пристрою у списку, а тоді Позначити цей пристрій.</string>
+    <string name="tag_alerts_on">Сповіщення увімкнені</string>
+    <string name="tag_alerts_silenced">Сповіщення вимкнені</string>
+    <string name="detail_tag">Ваша позначка</string>
+    <string name="tagged_label">%1$s · %2$s</string>
+    <string name="section_nearby">Поруч</string>
+    <string name="hint_nearby">Позначені сигнали, які чути зараз, найближчі вгорі. Відстань — це грубе припущення за силою сигналу. Торкніться рядка, щоб побачити подробиці, Знайти та Позначити цей пристрій.</string>
+    <string name="group_pinned">Ваш список стеження та позначки</string>
+    <string name="empty_nearby">Зараз поруч нічого позначеного.</string>
+    <string name="nearby_more">+%1$d ще</string>
+    <string name="legend_link">ⓘ Що означають значки</string>
+    <string name="legend_distance">Відстань оцінюється за силою сигналу. Стіни, авто й люди можуть спотворити її у 2–3 рази.</string>
 </resources>

@@ -59,8 +59,7 @@ You need Android 8 or newer. There is no iPhone version yet. The app uses your p
 ## How to use it
 
 - Tap **Start listening**. OwlEar keeps listening even when the app is closed, and sends you an alert when something important shows up.
-- The **radar** shows what's around you with simple icons: the shape says what it is, a bigger icon means a stronger signal, and the rings give a rough distance. Tap any icon to see everything OwlEar knows about it.
-- To find which way something is, tap **Find direction**. Hold the phone flat against your chest and turn slowly in a full circle.
+- The **Nearby** list shows what's around you right now, nearest first, with a rough distance (like "~30 ft", or meters if you switch it in Settings). The shape of each icon says what it is. Your watchlist hits and tagged devices are pinned to the top, and each kind of device has its own foldable group. Tap any row to see everything OwlEar knows about it, Find it, or tag it.
 - To track down one thing, like a tracker you think is hidden in your car or bag, tap its icon and choose **Find it**. Walk around slowly and watch the number: the higher it goes, the closer you are. It tells you when you're getting warmer or colder, and it can beep or buzz so you don't have to keep looking at the screen.
 - If a tracker turns out to be yours or your family's, tap it and choose **Ignore**.
 
@@ -72,7 +71,7 @@ You need Android 8 or newer. There is no iPhone version yet. The app uses your p
 ## Good to know
 
 - No phone can detect radar or laser speed guns, so OwlEar can't either.
-- Distance and direction are rough guesses. Walls and people block signals.
+- Distance is a rough guess. Walls and people block signals. A phone can't tell which direction a signal comes from, so OwlEar doesn't pretend to.
 - It can't find every hidden camera or every piece of police equipment. Many devices hide who made them.
 - **Don't use your phone while driving.** Let the alerts come to you.
 

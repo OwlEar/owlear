@@ -5,11 +5,7 @@
     <string name="app_tagline">Listens for hidden trackers, Flock cameras, camera glasses, fake cell towers and signals you choose. Nothing ever leaves this phone.</string>
     <string name="start_listening">Start listening</string>
     <string name="stop_listening">Stop listening</string>
-    <string name="find_direction">Find direction</string>
-    <string name="sweep_turning">Turn slowly in a full circle… %1$ds</string>
-    <string name="status_start_first">Start listening first, then find direction.</string>
-    <string name="status_no_compass">This phone has no compass sensor, so direction finding isn’t available.</string>
-    <string name="status_direction_failed">Couldn’t tell direction. Try again, turning slower with the phone against your chest.</string>
+    <string name="status_start_first">Start listening first.</string>
     <string name="status_need_bluetooth">OwlEar needs the Nearby devices / Bluetooth permission to listen.</string>
     <string name="status_starting">Starting…</string>
     <string name="status_couldnt_start">Couldn’t start: %1$s</string>
@@ -23,10 +19,8 @@
     <string name="status_need_location_for_place">Start listening with location allowed, then save the spot.</string>
     <string name="status_erased">Erased.</string>
     <string name="status_erased_listening">Erased. Still listening.</string>
-    <string name="section_radar">Radar</string>
-    <string name="hint_radar">Icon = what it is, size = signal strength, rings = rough distance. Tap an icon for details, tap ⓘ to learn the icons. For direction, hold the phone flat against your chest and turn slowly in a full circle.</string>
-    <string name="section_recent">Recently off radar</string>
-    <string name="hint_recent">Flagged signals the radar can’t hear right now, from the last hour.</string>
+    <string name="section_recent">Recently out of range</string>
+    <string name="hint_recent">Flagged signals OwlEar can’t hear right now, from the last hour.</string>
     <string name="section_following">⚠ Possibly following you</string>
     <string name="hint_following">Same tag, away from its owner, with you %1$d min+ across %2$d places. Tap one to ignore it if it’s yours.</string>
     <string name="section_hits">Watchlist hits</string>
@@ -52,7 +46,7 @@
     <string name="hint_places">Save spots you go often. At each one you can stop the buzz for gear you already know is there. Trackers always alert if one follows you, even at home. Gear heard at a place on %1$d+ separate days is labelled “regular”. It’s only a label and never silences anything.</string>
     <string name="section_privacy">Privacy</string>
     <string name="hint_privacy">Saved places, choices and your watchlist are encrypted with a key locked inside this phone. Addresses are kept only as one-way fingerprints, never a record of where you went. No backups, no phone-to-phone transfer, no internet.</string>
-    <string name="empty_recent">Nothing has dropped off the radar.</string>
+    <string name="empty_recent">Nothing has gone out of range.</string>
     <string name="empty_following">Nothing following you. 👍</string>
     <string name="empty_none_yet">None heard yet.</string>
     <string name="empty_trackers">None right now.</string>
@@ -60,6 +54,7 @@
     <string name="empty_places">No places saved yet.</string>
     <string name="just_now">just now</string>
     <string name="minutes_ago">%1$d min ago</string>
+    <string name="seconds_ago">%1$d sec ago</string>
     <string name="last_heard">last heard %1$s</string>
     <string name="was_proximity">was %1$s</string>
     <string name="with_you">with you %1$d min</string>
@@ -178,7 +173,6 @@
     <string name="very_close">very close</string>
     <string name="nearby">nearby</string>
     <string name="far">far</string>
-    <string name="compass_north">N</string>
     <string name="sound_default">Phone’s default sound</string>
     <string name="sound_sonar">Sonar ping</string>
     <string name="sound_double">Double beep</string>
@@ -213,20 +207,15 @@
     <string name="glyph_other">Hidden cameras and your own entries</string>
     <string name="dist_m">~%1$d m</string>
     <string name="dist_ft">~%1$d ft</string>
-    <string name="radar_description">Radar. Tap an icon for details.</string>
-    <string name="radar_showing">%1$d of %2$d shown</string>
-    <string name="legend_title">Reading the radar</string>
+    <string name="setting_units">Distance units</string>
+    <string name="units_feet">Feet (ft)</string>
+    <string name="units_meters">Meters (m)</string>
+    <string name="units_switch">· tap to switch</string>
+    <string name="legend_title">What the icons mean</string>
     <string name="legend_colors">Red = may be following you. Yellow = on your alert list. White = shown only. Grey = maker match only, could be harmless.</string>
-    <string name="legend_size">Bigger icon = stronger signal.</string>
-    <string name="legend_rings">Rings = rough distance, guessed from signal strength. Walls, cars and bodies can make it 2–3 times off.</string>
-    <string name="legend_filled">Filled = direction found with Find direction. Outline = no direction yet: it sits in its group’s slice of the circle, so the angle tells you the type, not where it is.</string>
-    <string name="legend_chips">Tap an icon in the row under the radar to hide or show that group. Trackers still near their owner are left off the radar to cut clutter; they’re still listed below.</string>
     <string name="detail_status">Status</string>
     <string name="detail_signal">Signal</string>
     <string name="detail_signal_value">%1$d dBm · about %2$s away</string>
-    <string name="detail_direction">Direction</string>
-    <string name="detail_direction_value">%1$d° from north</string>
-    <string name="detail_direction_none">Not known yet. Use Find direction.</string>
     <string name="detail_name">Name it broadcasts</string>
     <string name="detail_address">Address</string>
     <string name="detail_maker">Maker</string>
@@ -236,16 +225,9 @@
     <string name="detail_times">Times heard</string>
     <string name="detail_places">Places heard</string>
     <string name="detail_history">Signal over the last minute and a half. Rising = getting closer.</string>
-    <string name="legend_button" translatable="false">ⓘ</string>
-    <string name="radar_group_hidden">%1$s hidden from radar</string>
-    <string name="radar_group_shown">%1$s shown on radar</string>
     <plurals name="places_count">
         <item quantity="one">%d place</item>
         <item quantity="other">%d places</item>
-    </plurals>
-    <plurals name="direction_found">
-        <item quantity="one">Direction found for %d signal. Solid dots now point the way.</item>
-        <item quantity="other">Direction found for %d signals. Solid dots now point the way.</item>
     </plurals>
     <plurals name="fingerprints_count">
         <item quantity="one">%d fingerprint</item>
@@ -279,4 +261,75 @@
     </string-array>
     <string name="setting_updates">Check for updates</string>
     <string name="setting_updates_hint">You have version %1$s. Opens OwlEar’s download page in your browser. Install the new version over this one; your settings stay.</string>
+    <!-- Phone checkup (stalkerware signs on this phone) -->
+    <string name="section_checkup">Phone checkup</string>
+    <string name="hint_checkup">Looks for signs of stalkerware on this phone. It only runs when you tap Run, shows results only to you, and saves nothing.</string>
+    <string name="state_on">On</string>
+    <string name="state_off">Off</string>
+    <string name="checkup_switch">Phone checkup</string>
+    <string name="checkup_off_note">Tap to turn on. OwlEar will then be able to look at the list of apps on this phone, only when you run a checkup.</string>
+    <string name="checkup_on_note">Tap to turn off. Turning it off also clears the last results.</string>
+    <string name="checkup_parts">What to check (tap one to turn it on or off):</string>
+    <string name="check_known">Known stalkerware</string>
+    <string name="check_known_hint">Checks your apps against the names of %1$d known stalkerware apps. OwlEar only carries their names to look for, never the apps themselves. The name list is updated with each new version.</string>
+    <string name="check_screen">Apps that can read your screen</string>
+    <string name="check_screen_hint">Accessibility access lets an app see and tap anything on screen. Helpers like password managers use it too.</string>
+    <string name="check_notif">Apps that can read your notifications</string>
+    <string name="check_notif_hint">Notification access lets an app read your messages as they arrive.</string>
+    <string name="check_admin">Apps with device admin</string>
+    <string name="check_admin_hint">Device admin can lock the phone, wipe it, or make an app hard to uninstall.</string>
+    <string name="check_hidden">Hidden apps</string>
+    <string name="check_hidden_hint">Apps with powerful access but no icon on your home screen.</string>
+    <string name="check_outside">Installed outside an app store</string>
+    <string name="check_outside_hint">Stalkerware is usually installed by hand, not from an app store. Shown only next to another reason.</string>
+    <string name="check_sensors">Camera, microphone and location</string>
+    <string name="check_sensors_hint">Apps allowed all three at once. Shown only next to another reason, since maps and video calls need them too.</string>
+    <string name="check_settings">Phone settings</string>
+    <string name="check_settings_hint">USB debugging, developer options, and an active VPN or proxy.</string>
+    <string name="checkup_run">Run checkup</string>
+    <string name="checkup_running">Checking…</string>
+    <string name="checkup_failed">The checkup couldn’t finish. Try again.</string>
+    <string name="checkup_safety">Before you remove anything: if someone put stalkerware on your phone, they may notice when it stops reporting. If you might be in danger, make a safety plan first (see Get help below). OwlEar never removes or changes anything itself.</string>
+    <string name="checkup_summary">Looked at %1$d apps. %2$d to look at.</string>
+    <string name="checkup_clean">Nothing found by the checks you have on.</string>
+    <string name="checkup_phone_setting">Phone setting</string>
+    <string name="reason_known">Matches known stalkerware (%1$s)</string>
+    <string name="reason_screen">can read your screen</string>
+    <string name="reason_notif">can read your notifications</string>
+    <string name="reason_admin">has device admin</string>
+    <string name="reason_sensors">can use camera, microphone and location</string>
+    <string name="reason_hidden">has no home-screen icon</string>
+    <string name="reason_outside">installed outside an app store</string>
+    <string name="setting_found_usb">USB debugging is on. Someone with a computer and your phone could install or control apps. Turn it off in Developer options if you didn’t turn it on.</string>
+    <string name="setting_found_dev">Developer options are on. Fine if you turned them on; if not, someone else may have.</string>
+    <string name="setting_found_vpn">A VPN is active. If you didn’t set one up, it could be routing your internet traffic through someone else.</string>
+    <string name="setting_found_proxy">A proxy is set. If you didn’t set it, your internet traffic may be passing through someone else.</string>
+    <string name="checkup_limits">A finding means look closer, not proof. Tap an app to open its App info, where you can remove its access or uninstall it when you’re ready. This checkup can’t catch government-grade spyware like Pegasus. For that, Amnesty International’s free MVT tool and Access Now’s Digital Security Helpline can help.</string>
+    <string name="checkup_help">Get help</string>
+    <string name="checkup_help_hint">Opens the Coalition Against Stalkerware’s list of hotlines and support, by country, in your browser.</string>
+    <!-- Device tags -->
+    <string name="glyph_tagged">Devices you tagged</string>
+    <string name="tag_button">Tag this device</string>
+    <string name="tag_button_edit">Edit tag</string>
+    <string name="tag_title">Tag this device</string>
+    <string name="tag_hint">A name you’ll recognise, like “My car”</string>
+    <string name="tag_silence">Silence its alerts (it still shows in the list)</string>
+    <string name="tag_rotating">This device changes its address every so often to protect privacy, so the tag may only last a few minutes or hours.</string>
+    <string name="tag_remove">Remove tag</string>
+    <string name="tag_need_name">Type a name first.</string>
+    <string name="tag_failed">Couldn’t save a tag on this phone.</string>
+    <string name="tagged_label">%1$s · %2$s</string>
+    <string name="section_tags">Tagged devices</string>
+    <string name="hint_tags">Devices you named. Tap one to rename it, silence it or remove the tag. Saved only as a one-way fingerprint, never the address.</string>
+    <string name="empty_tags">No tags yet. Tap any device in a list, then Tag this device.</string>
+    <string name="tag_alerts_on">Alerts on</string>
+    <string name="tag_alerts_silenced">Alerts silenced</string>
+    <string name="detail_tag">Your tag</string>
+    <string name="section_nearby">Nearby</string>
+    <string name="hint_nearby">Flagged signals heard right now, nearest first. Distance is a rough guess from signal strength. Tap a row for details, Find it and Tag this device.</string>
+    <string name="group_pinned">Your watchlist and tags</string>
+    <string name="empty_nearby">Nothing flagged in range right now.</string>
+    <string name="nearby_more">+%1$d more</string>
+    <string name="legend_link">ⓘ What the icons mean</string>
+    <string name="legend_distance">Distances are guessed from signal strength. Walls, cars and bodies can make them 2–3 times off.</string>
 </resources>

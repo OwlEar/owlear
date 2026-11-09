@@ -102,6 +102,7 @@ class ScanService : Service() {
     override fun onCreate() {
         super.onCreate()
         L10n.init(this)
+        Distance.load(this)
         Watchlist.init(this)
         createChannels()
     }

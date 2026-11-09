@@ -4,11 +4,7 @@
     <string name="app_tagline">מאזין לאיתורנים מוסתרים, מצלמות Flock, משקפי מצלמה, אנטנות סלולר מזויפות ואותות שבוחרים בעצמכם. שום דבר לא יוצא אף פעם מהטלפון הזה.</string>
     <string name="start_listening">להתחיל להאזין</string>
     <string name="stop_listening">להפסיק להאזין</string>
-    <string name="find_direction">למצוא כיוון</string>
-    <string name="sweep_turning">להסתובב לאט סיבוב שלם… %1$d שנ׳</string>
-    <string name="status_start_first">קודם צריך להתחיל להאזין, ואז למצוא כיוון.</string>
-    <string name="status_no_compass">בטלפון הזה אין מצפן, ולכן אי אפשר למצוא כיוון.</string>
-    <string name="status_direction_failed">לא הצלחנו לזהות כיוון. כדאי לנסות שוב ולהסתובב לאט יותר עם הטלפון צמוד לחזה.</string>
+    <string name="status_start_first">קודם צריך להתחיל להאזין.</string>
     <string name="status_need_bluetooth">&#x200F;&#x200F;OwlEar צריך את ההרשאה „מכשירים בקרבת מקום” / Bluetooth כדי להאזין.</string>
     <string name="status_starting">מתחיל…</string>
     <string name="status_couldnt_start">לא ניתן להתחיל: %1$s</string>
@@ -22,10 +18,8 @@
     <string name="status_need_location_for_place">צריך להתחיל להאזין עם הרשאת מיקום, ואז לשמור את המקום.</string>
     <string name="status_erased">נמחק.</string>
     <string name="status_erased_listening">נמחק. ממשיך להאזין.</string>
-    <string name="section_radar">מכ״ם</string>
-    <string name="hint_radar">סמל = מה זה, גודל = עוצמת האות, טבעות = מרחק משוער. הקש על סמל לפרטים, ועל ⓘ כדי ללמוד את הסמלים. לכיוון, החזק את הטלפון שטוח צמוד לחזה והסתובב לאט סיבוב שלם.</string>
-    <string name="section_recent">יצאו לאחרונה מהמכ״ם</string>
-    <string name="hint_recent">אותות מסומנים מהשעה האחרונה שהמכ״ם לא שומע כרגע.</string>
+    <string name="section_recent">יצאו מהטווח לאחרונה</string>
+    <string name="hint_recent">אותות מסומנים מהשעה האחרונה ש־OwlEar לא שומע כרגע.</string>
     <string name="section_following">⚠ ייתכן שעוקב אחריך</string>
     <string name="hint_following">אותו איתורן, רחוק מהבעלים, איתך כבר %1$d+ דק׳ ב-%2$d מקומות. אם הוא שלך, אפשר לגעת בו כדי להתעלם.</string>
     <string name="section_hits">ממצאים מהרשימה שלך</string>
@@ -51,7 +45,7 @@
     <string name="hint_places">אפשר לשמור מקומות שמגיעים אליהם הרבה. בכל אחד אפשר לבטל את הרטט לציוד שכבר ידוע שנמצא שם. איתורנים תמיד מתריעים אם אחד עוקב אחריך, גם בבית. ציוד שנשמע במקום מסוים ב-%1$d+ ימים שונים מקבל תווית „קבוע”. זו רק תווית, והיא לעולם לא משתיקה כלום.</string>
     <string name="section_privacy">פרטיות</string>
     <string name="hint_privacy">המקומות השמורים, הבחירות והרשימה שלך מוצפנים במפתח שנעול בתוך הטלפון הזה. כתובות נשמרות רק כטביעות חד-כיווניות, אף פעם לא כתיעוד של איפה היית. בלי גיבויים, בלי העברה לטלפון אחר, בלי אינטרנט.</string>
-    <string name="empty_recent">שום דבר לא יצא מהמכ״ם.</string>
+    <string name="empty_recent">שום דבר לא יצא מהטווח.</string>
     <string name="empty_following">שום דבר לא עוקב אחריך. 👍</string>
     <string name="empty_none_yet">עוד לא נשמע כלום.</string>
     <string name="empty_trackers">אין כרגע.</string>
@@ -59,6 +53,7 @@
     <string name="empty_places">עוד אין מקומות שמורים.</string>
     <string name="just_now">הרגע</string>
     <string name="minutes_ago">לפני %1$d דק׳</string>
+    <string name="seconds_ago">לפני %1$d שנ׳</string>
     <string name="last_heard">נשמע לאחרונה %1$s</string>
     <string name="was_proximity">היה %1$s</string>
     <string name="with_you">איתך %1$d דק׳</string>
@@ -177,7 +172,6 @@
     <string name="very_close">קרוב מאוד</string>
     <string name="nearby">קרוב</string>
     <string name="far">רחוק</string>
-    <string name="compass_north">צ</string>
     <string name="sound_default">צליל ברירת המחדל של הטלפון</string>
     <string name="sound_sonar">פינג סונאר</string>
     <string name="sound_double">צפצוף כפול</string>
@@ -212,20 +206,15 @@
     <string name="glyph_other">מצלמות נסתרות ופריטים שלך</string>
     <string name="dist_m">&#x200F;~%1$d מ׳</string>
     <string name="dist_ft">&#x200F;~%1$d רגל</string>
-    <string name="radar_description">מכ״ם. הקש על סמל לפרטים.</string>
-    <string name="radar_showing">&#x200F;מוצגים %1$d מתוך %2$d</string>
-    <string name="legend_title">קריאת המכ״ם</string>
+    <string name="setting_units">יחידת מרחק</string>
+    <string name="units_feet">רגל (ft)</string>
+    <string name="units_meters">מטר (m)</string>
+    <string name="units_switch">· הקישו להחלפה</string>
+    <string name="legend_title">מה הסמלים אומרים</string>
     <string name="legend_colors">אדום = ייתכן שעוקב אחריך. צהוב = ברשימת ההתראות שלך. לבן = מוצג בלבד. אפור = רק היצרן תואם, ייתכן שאינו מזיק.</string>
-    <string name="legend_size">סמל גדול יותר = אות חזק יותר.</string>
-    <string name="legend_rings">טבעות = מרחק משוער לפי עוצמת האות. קירות, מכוניות ואנשים עלולים לשבש אותו פי 2–3.</string>
-    <string name="legend_filled">מלא = הכיוון נמצא עם „מצא כיוון”. קו מתאר = אין עדיין כיוון: הוא ממוקם בפלח של הקבוצה שלו, כך שהזווית מציינת סוג ולא מיקום.</string>
-    <string name="legend_chips">הקש על סמל בשורה שמתחת למכ״ם כדי להסתיר או להציג את הקבוצה. מכשירי מעקב שעדיין ליד בעליהם לא מוצגים במכ״ם כדי להפחית עומס; הם עדיין ברשימה למטה.</string>
     <string name="detail_status">מצב</string>
     <string name="detail_signal">אות</string>
     <string name="detail_signal_value">&#x200F;%1$d dBm · במרחק של כ־%2$s</string>
-    <string name="detail_direction">כיוון</string>
-    <string name="detail_direction_value">&#x200F;%1$d° מהצפון</string>
-    <string name="detail_direction_none">עדיין לא ידוע. השתמש ב„מצא כיוון”.</string>
     <string name="detail_name">השם שמשודר</string>
     <string name="detail_address">כתובת</string>
     <string name="detail_maker">יצרן</string>
@@ -235,17 +224,10 @@
     <string name="detail_times">מספר פעמים</string>
     <string name="detail_places">מספר מקומות</string>
     <string name="detail_history">האות בדקה וחצי האחרונות. עלייה = מתקרב.</string>
-    <string name="radar_group_hidden">&#x200F;%1$s הוסתרו מהמכ״ם</string>
-    <string name="radar_group_shown">&#x200F;%1$s מוצגים במכ״ם</string>
     <plurals name="places_count">
         <item quantity="one">מקום אחד</item>
         <item quantity="two">שני מקומות</item>
         <item quantity="other">&#x200F;%d מקומות</item>
-    </plurals>
-    <plurals name="direction_found">
-        <item quantity="one">נמצא כיוון לאות אחד. הנקודות המלאות מראות עכשיו את הדרך.</item>
-        <item quantity="two">נמצא כיוון לשני אותות. הנקודות המלאות מראות עכשיו את הדרך.</item>
-        <item quantity="other">נמצא כיוון ל-%d אותות. הנקודות המלאות מראות עכשיו את הדרך.</item>
     </plurals>
     <plurals name="fingerprints_count">
         <item quantity="one">טביעה אחת</item>
@@ -281,4 +263,75 @@
     </string-array>
     <string name="setting_updates">בדיקת עדכונים</string>
     <string name="setting_updates_hint">יש לך גרסה %1$s. פותח את דף ההורדה של OwlEar בדפדפן. התקן את הגרסה החדשה מעל זו; ההגדרות שלך נשמרות.</string>
+    <!-- Phone checkup (stalkerware signs on this phone) -->
+    <string name="section_checkup">בדיקת טלפון</string>
+    <string name="hint_checkup">מחפשת סימנים לרוגלת מעקב בטלפון הזה. פועלת רק כשמקישים על הפעלה, מציגה את התוצאות רק לך ולא שומרת דבר.</string>
+    <string name="state_on">מופעל</string>
+    <string name="state_off">כבוי</string>
+    <string name="checkup_switch">בדיקת טלפון</string>
+    <string name="checkup_off_note">הקישו כדי להפעיל. OwlEar תוכל אז לראות את רשימת האפליקציות בטלפון, רק בזמן בדיקה.</string>
+    <string name="checkup_on_note">הקישו כדי לכבות. הכיבוי מוחק גם את התוצאות האחרונות.</string>
+    <string name="checkup_parts">מה לבדוק (הקישו על שורה כדי להפעיל או לכבות):</string>
+    <string name="check_known">רוגלות מעקב מוכרות</string>
+    <string name="check_known_hint">בודק את האפליקציות שלך מול השמות של %1$d רוגלות מעקב מוכרות. OwlEar מכילה רק את השמות שלהן כדי לחפש אותן, אף פעם לא את האפליקציות עצמן. רשימת השמות מתעדכנת עם כל גרסה חדשה.</string>
+    <string name="check_screen">אפליקציות שיכולות לקרוא את המסך</string>
+    <string name="check_screen_hint">הרשאת נגישות מאפשרת לאפליקציה לראות וללחוץ על כל מה שבמסך. גם כלים כמו מנהלי סיסמאות משתמשים בה.</string>
+    <string name="check_notif">אפליקציות שיכולות לקרוא התראות</string>
+    <string name="check_notif_hint">גישה להתראות מאפשרת לאפליקציה לקרוא את ההודעות שלך ברגע שהן מגיעות.</string>
+    <string name="check_admin">אפליקציות עם הרשאת מנהל מכשיר</string>
+    <string name="check_admin_hint">מנהל מכשיר יכול לנעול את הטלפון, למחוק אותו או להקשות על הסרת אפליקציה.</string>
+    <string name="check_hidden">אפליקציות מוסתרות</string>
+    <string name="check_hidden_hint">אפליקציות עם הרשאות חזקות אבל בלי סמל במסך הבית.</string>
+    <string name="check_outside">הותקנו מחוץ לחנות אפליקציות</string>
+    <string name="check_outside_hint">רוגלות מעקב מותקנות בדרך כלל ידנית, לא מחנות. מוצג רק יחד עם סיבה נוספת.</string>
+    <string name="check_sensors">מצלמה, מיקרופון ומיקום</string>
+    <string name="check_sensors_hint">אפליקציות שמורשות לשלושתם יחד. מוצג רק יחד עם סיבה נוספת, כי גם מפות ושיחות וידאו צריכות אותם.</string>
+    <string name="check_settings">הגדרות הטלפון</string>
+    <string name="check_settings_hint">ניפוי באגים ב-USB, אפשרויות למפתחים ו-VPN או פרוקסי פעילים.</string>
+    <string name="checkup_run">הפעלת בדיקה</string>
+    <string name="checkup_running">בודק…</string>
+    <string name="checkup_failed">הבדיקה לא הסתיימה. נסו שוב.</string>
+    <string name="checkup_safety">לפני שמסירים משהו: אם מישהו התקין רוגלת מעקב בטלפון שלך, הוא עלול לשים לב כשהיא מפסיקה לדווח. אם ייתכן שאת/ה בסכנה, הכינו קודם תוכנית בטיחות (ראו קבלת עזרה למטה). OwlEar אף פעם לא מסירה או משנה דבר בעצמה.</string>
+    <string name="checkup_summary">נבדקו %1$d אפליקציות. %2$d שכדאי לבדוק.</string>
+    <string name="checkup_clean">הבדיקות המופעלות לא מצאו דבר.</string>
+    <string name="checkup_phone_setting">הגדרת טלפון</string>
+    <string name="reason_known">תואמת רוגלת מעקב מוכרת (%1$s)</string>
+    <string name="reason_screen">יכולה לקרוא את המסך</string>
+    <string name="reason_notif">יכולה לקרוא התראות</string>
+    <string name="reason_admin">יש לה הרשאת מנהל מכשיר</string>
+    <string name="reason_sensors">יכולה להשתמש במצלמה, במיקרופון ובמיקום</string>
+    <string name="reason_hidden">אין לה סמל במסך הבית</string>
+    <string name="reason_outside">הותקנה מחוץ לחנות אפליקציות</string>
+    <string name="setting_found_usb">ניפוי באגים ב-USB מופעל. מישהו עם מחשב והטלפון שלך יכול להתקין או לשלוט באפליקציות. כבו אותו באפשרויות למפתחים אם לא אתם הפעלתם.</string>
+    <string name="setting_found_dev">האפשרויות למפתחים מופעלות. זה בסדר אם אתם הפעלתם; אם לא, ייתכן שמישהו אחר עשה זאת.</string>
+    <string name="setting_found_vpn">יש VPN פעיל. אם לא אתם הגדרתם אותו, הוא עלול להעביר את תעבורת האינטרנט שלכם דרך מישהו אחר.</string>
+    <string name="setting_found_proxy">מוגדר פרוקסי. אם לא אתם הגדרתם אותו, תעבורת האינטרנט שלכם עלולה לעבור דרך מישהו אחר.</string>
+    <string name="checkup_limits">ממצא אומר להסתכל מקרוב, לא הוכחה. הקישו על אפליקציה כדי לפתוח את פרטי האפליקציה, שם אפשר לבטל הרשאות או להסיר אותה כשתהיו מוכנים. הבדיקה הזו לא מזהה רוגלות ברמה ממשלתית כמו Pegasus. לשם כך יכולים לעזור כלי ה-MVT החינמי של אמנסטי אינטרנשיונל וקו הסיוע לאבטחה דיגיטלית של Access Now.</string>
+    <string name="checkup_help">קבלת עזרה</string>
+    <string name="checkup_help_hint">פותח בדפדפן את רשימת קווי הסיוע והתמיכה לפי מדינה של Coalition Against Stalkerware.</string>
+    <!-- Device tags -->
+    <string name="glyph_tagged">מכשירים שתייגת</string>
+    <string name="tag_button">תיוג המכשיר הזה</string>
+    <string name="tag_button_edit">עריכת תג</string>
+    <string name="tag_title">תיוג המכשיר הזה</string>
+    <string name="tag_hint">שם שתזהו, כמו „הרכב שלי”</string>
+    <string name="tag_silence">השתקת ההתראות שלו (עדיין יופיע ברשימה)</string>
+    <string name="tag_rotating">המכשיר הזה מחליף כתובת מדי פעם כדי להגן על פרטיות, אז התג עשוי להחזיק רק דקות או שעות.</string>
+    <string name="tag_remove">הסרת התג</string>
+    <string name="tag_need_name">קודם כתבו שם.</string>
+    <string name="tag_failed">לא ניתן לשמור תג בטלפון הזה.</string>
+    <string name="section_tags">מכשירים מתויגים</string>
+    <string name="hint_tags">מכשירים שנתתם להם שם. הקישו על אחד כדי לשנות את שמו, להשתיק אותו או להסיר את התג. נשמר רק כטביעת אצבע חד-כיוונית, אף פעם לא הכתובת.</string>
+    <string name="empty_tags">עדיין אין תיוגים. מקישים על מכשיר כלשהו ברשימה ואז על תיוג המכשיר הזה.</string>
+    <string name="tag_alerts_on">התראות פעילות</string>
+    <string name="tag_alerts_silenced">התראות מושתקות</string>
+    <string name="detail_tag">התג שלך</string>
+    <string name="tagged_label">%1$s · %2$s</string>
+    <string name="section_nearby">בסביבה</string>
+    <string name="hint_nearby">אותות מסומנים שנשמעים עכשיו, הקרוב ביותר ראשון. המרחק הוא הערכה גסה לפי עוצמת האות. אפשר להקיש על שורה לפרטים, למצוא ותיוג המכשיר הזה.</string>
+    <string name="group_pinned">רשימת המעקב והתיוגים שלך</string>
+    <string name="empty_nearby">כרגע אין שום דבר מסומן בטווח.</string>
+    <string name="nearby_more">‏+%1$d נוספים</string>
+    <string name="legend_link">ⓘ מה הסמלים אומרים</string>
+    <string name="legend_distance">המרחקים מוערכים לפי עוצמת האות. קירות, מכוניות ואנשים יכולים לטעות פי 2–3.</string>
 </resources>

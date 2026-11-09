@@ -47,8 +47,7 @@ Il faut Android 8 ou plus récent. Il n'existe pas encore de version iPhone. L�
 ## Comment l'utiliser
 
 - Touchez **Commencer l’écoute**. OwlEar continue d'écouter même quand l'application est fermée et vous envoie une alerte quand quelque chose d'important apparaît.
-- Le **radar** montre ce qui vous entoure. Plus un point est proche du centre, plus l'objet est proche de vous.
-- Pour savoir dans quelle direction se trouve quelque chose, touchez **Trouver la direction**. Tenez le téléphone à plat contre votre poitrine et tournez lentement sur vous-même.
+- La liste **À proximité** montre ce qui vous entoure en ce moment, le plus proche d'abord, avec une distance approximative. Votre liste de surveillance et les appareils étiquetés restent en haut.
 - Pour retrouver un appareil précis, comme un traceur que vous pensez caché dans votre voiture ou votre sac, touchez son icône et choisissez **Le trouver**. Marchez lentement en regardant le chiffre : plus il monte, plus vous êtes près. L'app vous dit si vous vous rapprochez ou vous éloignez, et peut biper ou vibrer pour que vous n'ayez pas à fixer l'écran.
 - Si un traceur s'avère être le vôtre ou celui d'un proche, touchez-le et choisissez **Ignorer**.
 
@@ -60,7 +59,7 @@ Il faut Android 8 ou plus récent. Il n'existe pas encore de version iPhone. L�
 ## Bon à savoir
 
 - Aucun téléphone ne peut détecter les radars ou lasers de contrôle de vitesse, donc OwlEar non plus.
-- La distance et la direction sont approximatives. Les murs et les personnes bloquent les signaux.
+- La distance est approximative. Les murs et les personnes bloquent les signaux. Un téléphone ne peut pas savoir de quelle direction vient un signal, donc OwlEar ne fait pas semblant.
 - Elle ne peut pas trouver toutes les caméras cachées ni tout le matériel de police. Beaucoup d'appareils cachent leur fabricant.
 - **N'utilisez pas votre téléphone en conduisant.** Laissez les alertes venir à vous.
 
