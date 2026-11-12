@@ -278,11 +278,11 @@
     <string name="check_admin">برنامه‌های دارای مدیریت دستگاه</string>
     <string name="check_admin_hint">مدیر دستگاه می‌تواند گوشی را قفل یا پاک کند، یا حذف یک برنامه را سخت کند.</string>
     <string name="check_hidden">برنامه‌های پنهان</string>
-    <string name="check_hidden_hint">برنامه‌هایی با دسترسی قوی ولی بدون نماد در صفحهٔ اصلی.</string>
+    <string name="check_hidden_hint">برنامه‌هایی که خودتان نصب کرده‌اید با دسترسی قوی ولی بدون نماد در صفحهٔ اصلی. بخش‌های داخلی گوشی معمولاً نماد ندارند، پس برای این علامت نمی‌خورند.</string>
     <string name="check_outside">نصب‌شده از بیرون فروشگاه برنامه</string>
-    <string name="check_outside_hint">جاسوس‌افزار معمولاً دستی نصب می‌شود، نه از فروشگاه. فقط همراه دلیل دیگری نشان داده می‌شود.</string>
+    <string name="check_outside_hint">جاسوس‌افزار معمولاً دستی نصب می‌شود، نه از فروشگاه. فقط همراه دلیل دیگری نشان داده می‌شود. برنامهٔ پیش‌نصبی را هم که از بیرون فروشگاه یا به‌روزرسانی‌های خود گوشی به‌روز شده علامت می‌زند.</string>
     <string name="check_sensors">دوربین، میکروفون و موقعیت</string>
-    <string name="check_sensors_hint">برنامه‌هایی که هر سه را هم‌زمان دارند. فقط همراه دلیل دیگری نشان داده می‌شود، چون نقشه و تماس تصویری هم به آن‌ها نیاز دارند.</string>
+    <string name="check_sensors_hint">برنامه‌هایی که هر سه را هم‌زمان دارند. برای برنامه‌هایی که خودتان نصب کرده‌اید، فقط همراه دلیل دیگری نشان داده می‌شود، چون نقشه و تماس تصویری هم به آن‌ها نیاز دارند. برنامه‌های پیش‌نصب زیر «همراه این گوشی آمده» آمده‌اند.</string>
     <string name="check_settings">تنظیمات گوشی</string>
     <string name="check_settings_hint">اشکال‌زدایی USB، گزینه‌های برنامه‌نویس، و VPN یا پراکسی فعال.</string>
     <string name="checkup_run">اجرای بررسی</string>
@@ -332,4 +332,11 @@
     <string name="legend_link">ⓘ معنی نمادها</string>
     <string name="legend_radar">روی دایره‌ها، هرچه نماد به مرکز نزدیک‌تر باشد، دستگاه نزدیک‌تر به نظر می‌رسد. سمتی که نماد در آن قرار دارد معنایی ندارد، چون گوشی نمی‌تواند جهت را تشخیص دهد.</string>
     <string name="legend_distance">فاصله‌ها از قدرت سیگنال تخمین زده می‌شوند. دیوار، خودرو و بدن آدم‌ها می‌توانند آن را ۲ تا ۳ برابر اشتباه کنند.</string>
+    <string name="reason_factory">همراه گوشی آمده</string>
+    <string name="reason_factory_updated">از بیرون فروشگاه یا به‌روزرسانی‌های خود گوشی به‌روز شده</string>
+    <string name="checkup_factory">همراه این گوشی آمده (%1$d)</string>
+    <string name="checkup_factory_hint">برنامه‌های پیش‌نصب و دسترسی‌هایشان. بیشترش عادی است، چون تلفن، دوربین و برنامه‌های Google به آن نیاز دارند. دنبال نام‌هایی باشید که نمی‌شناسید.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">برای باز کردن بزنید</string>
+    <string name="checkup_tap_close">برای بستن بزنید</string>
 </resources>

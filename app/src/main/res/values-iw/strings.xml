@@ -281,11 +281,11 @@
     <string name="check_admin">אפליקציות עם הרשאת מנהל מכשיר</string>
     <string name="check_admin_hint">מנהל מכשיר יכול לנעול את הטלפון, למחוק אותו או להקשות על הסרת אפליקציה.</string>
     <string name="check_hidden">אפליקציות מוסתרות</string>
-    <string name="check_hidden_hint">אפליקציות עם הרשאות חזקות אבל בלי סמל במסך הבית.</string>
+    <string name="check_hidden_hint">אפליקציות שהתקנתם עם הרשאות חזקות אבל בלי סמל במסך הבית. לחלקים מובנים של הטלפון בדרך כלל אין סמל, ולכן הם לא מסומנים בגלל זה.</string>
     <string name="check_outside">הותקנו מחוץ לחנות אפליקציות</string>
-    <string name="check_outside_hint">רוגלות מעקב מותקנות בדרך כלל ידנית, לא מחנות. מוצג רק יחד עם סיבה נוספת.</string>
+    <string name="check_outside_hint">רוגלות מעקב מותקנות בדרך כלל ידנית, לא מחנות. מוצג רק יחד עם סיבה נוספת. מסמן גם אפליקציה מובנית שעודכנה מחוץ לחנות או לעדכונים של הטלפון עצמו.</string>
     <string name="check_sensors">מצלמה, מיקרופון ומיקום</string>
-    <string name="check_sensors_hint">אפליקציות שמורשות לשלושתם יחד. מוצג רק יחד עם סיבה נוספת, כי גם מפות ושיחות וידאו צריכות אותם.</string>
+    <string name="check_sensors_hint">אפליקציות שמורשות לשלושתם יחד. באפליקציות שהתקנתם, מוצג רק יחד עם סיבה נוספת, כי גם מפות ושיחות וידאו צריכות אותם. אפליקציות מובנות מופיעות תחת „הגיעו עם הטלפון”.</string>
     <string name="check_settings">הגדרות הטלפון</string>
     <string name="check_settings_hint">ניפוי באגים ב-USB, אפשרויות למפתחים ו-VPN או פרוקסי פעילים.</string>
     <string name="checkup_run">הפעלת בדיקה</string>
@@ -335,4 +335,11 @@
     <string name="legend_link">ⓘ מה הסמלים אומרים</string>
     <string name="legend_radar">על המעגלים, ככל שסמל קרוב יותר למרכז, המכשיר נראה קרוב יותר. הצד שבו הוא מופיע לא אומר כלום, כי טלפון לא יכול לדעת כיוון.</string>
     <string name="legend_distance">המרחקים מוערכים לפי עוצמת האות. קירות, מכוניות ואנשים יכולים לטעות פי 2–3.</string>
+    <string name="reason_factory">הגיעה עם הטלפון</string>
+    <string name="reason_factory_updated">עודכנה מחוץ לחנות או לעדכונים של הטלפון עצמו</string>
+    <string name="checkup_factory">הגיעו עם הטלפון (%1$d)</string>
+    <string name="checkup_factory_hint">אפליקציות מובנות וההרשאות שלהן. רוב זה רגיל, כי הטלפון, המצלמה ואפליקציות Google צריכים אותן. חפשו שמות שאתם לא מזהים.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">הקישו לפתיחה</string>
+    <string name="checkup_tap_close">הקישו לסגירה</string>
 </resources>

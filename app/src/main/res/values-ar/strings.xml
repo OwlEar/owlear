@@ -290,11 +290,11 @@
     <string name="check_admin">تطبيقات لها صلاحية مشرف الجهاز</string>
     <string name="check_admin_hint">مشرف الجهاز يستطيع قفل الهاتف أو مسحه أو جعل إزالة التطبيق صعبة.</string>
     <string name="check_hidden">تطبيقات مخفية</string>
-    <string name="check_hidden_hint">تطبيقات لها صلاحيات قوية لكن بلا أيقونة على الشاشة الرئيسية.</string>
+    <string name="check_hidden_hint">تطبيقات ثبّتها أنت لها صلاحيات قوية لكن بلا أيقونة على الشاشة الرئيسية. أجزاء الهاتف المدمجة غالبًا بلا أيقونة، لذلك لا تُعلَّم بسبب ذلك.</string>
     <string name="check_outside">مثبَّتة من خارج متجر التطبيقات</string>
-    <string name="check_outside_hint">عادةً تُثبَّت برامج التجسس يدويًا لا من متجر. تظهر فقط مع سبب آخر.</string>
+    <string name="check_outside_hint">عادةً تُثبَّت برامج التجسس يدويًا لا من متجر. تظهر فقط مع سبب آخر. وتُعلِّم أيضًا تطبيقًا مدمجًا حُدِّث من خارج متجر أو تحديثات الهاتف نفسه.</string>
     <string name="check_sensors">الكاميرا والميكروفون والموقع</string>
-    <string name="check_sensors_hint">تطبيقات مسموح لها بالثلاثة معًا. تظهر فقط مع سبب آخر، لأن الخرائط ومكالمات الفيديو تحتاجها أيضًا.</string>
+    <string name="check_sensors_hint">تطبيقات مسموح لها بالثلاثة معًا. للتطبيقات التي ثبّتها، تظهر فقط مع سبب آخر لأن الخرائط ومكالمات الفيديو تحتاجها أيضًا. التطبيقات المدمجة مذكورة تحت «جاء مع هذا الهاتف».</string>
     <string name="check_settings">إعدادات الهاتف</string>
     <string name="check_settings_hint">تصحيح أخطاء USB وخيارات المطوّرين وشبكة VPN أو وكيل نشط.</string>
     <string name="checkup_run">تشغيل الفحص</string>
@@ -344,4 +344,11 @@
     <string name="legend_link">ⓘ ماذا تعني الرموز</string>
     <string name="legend_radar">على الدوائر، كلما اقتربت الأيقونة من المركز بدا الجهاز أقرب إليك. الجهة التي تظهر فيها لا تعني شيئًا، لأن الهاتف لا يعرف الاتجاه.</string>
     <string name="legend_distance">المسافات تُقدَّر من قوة الإشارة. قد تجعلها الجدران والسيارات والأجسام خاطئة بمقدار 2 إلى 3 أضعاف.</string>
+    <string name="reason_factory">جاء مع الهاتف</string>
+    <string name="reason_factory_updated">حُدِّث من خارج متجر التطبيقات أو تحديثات الهاتف نفسه</string>
+    <string name="checkup_factory">جاء مع هذا الهاتف (%1$d)</string>
+    <string name="checkup_factory_hint">التطبيقات المدمجة والصلاحيات التي لديها. معظمها طبيعي، فالهاتف والكاميرا وتطبيقات Google تحتاجها. ابحث عن أسماء لا تعرفها.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">اضغط للفتح</string>
+    <string name="checkup_tap_close">اضغط للإغلاق</string>
 </resources>

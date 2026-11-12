@@ -281,11 +281,11 @@
     <string name="check_admin">Apps com administrador do dispositivo</string>
     <string name="check_admin_hint">O administrador do dispositivo pode bloquear o celular, apagá-lo ou dificultar a desinstalação de um app.</string>
     <string name="check_hidden">Apps ocultos</string>
-    <string name="check_hidden_hint">Apps com acessos poderosos, mas sem ícone na tela inicial.</string>
+    <string name="check_hidden_hint">Apps que você instalou com acessos poderosos, mas sem ícone na tela inicial. As partes internas do celular costumam não ter ícone, então não são marcadas por isso.</string>
     <string name="check_outside">Instalados fora de uma loja de apps</string>
-    <string name="check_outside_hint">Stalkerware costuma ser instalado à mão, não por uma loja. Só aparece junto com outro motivo.</string>
+    <string name="check_outside_hint">Stalkerware costuma ser instalado à mão, não por uma loja. Só aparece junto com outro motivo. Também marca um app de fábrica atualizado fora de uma loja ou das atualizações do próprio celular.</string>
     <string name="check_sensors">Câmera, microfone e localização</string>
-    <string name="check_sensors_hint">Apps com permissão para os três ao mesmo tempo. Só aparece junto com outro motivo, já que mapas e chamadas de vídeo também precisam deles.</string>
+    <string name="check_sensors_hint">Apps com permissão para os três ao mesmo tempo. Nos apps que você instalou, só aparece junto com outro motivo, já que mapas e chamadas de vídeo também precisam deles. Os apps de fábrica ficam em “Vieram com este celular”.</string>
     <string name="check_settings">Configurações do celular</string>
     <string name="check_settings_hint">Depuração USB, opções do desenvolvedor e uma VPN ou proxy ativos.</string>
     <string name="checkup_run">Verificar</string>
@@ -335,4 +335,11 @@
     <string name="legend_link">ⓘ O que os ícones significam</string>
     <string name="legend_radar">Nos círculos, quanto mais perto do centro está um ícone, mais perto o dispositivo parece estar. O lado em que aparece não significa nada, porque um telefone não consegue saber a direção.</string>
     <string name="legend_distance">As distâncias são estimadas pela força do sinal. Paredes, carros e pessoas podem errar de 2 a 3 vezes.</string>
+    <string name="reason_factory">veio com o celular</string>
+    <string name="reason_factory_updated">atualizado fora de uma loja ou das atualizações do próprio celular</string>
+    <string name="checkup_factory">Vieram com este celular (%1$d)</string>
+    <string name="checkup_factory_hint">Apps de fábrica e os acessos que eles têm. Quase tudo é normal, já que o telefone, a câmera e os apps do Google precisam deles. Procure nomes que você não reconhece.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">toque para abrir</string>
+    <string name="checkup_tap_close">toque para fechar</string>
 </resources>

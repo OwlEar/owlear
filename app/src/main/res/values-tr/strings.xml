@@ -278,11 +278,11 @@
     <string name="check_admin">Cihaz yöneticisi olan uygulamalar</string>
     <string name="check_admin_hint">Cihaz yöneticisi telefonu kilitleyebilir, silebilir veya bir uygulamanın kaldırılmasını zorlaştırabilir.</string>
     <string name="check_hidden">Gizli uygulamalar</string>
-    <string name="check_hidden_hint">Güçlü erişimi olan ama ana ekranda simgesi olmayan uygulamalar.</string>
+    <string name="check_hidden_hint">Senin yüklediğin, güçlü erişimi olan ama ana ekranda simgesi olmayan uygulamalar. Telefonun yerleşik parçalarının çoğunun simgesi yoktur, bu yüzden bunun için işaretlenmezler.</string>
     <string name="check_outside">Uygulama mağazası dışından yüklenenler</string>
-    <string name="check_outside_hint">Stalkerware genellikle mağazadan değil elle yüklenir. Yalnızca başka bir nedenle birlikte gösterilir.</string>
+    <string name="check_outside_hint">Stalkerware genellikle mağazadan değil elle yüklenir. Yalnızca başka bir nedenle birlikte gösterilir. Mağaza ya da telefonun kendi güncellemeleri dışından güncellenen yerleşik bir uygulamayı da işaretler.</string>
     <string name="check_sensors">Kamera, mikrofon ve konum</string>
-    <string name="check_sensors_hint">Üçüne birden izni olan uygulamalar. Haritalar ve görüntülü aramalar da bunlara ihtiyaç duyduğu için yalnızca başka bir nedenle birlikte gösterilir.</string>
+    <string name="check_sensors_hint">Üçüne birden izni olan uygulamalar. Senin yüklediğin uygulamalarda, haritalar ve görüntülü aramalar da bunlara ihtiyaç duyduğu için yalnızca başka bir nedenle birlikte gösterilir. Yerleşik uygulamalar “Bu telefonla birlikte geldi” altında listelenir.</string>
     <string name="check_settings">Telefon ayarları</string>
     <string name="check_settings_hint">USB hata ayıklama, geliştirici seçenekleri ve etkin bir VPN veya proxy.</string>
     <string name="checkup_run">Kontrolü başlat</string>
@@ -332,4 +332,11 @@
     <string name="legend_link">ⓘ Simgeler ne anlama geliyor</string>
     <string name="legend_radar">Çemberlerde bir simge merkeze ne kadar yakınsa cihaz da o kadar yakın görünür. Hangi tarafta durduğunun bir anlamı yoktur, çünkü telefon yönü anlayamaz.</string>
     <string name="legend_distance">Mesafeler sinyal gücünden tahmin edilir. Duvarlar, arabalar ve insanlar bunu 2–3 kat yanıltabilir.</string>
+    <string name="reason_factory">telefonla birlikte geldi</string>
+    <string name="reason_factory_updated">mağaza ya da telefonun kendi güncellemeleri dışından güncellendi</string>
+    <string name="checkup_factory">Bu telefonla birlikte geldi (%1$d)</string>
+    <string name="checkup_factory_hint">Yerleşik uygulamalar ve sahip oldukları erişim. Çoğu normaldir; telefon, kamera ve Google uygulamaları buna ihtiyaç duyar. Tanımadığın adlara bak.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">açmak için dokun</string>
+    <string name="checkup_tap_close">kapatmak için dokun</string>
 </resources>

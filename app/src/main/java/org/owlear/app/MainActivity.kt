@@ -53,6 +53,8 @@ class MainActivity : Activity() {
     private lateinit var tagsBox: LinearLayout
     private var checkupResult: Checkup.Result? = null
     private var checkupRunning = false
+    private var factoryOpen = false
+    private val factoryGroupsOpen = HashSet<Checkup.Access>()
     private var shownPlaceId: String? = "unset"
     private lateinit var nearbyBox: LinearLayout
     private lateinit var radar: RadarView
@@ -972,6 +974,7 @@ class MainActivity : Activity() {
                 ) { openAppInfo(f.packageName) })
             }
             for (sText in r.settings) checkupBox.addView(row(getString(R.string.checkup_phone_setting), sText, amber))
+            renderFactoryApps(r)
         }
 
         checkupBox.addView(label(getString(R.string.checkup_limits), 12f, dim).apply { setPadding(0, dp(10), 0, dp(2)) })
@@ -982,6 +985,54 @@ class MainActivity : Activity() {
                 Toast.makeText(this, HELP_URL, Toast.LENGTH_LONG).show()
             }
         })
+    }
+
+    /**
+     * Apps that came with the phone, folded shut under one heading so ordinary built-in access
+     * doesn't bury the real findings. Opened, it shows one group per kind of access with a
+     * count, most serious first; each group opens to its apps, with the app ID underneath so
+     * an unfamiliar name can be looked up. Tapping an app opens its App info, like above.
+     */
+    private fun renderFactoryApps(r: Checkup.Result) {
+        if (r.factory.isEmpty()) return
+        val rtl = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+        fun arrow(open: Boolean) = if (open) "▾  " else if (rtl) "◂  " else "▸  "
+
+        checkupBox.addView((row(
+            arrow(factoryOpen) + getString(R.string.checkup_factory, r.factory.size),
+            getString(R.string.checkup_factory_hint),
+            fg,
+        ) {
+            factoryOpen = !factoryOpen
+            renderCheckup()
+        } as LinearLayout).apply {
+            setPadding(0, dp(14), 0, dp(8))
+            addView(label(getString(if (factoryOpen) R.string.checkup_tap_close else R.string.checkup_tap_open), 11f, dim).apply {
+                setPadding(0, dp(2), 0, 0)
+            })
+        })
+        if (!factoryOpen) return
+
+        for (a in Checkup.Access.entries) {
+            val apps = r.factory.filter { a in it.access }
+            if (apps.isEmpty()) continue
+            val open = a in factoryGroupsOpen
+            checkupBox.addView(label(
+                arrow(open) + getString(R.string.checkup_group, getString(a.titleRes), apps.size), 14f, fg, bold = true,
+            ).apply {
+                setPaddingRelative(dp(12), dp(8), 0, dp(8))
+                setOnClickListener {
+                    if (open) factoryGroupsOpen.remove(a) else factoryGroupsOpen.add(a)
+                    renderCheckup()
+                }
+            })
+            if (!open) continue
+            for (f in apps) {
+                checkupBox.addView(row(f.label + "  " + getString(R.string.chevron), L10n.ltr(f.packageName), fg) {
+                    openAppInfo(f.packageName)
+                }.apply { setPaddingRelative(dp(28), dp(6), 0, dp(6)) })
+            }
+        }
     }
 
     private fun runCheckup() {
@@ -999,6 +1050,8 @@ class MainActivity : Activity() {
             handler.post {
                 checkupRunning = false
                 checkupResult = result
+                factoryOpen = false
+                factoryGroupsOpen.clear()
                 if (result == null) Toast.makeText(this, R.string.checkup_failed, Toast.LENGTH_SHORT).show()
                 if (!isDestroyed) renderCheckup()
             }

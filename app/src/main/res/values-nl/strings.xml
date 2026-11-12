@@ -278,11 +278,11 @@
     <string name="check_admin">Apps met apparaatbeheer</string>
     <string name="check_admin_hint">Apparaatbeheer kan de telefoon vergrendelen, wissen of een app moeilijk te verwijderen maken.</string>
     <string name="check_hidden">Verborgen apps</string>
-    <string name="check_hidden_hint">Apps met krachtige toegang maar zonder pictogram op je startscherm.</string>
+    <string name="check_hidden_hint">Door jou geïnstalleerde apps met krachtige toegang maar zonder pictogram op je startscherm. Ingebouwde onderdelen van de telefoon hebben meestal geen pictogram, dus die worden hierom niet gemarkeerd.</string>
     <string name="check_outside">Buiten een appwinkel geïnstalleerd</string>
-    <string name="check_outside_hint">Stalkerware wordt meestal met de hand geïnstalleerd, niet uit een winkel. Alleen getoond samen met een andere reden.</string>
+    <string name="check_outside_hint">Stalkerware wordt meestal met de hand geïnstalleerd, niet uit een winkel. Alleen getoond samen met een andere reden. Markeert ook een ingebouwde app die buiten een winkel of de eigen updates van de telefoon is bijgewerkt.</string>
     <string name="check_sensors">Camera, microfoon en locatie</string>
-    <string name="check_sensors_hint">Apps die alle drie tegelijk mogen. Alleen getoond samen met een andere reden, omdat kaarten en videobellen ze ook nodig hebben.</string>
+    <string name="check_sensors_hint">Apps die alle drie tegelijk mogen. Bij door jou geïnstalleerde apps alleen getoond samen met een andere reden, omdat kaarten en videobellen ze ook nodig hebben. Ingebouwde apps staan onder ‘Zat al op deze telefoon’.</string>
     <string name="check_settings">Telefooninstellingen</string>
     <string name="check_settings_hint">USB-foutopsporing, ontwikkelaarsopties en een actieve vpn of proxy.</string>
     <string name="checkup_run">Check starten</string>
@@ -332,4 +332,11 @@
     <string name="legend_link">ⓘ Wat de pictogrammen betekenen</string>
     <string name="legend_radar">Op de cirkels geldt: hoe dichter een pictogram bij het midden staat, hoe dichterbij het apparaat lijkt. Aan welke kant het staat betekent niets, want een telefoon kan geen richting bepalen.</string>
     <string name="legend_distance">Afstanden worden geschat op basis van de signaalsterkte. Muren, auto’s en mensen kunnen ze 2 à 3 keer verkeerd maken.</string>
+    <string name="reason_factory">zat al op de telefoon</string>
+    <string name="reason_factory_updated">bijgewerkt buiten een appwinkel of de eigen updates van de telefoon</string>
+    <string name="checkup_factory">Zat al op deze telefoon (%1$d)</string>
+    <string name="checkup_factory_hint">Ingebouwde apps en de toegang die ze hebben. Het meeste is normaal, want de telefoon, camera en Google-apps hebben het nodig. Let op namen die je niet kent.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">tik om te openen</string>
+    <string name="checkup_tap_close">tik om te sluiten</string>
 </resources>

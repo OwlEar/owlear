@@ -21,8 +21,12 @@ import java.security.MessageDigest
  * list (assets/stalkerware.tsv), and notes apps that hold the kinds of access stalkerware
  * needs. Results live in memory until the screen closes. Nothing is saved, nothing is sent
  * (OwlEar has no internet permission), and nothing is removed or changed: the person decides.
- * Mechanic version: the inspector walks the whole engine bay but only writes down parts that
- * shouldn't be there. He doesn't photograph your glovebox, and he doesn't pull parts himself.
+ *
+ * Apps that came with the phone are checked too, since spyware has shipped preinstalled and
+ * factory apps that can't be uninstalled have been used to push it later. Most of them hold
+ * access for ordinary reasons, so they're kept out of the main list unless something is
+ * unusual (a screen reader switched on, or an update from outside a store or the phone's own
+ * updater). Everything else they can do is listed separately, grouped by kind of access.
  *
  * Wording rule: a finding says what an app CAN do ("can read your screen"), never "this is
  * spyware", except for an exact match against the known list. It will not catch
@@ -44,6 +48,21 @@ object Checkup {
 
     enum class Level { KNOWN, CONCERN, NOTE }
 
+    /** Kinds of access shown for apps that came with the phone, most serious first. */
+    enum class Access(val titleRes: Int) {
+        SCREEN(R.string.check_screen),
+        NOTIFICATIONS(R.string.check_notif),
+        ADMIN(R.string.check_admin),
+        SENSORS(R.string.check_sensors),
+    }
+
+    /** An app that came with the phone and holds at least one kind of access. */
+    data class FactoryApp(
+        val packageName: String,
+        val label: String,
+        val access: Set<Access>,
+    )
+
     /** One app worth a look, and every reason it showed up. */
     data class AppFinding(
         val packageName: String,
@@ -57,6 +76,7 @@ object Checkup {
         val settings: List<String>,
         val appsLooked: Int,
         val ranChecks: Set<Check>,
+        val factory: List<FactoryApp>,
     )
 
     // App stores whose installs we don't flag. Everything else, including a browser download
@@ -67,6 +87,12 @@ object Checkup {
         "com.oppo.market", "com.bbk.appstore", "com.vivo.appstore", "com.motorola.ccc.ota",
         "org.fdroid.fdroid", "org.fdroid.basic", "com.aurora.store", "dev.imranr.obtainium",
         "com.google.android.feedback",
+    )
+
+    // Besides the stores above, these routinely update apps that came with the phone.
+    private val FACTORY_UPDATERS = setOf(
+        "android", "com.google.android.gms", "com.google.android.packageinstaller",
+        "com.android.packageinstaller",
     )
 
     private const val OWLEAR_ID = "org.owlear.app"
@@ -125,6 +151,7 @@ object Checkup {
         }
 
         val found = ArrayList<AppFinding>()
+        val factory = ArrayList<FactoryApp>()
         for (p in packages) {
             // Skip OwlEar itself, both the real app and the "OwlEar Test" build beside it.
             if (p.packageName == me || p.packageName.startsWith(OWLEAR_ID)) continue
@@ -142,9 +169,29 @@ object Checkup {
                 }
             }
 
-            // Everything below only looks at apps someone installed; phone-maker apps are skipped
-            // so the list stays short and readable.
-            if (!preinstalled) {
+            if (preinstalled) {
+                val access = LinkedHashSet<Access>()
+                if (p.packageName in screen) access.add(Access.SCREEN)
+                if (p.packageName in notif) access.add(Access.NOTIFICATIONS)
+                if (p.packageName in admins) access.add(Access.ADMIN)
+                if (Check.CAM_MIC_LOCATION in checks && holdsCamMicLocation(p)) access.add(Access.SENSORS)
+
+                // Two things are unusual for a built-in app, so they go in the main list:
+                // a screen reader switched on (phones ship with them off), and an update that
+                // came from somewhere other than a store or the phone's own updater.
+                val unusual = ArrayList<String>()
+                if (Access.SCREEN in access) unusual.add(L10n.s(R.string.reason_screen))
+                if (Check.OUTSIDE_STORE in checks && (ai.flags and ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0 &&
+                    updatedOutside(pm, p.packageName)
+                ) unusual.add(L10n.s(R.string.reason_factory_updated))
+                if (unusual.isNotEmpty()) {
+                    reasons.addAll(unusual)
+                    if (level != Level.KNOWN) level = Level.CONCERN
+                }
+                if (reasons.isNotEmpty()) reasons.add(L10n.s(R.string.reason_factory))
+
+                if (access.isNotEmpty()) factory.add(FactoryApp(p.packageName, appLabel(pm, ai, p.packageName), access))
+            } else {
                 val powerful = ArrayList<String>()
                 if (p.packageName in screen) powerful.add(L10n.s(R.string.reason_screen))
                 if (p.packageName in notif) powerful.add(L10n.s(R.string.reason_notif))
@@ -171,18 +218,20 @@ object Checkup {
             }
 
             if (reasons.isNotEmpty()) {
-                val label = try {
-                    pm.getApplicationLabel(ai).toString()
-                } catch (e: Exception) {
-                    p.packageName
-                }
-                found.add(AppFinding(p.packageName, label, level, reasons))
+                found.add(AppFinding(p.packageName, appLabel(pm, ai, p.packageName), level, reasons))
             }
         }
         found.sortWith(compareBy<AppFinding> { it.level.ordinal }.thenBy { it.label.lowercase() })
+        factory.sortBy { it.label.lowercase() }
 
         val settings = if (Check.PHONE_SETTINGS in checks) phoneSettings(context) else emptyList()
-        return Result(found, settings, packages.size, checks)
+        return Result(found, settings, packages.size, checks, factory)
+    }
+
+    private fun appLabel(pm: PackageManager, ai: ApplicationInfo, pkg: String): String = try {
+        pm.getApplicationLabel(ai).toString()
+    } catch (e: Exception) {
+        pkg
     }
 
     // ---- individual checks ----
@@ -238,14 +287,26 @@ object Checkup {
         }
     }
 
+    private fun installerOf(pm: PackageManager, pkg: String): String? = try {
+        if (Build.VERSION.SDK_INT >= 30) pm.getInstallSourceInfo(pkg).installingPackageName
+        else @Suppress("DEPRECATION") pm.getInstallerPackageName(pkg)
+    } catch (e: Exception) {
+        null
+    }
+
     private fun fromStore(pm: PackageManager, pkg: String): Boolean {
-        val installer = try {
-            if (Build.VERSION.SDK_INT >= 30) pm.getInstallSourceInfo(pkg).installingPackageName
-            else @Suppress("DEPRECATION") pm.getInstallerPackageName(pkg)
-        } catch (e: Exception) {
-            null
-        }
+        val installer = installerOf(pm, pkg)
         return installer != null && installer in STORES
+    }
+
+    /**
+     * For a built-in app that has an update on top of it: true when the update came from a
+     * named installer that isn't a store or the phone's own updater (for example a computer
+     * over USB, or another app). No installer recorded means we can't tell, so it isn't flagged.
+     */
+    private fun updatedOutside(pm: PackageManager, pkg: String): Boolean {
+        val installer = installerOf(pm, pkg) ?: return false
+        return installer != pkg && installer !in STORES && installer !in FACTORY_UPDATERS
     }
 
     /** Phone-wide settings that make spying easier. Plain sentences, ready to show. */

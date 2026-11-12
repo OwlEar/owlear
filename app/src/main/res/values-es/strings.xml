@@ -281,11 +281,11 @@
     <string name="check_admin">Apps con administrador del dispositivo</string>
     <string name="check_admin_hint">El administrador del dispositivo puede bloquear el teléfono, borrarlo o hacer que una app sea difícil de desinstalar.</string>
     <string name="check_hidden">Apps ocultas</string>
-    <string name="check_hidden_hint">Apps con accesos potentes pero sin icono en tu pantalla de inicio.</string>
+    <string name="check_hidden_hint">Apps que instalaste con accesos potentes pero sin icono en tu pantalla de inicio. Las partes integradas del teléfono no suelen tener icono, así que no se marcan por esto.</string>
     <string name="check_outside">Instaladas fuera de una tienda de apps</string>
-    <string name="check_outside_hint">El stalkerware suele instalarse a mano, no desde una tienda. Solo se muestra junto a otro motivo.</string>
+    <string name="check_outside_hint">El stalkerware suele instalarse a mano, no desde una tienda. Solo se muestra junto a otro motivo. También marca una app de fábrica actualizada desde fuera de una tienda o de las actualizaciones del propio teléfono.</string>
     <string name="check_sensors">Cámara, micrófono y ubicación</string>
-    <string name="check_sensors_hint">Apps con permiso para los tres a la vez. Solo se muestra junto a otro motivo, porque los mapas y las videollamadas también los necesitan.</string>
+    <string name="check_sensors_hint">Apps con permiso para los tres a la vez. En las apps que instalaste, solo se muestra junto a otro motivo, porque los mapas y las videollamadas también los necesitan. Las apps de fábrica aparecen en «Venían con este teléfono».</string>
     <string name="check_settings">Ajustes del teléfono</string>
     <string name="check_settings_hint">Depuración USB, opciones para desarrolladores y una VPN o proxy activos.</string>
     <string name="checkup_run">Revisar</string>
@@ -335,4 +335,11 @@
     <string name="legend_link">ⓘ Qué significan los iconos</string>
     <string name="legend_radar">En los círculos, cuanto más cerca del centro está un icono, más cerca parece estar el dispositivo. El lado en el que aparece no significa nada, porque un teléfono no puede saber la dirección.</string>
     <string name="legend_distance">Las distancias se calculan según la intensidad de la señal. Paredes, coches y personas pueden desviarlas de 2 a 3 veces.</string>
+    <string name="reason_factory">venía con el teléfono</string>
+    <string name="reason_factory_updated">actualizada desde fuera de una tienda o de las actualizaciones del propio teléfono</string>
+    <string name="checkup_factory">Venían con este teléfono (%1$d)</string>
+    <string name="checkup_factory_hint">Apps de fábrica y los accesos que tienen. Casi todo es normal, porque el teléfono, la cámara y las apps de Google los necesitan. Busca nombres que no reconozcas.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">toca para abrir</string>
+    <string name="checkup_tap_close">toca para cerrar</string>
 </resources>

@@ -278,11 +278,11 @@
     <string name="check_admin">Apps mit Geräteadministrator</string>
     <string name="check_admin_hint">Ein Geräteadministrator kann das Handy sperren, löschen oder eine App schwer deinstallierbar machen.</string>
     <string name="check_hidden">Versteckte Apps</string>
-    <string name="check_hidden_hint">Apps mit starken Zugriffsrechten, aber ohne Symbol auf dem Startbildschirm.</string>
+    <string name="check_hidden_hint">Von dir installierte Apps mit starken Zugriffsrechten, aber ohne Symbol auf dem Startbildschirm. Eingebaute Teile des Handys haben meist kein Symbol und werden dafür nicht markiert.</string>
     <string name="check_outside">Außerhalb eines App-Stores installiert</string>
-    <string name="check_outside_hint">Stalkerware wird meist von Hand installiert, nicht aus einem Store. Wird nur zusammen mit einem anderen Grund angezeigt.</string>
+    <string name="check_outside_hint">Stalkerware wird meist von Hand installiert, nicht aus einem Store. Wird nur zusammen mit einem anderen Grund angezeigt. Markiert auch eine vorinstallierte App, die von außerhalb eines Stores oder der Handy-Updates aktualisiert wurde.</string>
     <string name="check_sensors">Kamera, Mikrofon und Standort</string>
-    <string name="check_sensors_hint">Apps, die alle drei gleichzeitig dürfen. Nur zusammen mit einem anderen Grund angezeigt, weil Karten und Videoanrufe sie auch brauchen.</string>
+    <string name="check_sensors_hint">Apps, die alle drei gleichzeitig dürfen. Bei von dir installierten Apps nur zusammen mit einem anderen Grund angezeigt, weil Karten und Videoanrufe sie auch brauchen. Vorinstallierte Apps stehen unter „Schon auf dem Handy“.</string>
     <string name="check_settings">Handy-Einstellungen</string>
     <string name="check_settings_hint">USB-Debugging, Entwickleroptionen und ein aktives VPN oder ein Proxy.</string>
     <string name="checkup_run">Check starten</string>
@@ -332,4 +332,11 @@
     <string name="legend_link">ⓘ Was die Symbole bedeuten</string>
     <string name="legend_radar">Auf den Kreisen gilt: Je näher ein Symbol an der Mitte ist, desto näher scheint das Gerät zu sein. Auf welcher Seite es sitzt, bedeutet nichts, denn ein Handy kann keine Richtung erkennen.</string>
     <string name="legend_distance">Entfernungen werden aus der Signalstärke geschätzt. Wände, Autos und Menschen können sie um das 2- bis 3-Fache verfälschen.</string>
+    <string name="reason_factory">war schon auf dem Handy</string>
+    <string name="reason_factory_updated">von außerhalb eines App-Stores oder der Handy-Updates aktualisiert</string>
+    <string name="checkup_factory">Schon auf dem Handy (%1$d)</string>
+    <string name="checkup_factory_hint">Vorinstallierte Apps und ihre Zugriffsrechte. Das meiste ist normal, denn Telefon, Kamera und Google-Apps brauchen sie. Achte auf Namen, die du nicht kennst.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">zum Öffnen tippen</string>
+    <string name="checkup_tap_close">zum Schließen tippen</string>
 </resources>

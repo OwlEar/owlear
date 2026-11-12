@@ -27,7 +27,7 @@ Saved data is encrypted with a key kept inside your phone's Android Keystore, wh
 - **Nearby devices / Bluetooth:** to hear Bluetooth signals. OwlEar only listens; it never connects to anything.
 - **Location:** Android requires it for Wi-Fi scanning, and OwlEar uses it to check whether a tracker moves with you and to recognise your saved places.
 - **Notifications:** to warn you.
-- **See all apps** (Phone checkup only, off until you turn it on): to compare the apps on your phone with the built-in list of known stalkerware and to spot apps with screen-reading, notification or device-admin access. It runs only when you tap **Run checkup**, and the list never leaves your phone.
+- **See all apps** (Phone checkup only, off until you turn it on): to compare the apps on your phone with the built-in list of known stalkerware and to spot apps with screen-reading, notification or device-admin access, including apps that came with the phone. It runs only when you tap **Run checkup**, and the list never leaves your phone.
 - **View network connections** (Phone checkup only): to tell you whether a VPN or proxy is active. It does not let OwlEar use the internet.
 
 ## Deleting your data

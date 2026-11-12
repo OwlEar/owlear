@@ -279,11 +279,11 @@
     <string name="check_admin">Apps with device admin</string>
     <string name="check_admin_hint">Device admin can lock the phone, wipe it, or make an app hard to uninstall.</string>
     <string name="check_hidden">Hidden apps</string>
-    <string name="check_hidden_hint">Apps with powerful access but no icon on your home screen.</string>
+    <string name="check_hidden_hint">Apps you installed that have powerful access but no icon on your home screen. Built-in parts of the phone usually have no icon, so they aren’t flagged for this.</string>
     <string name="check_outside">Installed outside an app store</string>
-    <string name="check_outside_hint">Stalkerware is usually installed by hand, not from an app store. Shown only next to another reason.</string>
+    <string name="check_outside_hint">Stalkerware is usually installed by hand, not from an app store. Shown only next to another reason. Also flags a built-in app that was updated from outside a store or the phone’s own updates.</string>
     <string name="check_sensors">Camera, microphone and location</string>
-    <string name="check_sensors_hint">Apps allowed all three at once. Shown only next to another reason, since maps and video calls need them too.</string>
+    <string name="check_sensors_hint">Apps allowed all three at once. For apps you installed, shown only next to another reason, since maps and video calls need them too. Built-in apps are listed under Came with this phone.</string>
     <string name="check_settings">Phone settings</string>
     <string name="check_settings_hint">USB debugging, developer options, and an active VPN or proxy.</string>
     <string name="checkup_run">Run checkup</string>
@@ -333,4 +333,11 @@
     <string name="legend_link">ⓘ What the icons mean</string>
     <string name="legend_radar">On the circles, the closer an icon is to the centre, the closer the device seems to be. Which side it sits on means nothing, since a phone can\'t tell direction.</string>
     <string name="legend_distance">Distances are guessed from signal strength. Walls, cars and bodies can make them 2–3 times off.</string>
+    <string name="reason_factory">came with the phone</string>
+    <string name="reason_factory_updated">updated from outside an app store or the phone’s own updates</string>
+    <string name="checkup_factory">Came with this phone (%1$d)</string>
+    <string name="checkup_factory_hint">Built-in apps and the access they have. Most of it is normal, since the phone, camera and Google apps need it. Look for names you don’t recognize.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">tap to open</string>
+    <string name="checkup_tap_close">tap to close</string>
 </resources>

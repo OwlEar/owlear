@@ -281,11 +281,11 @@
     <string name="check_admin">App amministratore del dispositivo</string>
     <string name="check_admin_hint">Un amministratore del dispositivo può bloccare il telefono, cancellarlo o rendere un’app difficile da disinstallare.</string>
     <string name="check_hidden">App nascoste</string>
-    <string name="check_hidden_hint">App con accessi potenti ma senza icona nella schermata Home.</string>
+    <string name="check_hidden_hint">App che hai installato con accessi potenti ma senza icona nella schermata Home. Le parti integrate del telefono di solito non hanno icona, quindi non vengono segnalate per questo.</string>
     <string name="check_outside">Installate fuori da uno store</string>
-    <string name="check_outside_hint">Lo stalkerware di solito si installa a mano, non da uno store. Mostrato solo insieme a un altro motivo.</string>
+    <string name="check_outside_hint">Lo stalkerware di solito si installa a mano, non da uno store. Mostrato solo insieme a un altro motivo. Segnala anche un’app preinstallata aggiornata da fuori uno store o dagli aggiornamenti del telefono.</string>
     <string name="check_sensors">Fotocamera, microfono e posizione</string>
-    <string name="check_sensors_hint">App autorizzate a tutti e tre insieme. Mostrato solo insieme a un altro motivo, perché anche mappe e videochiamate ne hanno bisogno.</string>
+    <string name="check_sensors_hint">App autorizzate a tutti e tre insieme. Per le app che hai installato, mostrato solo insieme a un altro motivo, perché anche mappe e videochiamate ne hanno bisogno. Le app preinstallate sono elencate in «Già sul telefono».</string>
     <string name="check_settings">Impostazioni del telefono</string>
     <string name="check_settings_hint">Debug USB, opzioni sviluppatore e una VPN o un proxy attivi.</string>
     <string name="checkup_run">Avvia controllo</string>
@@ -335,4 +335,11 @@
     <string name="legend_link">ⓘ Cosa significano le icone</string>
     <string name="legend_radar">Sui cerchi, più un’icona è vicina al centro, più il dispositivo sembra vicino. Il lato in cui si trova non significa nulla, perché un telefono non può capire la direzione.</string>
     <string name="legend_distance">Le distanze sono stimate dalla potenza del segnale. Muri, auto e persone possono sbagliarle di 2–3 volte.</string>
+    <string name="reason_factory">era già sul telefono</string>
+    <string name="reason_factory_updated">aggiornata da fuori uno store o dagli aggiornamenti del telefono</string>
+    <string name="checkup_factory">Già sul telefono (%1$d)</string>
+    <string name="checkup_factory_hint">App preinstallate e gli accessi che hanno. Quasi tutto è normale, perché telefono, fotocamera e app Google ne hanno bisogno. Cerca nomi che non riconosci.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">tocca per aprire</string>
+    <string name="checkup_tap_close">tocca per chiudere</string>
 </resources>

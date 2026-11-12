@@ -284,11 +284,11 @@
     <string name="check_admin">Aplikacje z uprawnieniami administratora</string>
     <string name="check_admin_hint">Administrator urządzenia może zablokować telefon, wyczyścić go albo utrudnić odinstalowanie aplikacji.</string>
     <string name="check_hidden">Ukryte aplikacje</string>
-    <string name="check_hidden_hint">Aplikacje z silnymi uprawnieniami, ale bez ikony na ekranie głównym.</string>
+    <string name="check_hidden_hint">Zainstalowane przez Ciebie aplikacje z silnymi uprawnieniami, ale bez ikony na ekranie głównym. Wbudowane części telefonu zwykle nie mają ikony, więc nie są za to oznaczane.</string>
     <string name="check_outside">Zainstalowane spoza sklepu z aplikacjami</string>
-    <string name="check_outside_hint">Stalkerware zwykle instaluje się ręcznie, nie ze sklepu. Pokazywane tylko razem z innym powodem.</string>
+    <string name="check_outside_hint">Stalkerware zwykle instaluje się ręcznie, nie ze sklepu. Pokazywane tylko razem z innym powodem. Oznacza też wbudowaną aplikację zaktualizowaną spoza sklepu lub aktualizacji samego telefonu.</string>
     <string name="check_sensors">Aparat, mikrofon i lokalizacja</string>
-    <string name="check_sensors_hint">Aplikacje z dostępem do wszystkich trzech naraz. Pokazywane tylko razem z innym powodem, bo mapy i rozmowy wideo też ich potrzebują.</string>
+    <string name="check_sensors_hint">Aplikacje z dostępem do wszystkich trzech naraz. W aplikacjach zainstalowanych przez Ciebie pokazywane tylko razem z innym powodem, bo mapy i rozmowy wideo też ich potrzebują. Wbudowane aplikacje są w sekcji „Fabrycznie na telefonie”.</string>
     <string name="check_settings">Ustawienia telefonu</string>
     <string name="check_settings_hint">Debugowanie USB, opcje programisty oraz aktywny VPN lub serwer proxy.</string>
     <string name="checkup_run">Uruchom kontrolę</string>
@@ -338,4 +338,11 @@
     <string name="legend_link">ⓘ Co oznaczają ikony</string>
     <string name="legend_radar">Na okręgach im bliżej środka jest ikona, tym bliżej wydaje się urządzenie. Strona, po której się znajduje, nic nie znaczy, bo telefon nie potrafi określić kierunku.</string>
     <string name="legend_distance">Odległości są szacowane na podstawie siły sygnału. Ściany, samochody i ludzie mogą je zafałszować 2–3 razy.</string>
+    <string name="reason_factory">była na telefonie od nowości</string>
+    <string name="reason_factory_updated">zaktualizowana spoza sklepu lub aktualizacji samego telefonu</string>
+    <string name="checkup_factory">Fabrycznie na telefonie (%1$d)</string>
+    <string name="checkup_factory_hint">Wbudowane aplikacje i ich uprawnienia. Większość to norma, bo telefon, aparat i aplikacje Google ich potrzebują. Szukaj nazw, których nie znasz.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">dotknij, aby otworzyć</string>
+    <string name="checkup_tap_close">dotknij, aby zamknąć</string>
 </resources>

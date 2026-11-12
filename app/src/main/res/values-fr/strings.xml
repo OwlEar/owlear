@@ -281,11 +281,11 @@
     <string name="check_admin">Applis administrateur de l’appareil</string>
     <string name="check_admin_hint">Un administrateur de l’appareil peut verrouiller le téléphone, l’effacer ou rendre une appli difficile à désinstaller.</string>
     <string name="check_hidden">Applis cachées</string>
-    <string name="check_hidden_hint">Applis aux accès puissants mais sans icône sur l’écran d’accueil.</string>
+    <string name="check_hidden_hint">Applis que vous avez installées, aux accès puissants mais sans icône sur l’écran d’accueil. Les parties intégrées du téléphone n’ont souvent pas d’icône, elles ne sont donc pas signalées pour ça.</string>
     <string name="check_outside">Installées hors d’une boutique d’applis</string>
-    <string name="check_outside_hint">Un stalkerware est généralement installé à la main, pas depuis une boutique. Affiché seulement avec une autre raison.</string>
+    <string name="check_outside_hint">Un stalkerware est généralement installé à la main, pas depuis une boutique. Affiché seulement avec une autre raison. Signale aussi une appli préinstallée mise à jour hors d’une boutique ou des mises à jour du téléphone.</string>
     <string name="check_sensors">Caméra, micro et position</string>
-    <string name="check_sensors_hint">Applis autorisées aux trois à la fois. Affiché seulement avec une autre raison, car les cartes et les appels vidéo en ont aussi besoin.</string>
+    <string name="check_sensors_hint">Applis autorisées aux trois à la fois. Pour les applis que vous avez installées, affiché seulement avec une autre raison, car les cartes et les appels vidéo en ont aussi besoin. Les applis préinstallées sont listées sous « Fournies avec ce téléphone ».</string>
     <string name="check_settings">Réglages du téléphone</string>
     <string name="check_settings_hint">Débogage USB, options pour les développeurs, et VPN ou proxy actif.</string>
     <string name="checkup_run">Lancer le contrôle</string>
@@ -335,4 +335,11 @@
     <string name="legend_link">ⓘ Ce que signifient les icônes</string>
     <string name="legend_radar">Sur les cercles, plus une icône est proche du centre, plus l’appareil semble proche. Le côté où elle se trouve ne veut rien dire, car un téléphone ne peut pas connaître la direction.</string>
     <string name="legend_distance">Les distances sont estimées d’après la force du signal. Murs, voitures et personnes peuvent les fausser d’un facteur 2 à 3.</string>
+    <string name="reason_factory">fournie avec le téléphone</string>
+    <string name="reason_factory_updated">mise à jour hors d’une boutique ou des mises à jour du téléphone</string>
+    <string name="checkup_factory">Fournies avec ce téléphone (%1$d)</string>
+    <string name="checkup_factory_hint">Applis préinstallées et leurs accès. C’est surtout normal : le téléphone, l’appareil photo et les applis Google en ont besoin. Repérez les noms que vous ne reconnaissez pas.</string>
+    <string name="checkup_group">%1$s (%2$d)</string>
+    <string name="checkup_tap_open">touchez pour ouvrir</string>
+    <string name="checkup_tap_close">touchez pour fermer</string>
 </resources>
