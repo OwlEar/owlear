@@ -330,5 +330,6 @@
     <string name="empty_nearby">Gerade nichts Markiertes in Reichweite.</string>
     <string name="nearby_more">+%1$d weitere</string>
     <string name="legend_link">ⓘ Was die Symbole bedeuten</string>
+    <string name="legend_radar">Auf den Kreisen gilt: Je näher ein Symbol an der Mitte ist, desto näher scheint das Gerät zu sein. Auf welcher Seite es sitzt, bedeutet nichts, denn ein Handy kann keine Richtung erkennen.</string>
     <string name="legend_distance">Entfernungen werden aus der Signalstärke geschätzt. Wände, Autos und Menschen können sie um das 2- bis 3-Fache verfälschen.</string>
 </resources>

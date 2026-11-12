@@ -336,5 +336,6 @@
     <string name="empty_nearby">Зараз поруч нічого позначеного.</string>
     <string name="nearby_more">+%1$d ще</string>
     <string name="legend_link">ⓘ Що означають значки</string>
+    <string name="legend_radar">На колах: що ближче значок до центру, то ближче, схоже, пристрій. Бік, на якому він стоїть, нічого не означає, бо телефон не може визначити напрямок.</string>
     <string name="legend_distance">Відстань оцінюється за силою сигналу. Стіни, авто й люди можуть спотворити її у 2–3 рази.</string>
 </resources>

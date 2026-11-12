@@ -4,10 +4,10 @@ OwlEar is a free Android app that warns you about trackers that might be followi
 No ads. No accounts. No tracking. Everything stays on your phone.
 
 ## What's new
-- **A clearer radar.** Each kind of device has its own icon, with a rough distance. Tap any icon to see its details, and use the buttons across the top to hide the kinds you don't care about.
-- **Find it.** Open any device and tap **Find it** to walk toward it. A big meter tells you if you're getting warmer or colder, with an optional beep or silent buzz that speeds up as you get closer.
-- **Check for updates.** A button in Settings opens this page so you can see if there's a newer version.
-- Small fixes.
+- **The circles are back.** Above the Nearby list, three circles show the same devices as icons. The closer an icon is to the middle, the closer the device seems to be. There's no direction and no distance writing, because a phone can't really tell those.
+- **Fewer devices blinking in and out.** Bluetooth devices now stay on the list for 20 seconds after they were last heard.
+- **Tags that say "Alerts on" now really alert.** A device you tagged sounds once when it shows up, and again only after it's been gone at least 10 minutes.
+- **Fixed:** "Recently out of range" kept counting trackers that never showed up on the Nearby list, like ones in strangers' bags, so the number kept climbing.
 
 ## How to install
 1. On your Android phone, scroll down to **Assets** below and tap the file that ends in **.apk**.

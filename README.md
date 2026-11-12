@@ -59,7 +59,7 @@ You need Android 8 or newer. There is no iPhone version yet. The app uses your p
 ## How to use it
 
 - Tap **Start listening**. OwlEar keeps listening even when the app is closed, and sends you an alert when something important shows up.
-- The **Nearby** list shows what's around you right now, nearest first, with a rough distance (like "~30 ft", or meters if you switch it in Settings). The shape of each icon says what it is. Your watchlist hits and tagged devices are pinned to the top, and each kind of device has its own foldable group. Tap any row to see everything OwlEar knows about it, Find it, or tag it.
+- The **Nearby** list shows what's around you right now, nearest first, with a rough distance (like "~30 ft", or meters if you switch it in Settings). The shape of each icon says what it is. Your watchlist hits and tagged devices are pinned to the top, and each kind of device has its own foldable group. Tap any row to see everything OwlEar knows about it, Find it, or tag it. Above the list, three circles show the same devices as icons: the closer an icon is to the middle, the closer the device seems to be.
 - To track down one thing, like a tracker you think is hidden in your car or bag, tap its icon and choose **Find it**. Walk around slowly and watch the number: the higher it goes, the closer you are. It tells you when you're getting warmer or colder, and it can beep or buzz so you don't have to keep looking at the screen.
 - If a tracker turns out to be yours or your family's, tap it and choose **Ignore**.
 

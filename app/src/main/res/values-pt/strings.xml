@@ -333,5 +333,6 @@
     <string name="empty_nearby">Nada marcado ao alcance agora.</string>
     <string name="nearby_more">+%1$d a mais</string>
     <string name="legend_link">ⓘ O que os ícones significam</string>
+    <string name="legend_radar">Nos círculos, quanto mais perto do centro está um ícone, mais perto o dispositivo parece estar. O lado em que aparece não significa nada, porque um telefone não consegue saber a direção.</string>
     <string name="legend_distance">As distâncias são estimadas pela força do sinal. Paredes, carros e pessoas podem errar de 2 a 3 vezes.</string>
 </resources>

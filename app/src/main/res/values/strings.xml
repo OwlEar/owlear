@@ -331,5 +331,6 @@
     <string name="empty_nearby">Nothing flagged in range right now.</string>
     <string name="nearby_more">+%1$d more</string>
     <string name="legend_link">ⓘ What the icons mean</string>
+    <string name="legend_radar">On the circles, the closer an icon is to the centre, the closer the device seems to be. Which side it sits on means nothing, since a phone can\'t tell direction.</string>
     <string name="legend_distance">Distances are guessed from signal strength. Walls, cars and bodies can make them 2–3 times off.</string>
 </resources>

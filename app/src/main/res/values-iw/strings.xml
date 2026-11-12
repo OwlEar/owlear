@@ -333,5 +333,6 @@
     <string name="empty_nearby">כרגע אין שום דבר מסומן בטווח.</string>
     <string name="nearby_more">‏+%1$d נוספים</string>
     <string name="legend_link">ⓘ מה הסמלים אומרים</string>
+    <string name="legend_radar">על המעגלים, ככל שסמל קרוב יותר למרכז, המכשיר נראה קרוב יותר. הצד שבו הוא מופיע לא אומר כלום, כי טלפון לא יכול לדעת כיוון.</string>
     <string name="legend_distance">המרחקים מוערכים לפי עוצמת האות. קירות, מכוניות ואנשים יכולים לטעות פי 2–3.</string>
 </resources>

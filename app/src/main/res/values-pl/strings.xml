@@ -336,5 +336,6 @@
     <string name="empty_nearby">Teraz nic oznaczonego w zasięgu.</string>
     <string name="nearby_more">+%1$d więcej</string>
     <string name="legend_link">ⓘ Co oznaczają ikony</string>
+    <string name="legend_radar">Na okręgach im bliżej środka jest ikona, tym bliżej wydaje się urządzenie. Strona, po której się znajduje, nic nie znaczy, bo telefon nie potrafi określić kierunku.</string>
     <string name="legend_distance">Odległości są szacowane na podstawie siły sygnału. Ściany, samochody i ludzie mogą je zafałszować 2–3 razy.</string>
 </resources>

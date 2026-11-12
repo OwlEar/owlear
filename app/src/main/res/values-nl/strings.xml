@@ -330,5 +330,6 @@
     <string name="empty_nearby">Op dit moment niets gemarkeerds binnen bereik.</string>
     <string name="nearby_more">+%1$d meer</string>
     <string name="legend_link">ⓘ Wat de pictogrammen betekenen</string>
+    <string name="legend_radar">Op de cirkels geldt: hoe dichter een pictogram bij het midden staat, hoe dichterbij het apparaat lijkt. Aan welke kant het staat betekent niets, want een telefoon kan geen richting bepalen.</string>
     <string name="legend_distance">Afstanden worden geschat op basis van de signaalsterkte. Muren, auto’s en mensen kunnen ze 2 à 3 keer verkeerd maken.</string>
 </resources>

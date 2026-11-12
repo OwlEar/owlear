@@ -342,5 +342,6 @@
     <string name="empty_nearby">لا شيء مميّز في النطاق الآن.</string>
     <string name="nearby_more">+%1$d أخرى</string>
     <string name="legend_link">ⓘ ماذا تعني الرموز</string>
+    <string name="legend_radar">على الدوائر، كلما اقتربت الأيقونة من المركز بدا الجهاز أقرب إليك. الجهة التي تظهر فيها لا تعني شيئًا، لأن الهاتف لا يعرف الاتجاه.</string>
     <string name="legend_distance">المسافات تُقدَّر من قوة الإشارة. قد تجعلها الجدران والسيارات والأجسام خاطئة بمقدار 2 إلى 3 أضعاف.</string>
 </resources>

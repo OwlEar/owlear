@@ -333,5 +333,6 @@
     <string name="empty_nearby">Rien de signalé à portée pour l’instant.</string>
     <string name="nearby_more">+%1$d de plus</string>
     <string name="legend_link">ⓘ Ce que signifient les icônes</string>
+    <string name="legend_radar">Sur les cercles, plus une icône est proche du centre, plus l’appareil semble proche. Le côté où elle se trouve ne veut rien dire, car un téléphone ne peut pas connaître la direction.</string>
     <string name="legend_distance">Les distances sont estimées d’après la force du signal. Murs, voitures et personnes peuvent les fausser d’un facteur 2 à 3.</string>
 </resources>

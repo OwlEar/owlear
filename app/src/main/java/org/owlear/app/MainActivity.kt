@@ -55,6 +55,7 @@ class MainActivity : Activity() {
     private var checkupRunning = false
     private var shownPlaceId: String? = "unset"
     private lateinit var nearbyBox: LinearLayout
+    private lateinit var radar: RadarView
     private var findScreen: FindScreen? = null
     private val refresher = object : Runnable {
         override fun run() {
@@ -271,6 +272,9 @@ class MainActivity : Activity() {
 
         nearbyBox = section(getString(R.string.section_nearby), getString(R.string.hint_nearby), startOpen = true)
         val nearbyCard = nearbyBox.parent as LinearLayout
+        // The rings sit above the list: closer to the centre = closer to you.
+        radar = RadarView(this).apply { onPick = { showDetails(it) } }
+        nearbyCard.addView(radar, nearbyCard.indexOfChild(nearbyBox), spaced().apply { topMargin = dp(4) })
         nearbyCard.addView(label(getString(R.string.legend_link), 13f, green).apply {
             setPadding(0, dp(10), 0, dp(4))
             setOnClickListener { showLegend() }
@@ -412,15 +416,13 @@ class MainActivity : Activity() {
         if (here?.id != shownPlaceId) renderPlaces()
 
         // Only what's being heard right now is Nearby; the rest drops to "Recently out of range".
-        val live = all.filter {
-            (it.kind != Kind.OTHER || it.tag != null) && Repo.isLive(it, now) && !Repo.isIgnored(it.address)
-        }
+        // Both use the same test, so nothing lands in Recently out of range that Nearby never showed.
+        val live = all.filter { belongsInNearby(it) && Repo.isLive(it, now) }
         renderNearby(live)
 
         recentBox.removeAllViews()
         val recent = all.filter {
-            (it.kind != Kind.OTHER || it.tag != null) && it !in live && now - it.lastSeen < 60 * 60_000L &&
-                !Repo.isIgnored(it.address)
+            belongsInNearby(it) && !Repo.isLive(it, now) && now - it.lastSeen < 60 * 60_000L
         }.sortedByDescending { it.lastSeen }
         setCount(recentBox, recent.size)
         if (recent.isEmpty()) recentBox.addView(empty(getString(R.string.empty_recent)))
@@ -569,8 +571,9 @@ class MainActivity : Activity() {
      */
     private fun renderNearby(live: List<Sighting>) {
         nearbyBox.removeAllViews()
-        val shown = live.filter { !(it.kind == Kind.TRACKER && !it.separated && it.tag == null) }
-            .sortedBy { Distance.meters(it.rssi, it.source) }
+        val shown = live.sortedBy { Distance.meters(it.rssi, it.source) }
+        radar.items = shown.take(RADAR_MAX)
+        radar.invalidate()
         setCount(nearbyBox, shown.size)
         if (shown.isEmpty()) {
             nearbyBox.addView(empty(getString(R.string.empty_nearby)))
@@ -581,6 +584,16 @@ class MainActivity : Activity() {
         val rest = shown.filter { it !in pinned }.groupBy { Glyph.of(it) }
         for (g in Glyph.entries) rest[g]?.let { group(g.name, g.title, g, it) }
     }
+
+    /**
+     * Whether a signal is the kind Nearby shows (and so Recently out of range too). Left out:
+     * ordinary "everything else" devices, ignored ones, and trackers still with their owner
+     * (passers-by, which rotate their address every few minutes and would pile up).
+     */
+    private fun belongsInNearby(s: Sighting): Boolean =
+        (s.kind != Kind.OTHER || s.tag != null) &&
+            !(s.kind == Kind.TRACKER && !s.separated && s.tag == null) &&
+            !Repo.isIgnored(s.address)
 
     /** One foldable group inside Nearby: tap its title to fold it. Remembered while the app runs. */
     private fun group(key: String, title: String, glyph: Glyph?, items: List<Sighting>) {
@@ -639,7 +652,7 @@ class MainActivity : Activity() {
                 addView(label(g.title, 14f, fg).apply { setPadding(dp(10), 0, 0, 0) })
             })
         }
-        for (id in intArrayOf(R.string.legend_colors, R.string.legend_distance)) {
+        for (id in intArrayOf(R.string.legend_colors, R.string.legend_radar, R.string.legend_distance)) {
             list.addView(label(getString(id), 13f, dim).apply { setPadding(0, dp(8), 0, 0) })
         }
         AlertDialog.Builder(this)
@@ -1291,6 +1304,8 @@ class MainActivity : Activity() {
         private const val HELP_URL = "https://stopstalkerware.org/resources/"
         /** Most rows shown per Nearby group; the count in the group title still says how many. */
         private const val GROUP_MAX = 25
+        /** Most icons drawn on the rings at once; the list below still shows them all. */
+        private const val RADAR_MAX = 40
         private const val KEY_PINNED = "pinned"
         /** Which Nearby groups are folded shut, kept while the app runs. */
         private val groupOpen = HashMap<String, Boolean>()

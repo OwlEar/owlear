@@ -330,5 +330,6 @@
     <string name="empty_nearby">Şu an menzilde işaretli bir şey yok.</string>
     <string name="nearby_more">+%1$d tane daha</string>
     <string name="legend_link">ⓘ Simgeler ne anlama geliyor</string>
+    <string name="legend_radar">Çemberlerde bir simge merkeze ne kadar yakınsa cihaz da o kadar yakın görünür. Hangi tarafta durduğunun bir anlamı yoktur, çünkü telefon yönü anlayamaz.</string>
     <string name="legend_distance">Mesafeler sinyal gücünden tahmin edilir. Duvarlar, arabalar ve insanlar bunu 2–3 kat yanıltabilir.</string>
 </resources>

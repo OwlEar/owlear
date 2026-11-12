@@ -81,7 +81,7 @@ object Repo {
      * several times a second; Wi-Fi is only re-read every 30 s, so it needs a little longer.
      * Dropping off the list is also what counts as "left" for watchlist alerts.
      */
-    const val LIVE_BT_MS = 10_000L
+    const val LIVE_BT_MS = 20_000L
     const val LIVE_WIFI_MS = 35_000L
 
     /**
@@ -156,7 +156,14 @@ object Repo {
             watch != null -> Kind.WATCHLIST
             else -> Kind.OTHER
         }
-        val label = tracker?.label ?: spotted?.label ?: watch?.displayLabel ?: (name ?: L10n.s(R.string.unknown_device))
+        // A maker-ID match says nothing about which device it is, so keep the name it broadcasts
+        // in front: "MEVANS · Maker A8:93:4A" instead of just "Maker A8:93:4A".
+        val heard = name ?: existing?.heardName
+        val watchLabel = watch?.let {
+            if (it.isMacPrefix && !heard.isNullOrBlank()) L10n.s(R.string.tagged_label, L10n.ltr(heard), it.displayLabel)
+            else it.displayLabel
+        }
+        val label = tracker?.label ?: spotted?.label ?: watchLabel ?: (name ?: L10n.s(R.string.unknown_device))
 
         val s = if (existing != null && existing.kind == kind && existing.category == category) existing
         else Sighting(address, label, kind, now, category).also { sightings[key] = it }
@@ -209,16 +216,18 @@ object Repo {
             s.followAlerted = true
             alerts.add(Alert.Following(s))
         }
+        // An ordinary device you tagged (alerts on) sounds the same way a watchlist hit does.
+        val tagAlert = kind == Kind.OTHER && s.tag != null
         // "Possible" maker-only matches show in the app but don't buzz your phone.
-        if (kind == Kind.WATCHLIST || kind == Kind.SPOTTED) {
+        if (kind == Kind.WATCHLIST || kind == Kind.SPOTTED || tagAlert) {
             val st = watchStates.getOrPut(key) { WatchState(0L, 0L) }
             // A new visit: heard for the first time, or back after being gone the whole cooldown.
             if (st.heardAt == 0L || now - st.heardAt >= WATCH_COOLDOWN_MS) st.alertedAt = 0L
             st.heardAt = now
+            val allowed = tagAlert ||
+                (mode == Mode.ALERT && s.confidence == Confidence.HIGH && s.mutedAt == null)
             // One sound per visit, the first moment it's allowed to sound.
-            if (mode == Mode.ALERT && !silenced && s.confidence == Confidence.HIGH && s.mutedAt == null &&
-                st.alertedAt == 0L
-            ) {
+            if (allowed && !silenced && st.alertedAt == 0L) {
                 st.alertedAt = now
                 alerts.add(Alert.WatchHit(s))
             }

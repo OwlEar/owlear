@@ -333,5 +333,6 @@
     <string name="empty_nearby">Al momento niente di segnalato nei paraggi.</string>
     <string name="nearby_more">+%1$d altri</string>
     <string name="legend_link">ⓘ Cosa significano le icone</string>
+    <string name="legend_radar">Sui cerchi, più un’icona è vicina al centro, più il dispositivo sembra vicino. Il lato in cui si trova non significa nulla, perché un telefono non può capire la direzione.</string>
     <string name="legend_distance">Le distanze sono stimate dalla potenza del segnale. Muri, auto e persone possono sbagliarle di 2–3 volte.</string>
 </resources>
