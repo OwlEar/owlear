@@ -4,10 +4,9 @@ OwlEar is a free Android app that warns you about trackers that might be followi
 No ads. No accounts. No tracking. Everything stays on your phone.
 
 ## What's new
-- **The circles are back.** Above the Nearby list, three circles show the same devices as icons. The closer an icon is to the middle, the closer the device seems to be. There's no direction and no distance writing, because a phone can't really tell those.
-- **Fewer devices blinking in and out.** Bluetooth devices now stay on the list for 20 seconds after they were last heard.
-- **Tags that say "Alerts on" now really alert.** A device you tagged sounds once when it shows up, and again only after it's been gone at least 10 minutes.
-- **Fixed:** "Recently out of range" kept counting trackers that never showed up on the Nearby list, like ones in strangers' bags, so the number kept climbing.
+- **The spyware checkup now looks at apps that came with your phone too.** Built-in apps can still be misused, so OwlEar now checks which ones can read your screen, read your notifications, control the device, or use your camera, microphone and location.
+- **Anything unusual goes to the top.** A built-in app with a screen reader switched on, or one updated from outside an app store or your phone's own updater, is listed with the other findings.
+- **Everything else is folded away.** The rest sits under "Came with this phone." Most of that access is normal, because the phone, camera and Google apps need it. Tap to open it and look for names you don't recognize.
 
 ## How to install
 1. On your Android phone, scroll down to **Assets** below and tap the file that ends in **.apk**.

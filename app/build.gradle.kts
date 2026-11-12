@@ -11,8 +11,8 @@ android {
         applicationId = "org.owlear.app"
         minSdk = 26
         targetSdk = 36
-        versionCode = 8
-        versionName = "0.5.1"
+        versionCode = 9
+        versionName = "0.5.2"
     }
 
     // Release signing key comes from CI secrets only; it is never committed.
